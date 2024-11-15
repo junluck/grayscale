@@ -5,10 +5,12 @@ import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import IsClickedSliceReducer  from './features/isClicked';
+import { IsClickedTwoReduce } from './features/isClicked';
 
 const store = configureStore({
   reducer:{
-    IsClickedSlice:IsClickedSliceReducer 
+    IsClickedSlice:IsClickedSliceReducer,
+    IsClickedSliceTwo:IsClickedTwoReduce
   }
 })
 
