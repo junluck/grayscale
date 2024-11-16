@@ -1,11 +1,10 @@
 .menuDivActive{
-    position: absolute;
     top: 64px;
     left: 0%;
     background-color: white;
     border-right: 2px solid rgb(226, 226, 226);
     width: 250px;
-    height: 100%;    
+    height: 2080px;    
     position:fixed;
     padding:0;
     margin:0;
@@ -34,15 +33,97 @@
     border-bottom: 2px solid rgb(226, 226, 226);
     width: 100%;
 }
- .menuDiv h3,.menuDiv h4{
+
+.shopMen h2{
+    margin-left: 5px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+.shopWomen h2{
+    margin-left: 5px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.shopMen h3{
+    margin-left: 15px;
+    font-weight: 500;
+}
+.shopWomen h3{
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+
+ .menuDivActive h3,.menuDivDeactive h4,.groupTopsOneActive h4,.groupTopsOneXDeactive h4,.groupBottomsOneActive h4,.groupBottomsOneXDeactive h4,.groupTopsTwoActive h4,.groupTopsTwoDeactive h4,.groupBottomsTwoActive h4,.groupBottomsTwoDeactive h4{ 
     cursor: pointer;
  }
 .topsOneXDeactive,.groupTopsOneXDeactive,.groupBottomsOneXDeactive,.topsTwoDeactive,.groupTopsTwoDeactive,.groupBottomsTwoDeactive{
     display: none;
+    margin-left: 20px;
 }
+
 .shopMenHeading{
     cursor: pointer;
 }
 .groupOfTops{
     
+}
+
+.TShirtDeactive,.hoodiesDeactive,.sweatshirtDeactive,.jacketsDeactive,.shortsDeactive,.jeansDeactive,.dressDeactive,.trackDeactive,.blouseDeactive,.sweatersDeactive,.BodysuitsDeactive,.jacketsTwoDeactive,.jeansTwoDeactive,.trouserDeactive,.shortsDeactive,.skirtsDeactive,.teeesDeactive,.shoesOneDeactive,.accessoryOneDeactive,.shoesDeactive,.accessoryDeactive{
+    opacity: 0.5;
+    font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+    
+
+
+.subHeading{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: relative;
+    justify-content: center;
+    
+}
+
+.TShirtActive,.hoodiesActive,.sweatshirtActive,.jacketsActive,.shortsActive,.jeansActive,.dressActive,.trackActive,.blouseActive,.sweatersActive,.BodysuitsActive,.jacketsTwoActive,.jeansTwoActive,.trouserActive,.shortsActive,.skirtsActive,.teesActive,.sweatshirtsActive,.shoesOneActive,.accessoryOneActive,.shoesActive,.accessoryActive{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+
+.spanActive{
+    height: 1px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: black;
+    margin-top: 0px;
+    position: absolute;
+    bottom:25%;
+    transition: .4s ease;
+    transform: scaleX(1);
+    transform-origin: 0 0;
+    margin-left: 30px;
+}
+
+.spanDeactive{
+    height: 1px;
+    width: 95%;
+    border-radius: 50px;
+    background-color: black;
+    margin-top: 0px;
+    position: absolute;
+    bottom:25%;
+    transition: .4s ease;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    margin-left: 30px;
 }

@@ -37,9 +37,9 @@ function Navbar(){
                 <span></span>
                 <li onClick={()=>dispatch(isClickedBool(1))} className={isClicked[1]?"menActive":"menDeactive"}>WOMEN</li>
                 <span></span>
-                <li onClick={()=>dispatch(isClickedBool(2))} className={isClicked[2]?"menActive":"menDeactive"}>ACCESSORIES</li>
+                <li onClick={()=>dispatch(isClickedBool(2))} className={isClicked[2]?"menActive":"menDeactive"}>HOME</li>
                 <span></span>
-                <li onClick={()=>dispatch(isClickedBool(3))} className={isClicked[3]?"menActive":"menDeactive"}>SHOES</li>
+                <li onClick={()=>dispatch(isClickedBool(3))} className={isClicked[3]?"menActive":"menDeactive"}>CONTACT US</li>
             </ul>
             <form className="magnifyerAndSearch" onSubmit={(e)=>{
                 e.preventDefault()
