@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { isClickedBool } from "../../features/isClicked";
 import { isClickedBoolTwo } from "../../features/isClicked";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 function Navbar(){
 
     const isClicked = useSelector((state)=> state.IsClickedSlice)
@@ -17,6 +18,7 @@ function Navbar(){
    
 
     return(
+        <div>
         <div className="navBar">
             <div className="menu" onClick={()=>{
                 dispatch(isClickedBoolTwo())
@@ -31,7 +33,10 @@ function Navbar(){
                 <h4>MENU</h4>
                
             </div>
-            
+            <div className="homeAndContact">
+                <img src="assests/images/home.svg" className="homeLogo"/>
+                <img src="assests/images/contact us.svg" className="contactLogo"/>
+            </div>
             <ul className="menuList">
                 <li onClick={()=>dispatch(isClickedBool(0))} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li>
                 <span></span>
@@ -50,9 +55,20 @@ function Navbar(){
                 <img src="assests/images/Cart.svg" className="cartLogo"/>
             </form>
           
-            <div>
+            <div className="menuTwo">
                 <Menu isClickedFour={isClickedFour}/>
             </div>
+            <form className="magnifyerAndSearchTwo" onSubmit={(e)=>{
+                e.preventDefault()
+                console.log(e)
+            }}>
+                <img src='assests/images/magnify.svg' className="magnify"/>
+                <input type="text" placeholder="search" id="search"/>
+                <img src="assests/images/Cart.svg" className="cartLogo"/>
+            </form>
+           
+        </div>
+            <Outlet />
         </div>
     )
 }

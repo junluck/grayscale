@@ -1,0 +1,33 @@
+
+.headerOuter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerInner{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 60% 40%;
+    width: 95%;
+}
+
+.grayScaleLogo{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    opacity: 0.4;
+
+}
+
+.backgroundPicture{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+   
+}
