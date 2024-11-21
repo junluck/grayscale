@@ -6,9 +6,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import IsClickedSliceReducer  from './features/isClicked';
 import { IsClickedTwoReduce } from './features/isClicked';
+import currencyReducer from "./features/currencySlice"
 
 const store = configureStore({
   reducer:{
+    CurrencySlice:currencyReducer,
     IsClickedSlice:IsClickedSliceReducer,
     IsClickedSliceTwo:IsClickedTwoReduce
   }

@@ -6,6 +6,17 @@
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
+.space{
+    height: 60px;
+}
+.navBar{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+}
 .menu{
     z-index: 1;
 }
@@ -234,7 +245,7 @@
         grid-template-rows: 100%;
         grid-template-columns: 20% 10% 70% ;
         background-color:#C2C1C1 ;
-        z-index: 1;
+        
     }
 
     .menuList{

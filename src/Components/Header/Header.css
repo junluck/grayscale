@@ -3,15 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:#939393 ;
+    position: relative;
 }
 
-.headerInner{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 60% 40%;
-    width: 95%;
-}
+
 
 .grayScaleLogo{
     grid-column-start: 1;
@@ -19,7 +15,7 @@
     grid-row-start: 1;
     grid-row-end: 2;
     width: 100%;
-    opacity: 0.4;
+    opacity: 0.6;
 
 }
 
@@ -30,4 +26,315 @@
     grid-row-end: 3;
     width: 100%;
    
+}
+
+.newColllection{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+.newCollectionHeading{
+    font-size: 2.3rem;
+    color: white;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.shopNowButton{
+    background-color: black;
+    color: white;
+    width: 40%;
+    height: 20%;
+    font-size: 1.9rem;
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.premiumBlendBox{
+    position: absolute;
+    background-color: #b8b8b8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    bottom: -12%;
+    min-width: 450px;
+    max-width: 450px;
+    z-index: 1;
+}
+.headingAndSpan{
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headingAndSpan span{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 10px;
+}
+
+.headingAndSpan h3{
+    margin-bottom: 0px;
+}
+.paragraphBlended{
+    margin-top: 0px;
+    text-align: center;
+    line-height: 40px;
+}
+@media (min-width:1541px){
+    .headerInner{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 60% 40%;
+        width: 96%;
+        max-width: 2000px;
+    }
+}
+@media (min-width:1150px) and (max-width:1540px){
+    .headerInner{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 60% 40%;
+        width: 95%;
+    }
+    .newCollectionHeading{
+        font-size: 1.8rem;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+    .shopNowButton{
+        background-color: black;
+        color: white;
+        width: 200px;
+        height: 50px;
+        font-size: 1.6rem;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .premiumBlendBox{
+        bottom: -100px;
+        min-width: 390px;
+    }
+}
+
+@media (min-width:830px) and (max-width:1149px){
+    .headerInner{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 60% 40%;
+        width: 95%;
+    }
+    .newCollectionHeading{
+        font-size: 1.4rem;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+    .shopNowButton{
+        background-color: black;
+        color: white;
+        width: 140px;
+        height: 40px;
+        font-size: 1.1rem;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .premiumBlendBox{
+        bottom: -110px;
+        min-width: 300px;
+    }
+
+    .paragraphBlended{
+        font-size: 0.8rem;
+        line-height: 30px;
+    }
+}
+
+@media (min-width:670px) and (max-width:829px){
+
+    .headerInner{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 60% 40%;
+        width: 95%;
+    }
+    .newCollectionHeading{
+        font-size: 1.1rem;
+        color: white;
+        font-weight: 300;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .shopNowButton{
+        background-color: black;
+        color: white;
+        width: 120px;
+        height: 30px;
+        font-size: 0.8rem;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .premiumBlendBox{
+        bottom: -100px;
+        min-width: 250px;
+    }
+
+    .paragraphBlended{
+        font-size: 0.7rem;
+        line-height: 25px;
+    }
+
+    .headingAndSpan h3{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:530px) and (max-width:669px){
+    .headerInner{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 60% 40%;
+        width: 95%;
+    }
+    .newCollectionHeading{
+        font-size: 0.9rem;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    .shopNowButton{
+        background-color: black;
+        color: white;
+        width: 80px;
+        height: 20px;
+        font-size: 0.6rem;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .premiumBlendBox{
+        bottom: -90px;
+        min-width: 250px;
+    }
+
+    .paragraphBlended{
+        font-size: 0.6rem;
+        line-height: 20px;
+    }
+
+    .headingAndSpan h3{
+        margin-top: 10px;
+        font-size: 0.8rem;
+    }
+
+    .headingAndSpan span{
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        margin-top: 5px;
+    }
+}
+
+@media (min-width:320px) and (max-width:529px){
+    .headerInner{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        width: 95%;
+    }
+    .newCollectionHeading{
+        font-size: 0.6rem;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 5px;
+        margin-top: 0px;
+    }
+
+    .shopNowButton{
+        background-color: black;
+        color: white;
+        width: 80px;
+        height: 20px;
+        font-size: 0.5rem;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .premiumBlendBox{
+        bottom: -65px;
+        min-width: 220px;
+    }
+
+    .paragraphBlended{
+        font-size: 0.6rem;
+        line-height: 15px;
+    }
+
+    .headingAndSpan h3{
+        margin-top: 10px;
+        font-size: 0.7rem;
+    }
+
+    .headingAndSpan span{
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        margin-top: 5px;
+    }
+
+    .newColllection{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin-top: 0px;
+    }
+
+    .grayScaleLogo{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        justify-self: center;
+        align-self: center;
+        opacity: 0.6;
+        margin-top: 0px;
+    
+    }
+
 }

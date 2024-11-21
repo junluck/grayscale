@@ -66,7 +66,11 @@ function Navbar(){
                 <input type="text" placeholder="search" id="search"/>
                 <img src="assests/images/Cart.svg" className="cartLogo"/>
             </form>
-           
+        
+        </div>
+        
+        <div className="space">
+            
         </div>
             <Outlet />
         </div>
