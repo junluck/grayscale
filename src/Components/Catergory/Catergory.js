@@ -41,7 +41,7 @@ function Catergory(){
                     <form className="formVoucher">
                         <label for="emailInput"id="emailLabel">Email</label>
                         <div className="buttonInput">
-                            <input name="emailInput" id="emailInput"/>
+                            <input name="emailInput" id="emailInput" placeholder="Enter email address"/>
                             <button>Subscribe</button>
                         </div>
                     </form>
