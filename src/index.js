@@ -2,20 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import IsClickedSliceReducer  from './features/isClicked';
-import { IsClickedTwoReduce } from './features/isClicked';
-import currencyReducer from "./features/currencySlice"
+import store from './store';
 
-const store = configureStore({
-  reducer:{
-    CurrencySlice:currencyReducer,
-    IsClickedSlice:IsClickedSliceReducer,
-    IsClickedSliceTwo:IsClickedTwoReduce
-  }
-})
-
+console.log(store)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

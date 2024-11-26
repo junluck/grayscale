@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { isClickedBool } from "../../features/isClicked";
 import { isClickedBoolTwo } from "../../features/isClicked";
+import { arrayOfSortedItems,arrayReseter } from "../../features/productSlice";
+import inventory from "../../features/inventory";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 function Navbar(){
@@ -38,7 +40,17 @@ function Navbar(){
                 <img src="assests/images/contact us.svg" className="contactLogo"/>
             </div>
             <ul className="menuList">
-                <li onClick={()=>dispatch(isClickedBool(0))} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li>
+                <li onClick={
+                    ()=>{
+                            dispatch(isClickedBool(0))
+                            dispatch(arrayReseter())
+                            for(const clothing in inventory.men.tops){
+                                let array = [...inventory.men.tops[clothing]]
+                                dispatch(arrayOfSortedItems(array))
+
+                            }
+                            
+                        }} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li>
                 <span></span>
                 <li onClick={()=>dispatch(isClickedBool(1))} className={isClicked[1]?"menActive":"menDeactive"}>WOMEN</li>
                 <span></span>
