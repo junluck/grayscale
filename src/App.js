@@ -9,8 +9,7 @@ import Product from './Pages/Product/Product';
 const appRouter =  createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Navbar />}>
     <Route path='' element={<Home />}/>
-    <Route path='Man' element={<Items />}/>
-    <Route path='Women' element={<Items />}/>
+    <Route path='items' element={<Items />}/>
     <Route path='Product' element={<Product />}/>
   </Route>  
 ))

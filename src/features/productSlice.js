@@ -18,5 +18,23 @@ const ProductSlice = createSlice({
     }
 })
 
+const ProductSliceTwp = createSlice({
+    name:"arraySortTwo",
+    initialState:[],
+    reducers:{
+        arrayOfSortedItemsTwo:(state,action)=>{
+            let array = [];
+            let k = 0
+            let maxArrayIndex = 9 +  action.payload.index;
+            for(let i = action.payload.index; i < maxArrayIndex ; i++ ){
+                array[k] = action.payload.arraySorted[i];
+            }
+            state = [...array];
+            return state
+        }
+
+    }
+})
+
 export const {arrayOfSortedItems, arrayReseter} = ProductSlice.actions;
 export default ProductSlice.reducer

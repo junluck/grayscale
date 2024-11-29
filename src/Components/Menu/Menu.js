@@ -1,8 +1,12 @@
 import React from "react";
 import "./Menu.css"
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { arrayOfSortedItems,arrayReseter } from "../../features/productSlice";
+import inventory from "../../features/inventory";
 
 function Menu({isClickedFour}){
+    const dispatch = useDispatch()
     const [isClickedThree,setIsClickedThree] = useState([false,false,false,false]);
     const [isClickedFive,setIsClickedFive] = useState([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
     const arrayOfBools = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
@@ -31,32 +35,41 @@ function Menu({isClickedFour}){
                 <div className={isClickedThree[1]?"groupTopsOneActive":"groupTopsOneXDeactive"}>
                     <div className="subHeading">
                         <h4 className={isClickedFive[0]?"TShirtActive":"TShirtDeactive"} onClick={()=>{
-                            arraySetter(0,arrayOfBools,setIsClickedFive)
+                            arraySetter(0,arrayOfBools,setIsClickedFive);
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.tops.tShirts))
                         }}>T-shirts</h4>
                         <span className={isClickedFive[0]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[1]?"hoodiesActive":"hoodiesDeactive"} onClick={()=>{
                             arraySetter(1,arrayOfBools,setIsClickedFive)
-
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.tops.hoodies))
                         }}>Hoodies</h4>
                         <span className={isClickedFive[1]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[2]?"sweatshirtsActive":"sweatshirtDeactive"} onClick={()=>{
                             arraySetter(2,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.tops.sweatshirts))
                         }}>Sweatshirts</h4>
                         <span className={isClickedFive[2]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[3]?"jacketsActive":"jacketsDeactive"} onClick={()=>{
                             arraySetter(3,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.tops.jackets))
                         }}>Jackets</h4>
                         <span className={isClickedFive[3]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[20]?"accessoryOneActive":"accessoryOneDeactive"} onClick={()=>{
-                                arraySetter(20,arrayOfBools,setIsClickedFive)
+                            arraySetter(20,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.tops.accessories))
                             }}>Accessories</h4>
                         <span className={isClickedFive[20]?"spanActive":"spanDeactive"}></span>
                     </div>
@@ -66,6 +79,7 @@ function Menu({isClickedFour}){
             <div className={isClickedThree[0]?"topsOneActive":"topsOneXDeactive"}>
                 <div className="tops" onClick={()=>{
                         arraySetter(2,isClickedThree,setIsClickedThree)
+                        
                     }}>
                     <h3 className="bottomsHeading">Bottoms</h3>
                     <div className="minusAndPlus">
@@ -77,32 +91,40 @@ function Menu({isClickedFour}){
                     <div className="subHeading">
                         <h4 className={isClickedFive[4]?"shortsActive":"shortsDeactive"} onClick={()=>{
                             arraySetter(4,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.bottoms.shorts))
                         }}>Shorts</h4>
                         <span className={isClickedFive[4]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[5]?"jeansActive":"jeansDeactive"} onClick={()=>{
                             arraySetter(5,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.bottoms.jeans))
                         }}>Jeans</h4>
                         <span className={isClickedFive[5]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[6]?"dressActive":"dressDeactive"} onClick={()=>{
                             arraySetter(6,arrayOfBools,setIsClickedFive)
-
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.bottoms.dressPants))
                         }}>Dress Pants</h4>
                         <span className={isClickedFive[6]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[7]?"trackActive":"trackDeactive"} onClick={()=>{
                             arraySetter(7,arrayOfBools,setIsClickedFive)
-
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.bottoms.trackPants))
                         }}>Track Pants</h4>
                         <span className={isClickedFive[7]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[19]?"shoesOneActive":"shoesOneDeactive"} onClick={()=>{
-                                arraySetter(19,arrayOfBools,setIsClickedFive)
+                            arraySetter(19,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.men.bottoms.shoes))
                             }}>Shoes</h4>
                         <span className={isClickedFive[19]?"spanActive":"spanDeactive"}></span>
                     </div>
@@ -129,36 +151,48 @@ function Menu({isClickedFour}){
                     <div className="subHeading">
                         <h4 className={isClickedFive[8]?"teesActive":"teeesDeactive"} onClick={()=>{
                             arraySetter(8,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.tops.tShirtsTees))
                         }}>T-Shirts & Tees</h4>
                         <span className={isClickedFive[8]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[9]?"blouseActive":"blouseDeactive"} onClick={()=>{
                             arraySetter(9,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.tops.blouses))
                         }}>Blouses</h4>
                         <span className={isClickedFive[9]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[10]?"sweatersActive":"sweatersDeactive"} onClick={()=>{
                             arraySetter(10,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.tops.sweatersCardigans))
                         }}>Sweaters & Cardigans</h4>
                         <span className={isClickedFive[10]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[11]?"BodysuitsActive":"BodysuitsDeactive"} onClick={()=>{
                             arraySetter(11,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.tops.Bodysuits))
                         }}>Bodysuits</h4>
                         <span className={isClickedFive[11]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[12]?"jacketsTwoActive":"jacketsTwoDeactive"} onClick={()=>{
                             arraySetter(12,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.tops.jackets))
                         }}>Jackets</h4>
                         <span className={isClickedFive[12]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[18]?"accessoryActive":"accessoryDeactive"} onClick={()=>{
-                                arraySetter(18,arrayOfBools,setIsClickedFive)
+                            arraySetter(18,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.tops.accessories))
                             }}>Accessories</h4>
                         <span className={isClickedFive[18]?"spanActive":"spanDeactive"}></span>
                     </div>
@@ -168,6 +202,7 @@ function Menu({isClickedFour}){
             <div className={isClickedThree[3]?"topsTwoActive":"topsTwoDeactive"}>
                 <div className="tops" onClick={()=>{
                         arraySetter(5,isClickedThree,setIsClickedThree)
+
                 }}>
                     <h3>Bottoms</h3>
                     <div className="minusAndPlus">
@@ -179,30 +214,40 @@ function Menu({isClickedFour}){
                     <div className="subHeading">
                         <h4 className={isClickedFive[13]?"jeansTwoActive":"jeansTwoDeactive"} onClick={()=>{
                             arraySetter(13,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.bottoms.jeans))
                         }}>Jeans</h4>
                         <span className={isClickedFive[13]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[14]?"trouserActive":"trouserDeactive"} onClick={()=>{
                             arraySetter(14,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.bottoms.pantsTrousers))
                         }}>Pants & Trousers</h4>
                         <span className={isClickedFive[14]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[15]?"shortsActive":"shortsDeactive"} onClick={()=>{
                             arraySetter(15,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.bottoms.shorts))
                         }}>Shorts</h4>
                         <span className={isClickedFive[15]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[16]?"skirtsActive":"skirtsDeactive"} onClick={()=>{
                             arraySetter(16,arrayOfBools,setIsClickedFive)
+                            dispatch(arrayReseter())
+                            dispatch(arrayOfSortedItems(inventory.women.bottoms.skirts))
                         }}>Skirts</h4>
                         <span className={isClickedFive[16]?"spanActive":"spanDeactive"}></span>
                     </div>
                     <div className="subHeading">
                         <h4 className={isClickedFive[17]?"shoesActive":"shoesDeactive"} onClick={()=>{
                                 arraySetter(17,arrayOfBools,setIsClickedFive)
+                                dispatch(arrayReseter())
+                                dispatch(arrayOfSortedItems(inventory.women.bottoms.shoes))
                             }}>Shoes</h4>
                         <span className={isClickedFive[17]?"spanActive":"spanDeactive"}></span>
                     </div>

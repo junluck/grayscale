@@ -9,10 +9,12 @@ import { arrayOfSortedItems,arrayReseter } from "../../features/productSlice";
 import inventory from "../../features/inventory";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 function Navbar(){
 
     const isClicked = useSelector((state)=> state.IsClickedSlice)
     const isClickedTwo = useSelector((state)=> state.IsClickedSliceTwo)
+    const productSlice = useSelector((state)=> state.ProductSlice)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
 
@@ -40,23 +42,46 @@ function Navbar(){
                 <img src="assests/images/contact us.svg" className="contactLogo"/>
             </div>
             <ul className="menuList">
-                <li onClick={
-                    ()=>{
-                            dispatch(isClickedBool(0))
-                            dispatch(arrayReseter())
-                            for(const clothing in inventory.men.tops){
-                                let array = [...inventory.men.tops[clothing]]
-                                dispatch(arrayOfSortedItems(array))
-
-                            }
-                            
-                        }} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li>
-                <span></span>
-                <li onClick={()=>dispatch(isClickedBool(1))} className={isClicked[1]?"menActive":"menDeactive"}>WOMEN</li>
-                <span></span>
-                <li onClick={()=>dispatch(isClickedBool(2))} className={isClicked[2]?"menActive":"menDeactive"}>HOME</li>
+            <Link to={""} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>dispatch(isClickedBool(2))} className={isClicked[2]?"menActive":"menDeactive"}>HOME</li></Link>
                 <span></span>
                 <li onClick={()=>dispatch(isClickedBool(3))} className={isClicked[3]?"menActive":"menDeactive"}>CONTACT US</li>
+                <span></span>
+                <Link to="/items" style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={
+                    ()=>{
+                    dispatch(isClickedBool(0))
+                    dispatch(arrayReseter())
+                    for(const clothing in inventory.men.tops){
+                        let array = [...inventory.men.tops[clothing]]
+                        dispatch(arrayOfSortedItems(array))
+
+                    }
+                    for(const clothing in inventory.men.bottoms){
+                        let array = [...inventory.men.bottoms[clothing]]
+                        dispatch(arrayOfSortedItems(array))
+
+                        }
+                    console.log(productSlice)
+                            
+                        }} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li></Link>
+                <span></span>
+                <Link to={"items"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{
+                    dispatch(isClickedBool(1));
+                    dispatch(arrayReseter())
+                    for(const clothing in inventory.women.tops){
+                        let array = [...inventory.women.tops[clothing]]
+                        dispatch(arrayOfSortedItems(array))
+                    }
+
+                    for(const clothing in inventory.women.bottoms){
+                        let array = [...inventory.women.bottoms[clothing]]
+                        dispatch(arrayOfSortedItems(array))
+
+                    }
+                    console.log(productSlice)
+                    
+                }} className={isClicked[1]?"menActive":"menDeactive"}>WOMEN</li></Link>
+                <span></span>
+                
             </ul>
             <form className="magnifyerAndSearch" onSubmit={(e)=>{
                 e.preventDefault()
