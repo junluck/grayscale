@@ -1,5 +1,7 @@
 import IsClickedSliceReducer  from './features/isClicked';
 import { IsClickedTwoReduce } from './features/isClicked';
+import { ProductSliceTwoReducer,  ProductIndexSliceReducer  } from './features/productSlice';
+
 import ProductSliceReducer from "./features/productSlice"
 import currencyReducer from "./features/currencySlice"
 import { configureStore } from '@reduxjs/toolkit';
@@ -9,8 +11,9 @@ const store = configureStore({
       CurrencySlice:currencyReducer,
       IsClickedSlice:IsClickedSliceReducer,
       IsClickedSliceTwo:IsClickedTwoReduce,
-      ProductSlice:ProductSliceReducer
-      
+      ProductSlice:ProductSliceReducer,
+      ProductSliceTwo: ProductSliceTwoReducer,
+      ProductIndexSlice: ProductIndexSliceReducer 
     }
   })
 

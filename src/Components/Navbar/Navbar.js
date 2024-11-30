@@ -10,6 +10,7 @@ import inventory from "../../features/inventory";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { incermentByNine } from "../../features/productSlice";
 function Navbar(){
 
     const isClicked = useSelector((state)=> state.IsClickedSlice)
@@ -26,8 +27,13 @@ function Navbar(){
         <div className="navBar">
             <div className="menu" onClick={()=>{
                 dispatch(isClickedBoolTwo())
+              
                 setIsClickedThree(!isClickedThree)
                 setIsClickedFour(!isClickedFour)
+        
+                    dispatch(incermentByNine(productSlice.length))
+                   
+                   
             }}>
                 <div className="HamBurgerMenu">
                     <span className={isClickedTwo?"spanOneActive":"spanOneDeactive"}></span>
@@ -60,6 +66,7 @@ function Navbar(){
                         dispatch(arrayOfSortedItems(array))
 
                         }
+                        
                     console.log(productSlice)
                             
                         }} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li></Link>
@@ -101,7 +108,7 @@ function Navbar(){
             }}>
                 <img src='assests/images/magnify.svg' className="magnify"/>
                 <input type="text" placeholder="search" id="search"/>
-                <img src="assests/images/Cart.svg" className="cartLogo"/>
+                <img src="assests/images/Cart.svg" className="cartLogo" />
             </form>
         
         </div>
