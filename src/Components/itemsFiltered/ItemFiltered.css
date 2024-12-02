@@ -115,6 +115,47 @@
     
     
 }
+.PageNumbersActive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    margin-bottom: 30px;
+    
+}
+.PageNumbersDeactive{
+    opacity: 0;
+}
+.numberActive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color:#939393;
+    color: white;
+    margin-left: 5px;
+    
+}
+
+.numberDeactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    border: solid 0.4px #939393;
+    cursor: pointer;
+}
+
+
 
 @media (min-width:1541px){
     .groupOfItemsTwo{

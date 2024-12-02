@@ -52,18 +52,17 @@ const ProductIndexSlice = createSlice({
     reducers:{
         reset:(state,action)=>{
             state = 0
+            return state
         },
         incermentByNine:(state,action)=>{
            
             let value = state + 9
             console.log(action.payload)
-            if((action.payload - value) < 9 && (action.payload - value) != 0 ){
-                value = 9 * (Math.floor(action.payload/9))
+            if((action.payload - value) < 9 ){
+                value = action.payload - 9
                
             }
-            else{
-                value = 9 * (Math.floor(action.payload/9) - 1)
-            }
+            
             return value
         },
         decrementByNine:(state,action)=>{
@@ -75,13 +74,76 @@ const ProductIndexSlice = createSlice({
             return index
 
             
+        },
+        mutiplyier:(state,action)=>{
+           let index = 9 * action.payload
+           return index
         }
     }
 })
 
-export const ProductSliceTwoReducer = ProductSliceTwo.reducer
-export const ProductIndexSliceReducer = ProductIndexSlice.reducer
-export default ProductSlice.reducer
-export const {arrayOfSortedItemsTwo} = ProductSliceTwo.actions
+const ProductPageNumberSlice = createSlice({
+    name:"pageNumbers",
+    initialState:[],
+    reducers:{
+        arrayPageNumbering:(state,action)=>{
+            let array = [];
+            let maxPages = Math.ceil(action.payload/9)
+            for(let i = 0 ; i < maxPages ; i++){
+                array[i] = i + 1
+            }
+            return array
+        }
+    }
+})
+
+const ProductPageIndexerSlice = createSlice({
+    name:"pageDisplayer",
+    initialState:true,
+    reducers:{
+        pageDisplayerTrue:(state,action)=>{
+            let bool = true;
+            return bool
+        },
+        pageDisplayerFalse:(state,action)=>{
+            let bool = false;
+            return bool
+        }
+    }
+    
+})
+
+const ProductSlicePageNumberCircle = createSlice({
+    name:"pageNumberCircle",
+    initialState:[true],
+    reducers:{
+        pageNumberCircle:(state,action)=>{
+            let array = []
+            for(let i = 0;i < action.payload.length; i++){
+                array[i] = false
+            }
+            array[action.payload.ele] = true
+            return array
+            
+        },
+        pageNumberCircleReset:(state,action)=>{
+            let array = [true]
+            return array
+            
+        }
+
+    }
+})
+
+export const ProductSliceTwoReducer = ProductSliceTwo.reducer;
+export const ProductIndexSliceReducer = ProductIndexSlice.reducer;
+export const ProductPageNumberSliceReducer = ProductPageNumberSlice.reducer;
+export const ProductPageIndexerSliceReducer = ProductPageIndexerSlice.reducer;
+export const ProductSlicePageNumberCircleReducer = ProductSlicePageNumberCircle.reducer
+export default ProductSlice.reducer;
+export const {arrayOfSortedItemsTwo} = ProductSliceTwo.actions;
 export const {arrayOfSortedItems, arrayReseter} = ProductSlice.actions;
-export const {reset,incermentByNine,decrementByNine} = ProductIndexSlice.actions
+export const {reset,incermentByNine,decrementByNine,mutiplyier} = ProductIndexSlice.actions;
+export const {arrayPageNumbering} = ProductPageNumberSlice.actions;
+export const {pageDisplayerTrue,pageDisplayerFalse} = ProductPageIndexerSlice.actions;
+export const { pageNumberCircle,pageNumberCircleReset} = ProductSlicePageNumberCircle.actions

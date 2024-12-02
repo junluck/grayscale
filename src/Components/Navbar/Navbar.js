@@ -5,19 +5,21 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { isClickedBool } from "../../features/isClicked";
 import { isClickedBoolTwo } from "../../features/isClicked";
-import { arrayOfSortedItems,arrayReseter } from "../../features/productSlice";
+import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,pageDisplayerTrue,pageNumberCircleReset} from "../../features/productSlice";
 import inventory from "../../features/inventory";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { incermentByNine } from "../../features/productSlice";
-function Navbar(){
+import { incermentByNine, reset } from "../../features/productSlice";
+function Navbar({isClickedFive,setIsClickedFive}){
 
     const isClicked = useSelector((state)=> state.IsClickedSlice)
     const isClickedTwo = useSelector((state)=> state.IsClickedSliceTwo)
     const productSlice = useSelector((state)=> state.ProductSlice)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
+    
+
 
     const dispatch = useDispatch()
    
@@ -27,12 +29,8 @@ function Navbar(){
         <div className="navBar">
             <div className="menu" onClick={()=>{
                 dispatch(isClickedBoolTwo())
-              
                 setIsClickedThree(!isClickedThree)
-                setIsClickedFour(!isClickedFour)
-        
-                    dispatch(incermentByNine(productSlice.length))
-                   
+                setIsClickedFour(!isClickedFour)                   
                    
             }}>
                 <div className="HamBurgerMenu">
@@ -48,14 +46,24 @@ function Navbar(){
                 <img src="assests/images/contact us.svg" className="contactLogo"/>
             </div>
             <ul className="menuList">
-            <Link to={""} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>dispatch(isClickedBool(2))} className={isClicked[2]?"menActive":"menDeactive"}>HOME</li></Link>
+            <Link to={""} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{   
+                dispatch(isClickedBool(2))
+                setIsClickedFive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
+            }} className={isClicked[2]?"menActive":"menDeactive"}>HOME</li></Link>
                 <span></span>
-                <li onClick={()=>dispatch(isClickedBool(3))} className={isClicked[3]?"menActive":"menDeactive"}>CONTACT US</li>
+                <li onClick={()=>{
+                    dispatch(isClickedBool(3))
+                    setIsClickedFive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])}
+                } className={isClicked[3]?"menActive":"menDeactive"}>CONTACT US</li>
                 <span></span>
                 <Link to="/items" style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={
                     ()=>{
-                    dispatch(isClickedBool(0))
-                    dispatch(arrayReseter())
+                    dispatch(isClickedBool(0));
+                    dispatch(arrayReseter());
+                    dispatch(reset());
+                    dispatch(pageDisplayerTrue());
+                    dispatch(pageNumberCircleReset());
+                    setIsClickedFive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
                     for(const clothing in inventory.men.tops){
                         let array = [...inventory.men.tops[clothing]]
                         dispatch(arrayOfSortedItems(array))
@@ -66,14 +74,16 @@ function Navbar(){
                         dispatch(arrayOfSortedItems(array))
 
                         }
-                        
-                    console.log(productSlice)
                             
                         }} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li></Link>
                 <span></span>
                 <Link to={"items"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{
                     dispatch(isClickedBool(1));
-                    dispatch(arrayReseter())
+                    dispatch(arrayReseter());
+                    dispatch(reset());
+                    dispatch(pageDisplayerTrue());
+                    dispatch(pageNumberCircleReset());
+                    setIsClickedFive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
                     for(const clothing in inventory.women.tops){
                         let array = [...inventory.women.tops[clothing]]
                         dispatch(arrayOfSortedItems(array))
@@ -100,7 +110,7 @@ function Navbar(){
             </form>
           
             <div className="menuTwo">
-                <Menu isClickedFour={isClickedFour}/>
+                <Menu isClickedFour={isClickedFour} isClickedFive={isClickedFive} setIsClickedFive={setIsClickedFive}/>
             </div>
             <form className="magnifyerAndSearchTwo" onSubmit={(e)=>{
                 e.preventDefault()
