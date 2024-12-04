@@ -1,5 +1,6 @@
 import React from "react";
-import "./Header.css"
+import "./Header.css";
+import { Link } from "react-router-dom";
 function Header(){
     return(
         <div className="headerOuter">
@@ -8,7 +9,7 @@ function Header(){
                 <img src="assests/images/headerPicture.png" className="backgroundPicture"/>
                 <div className="newColllection">
                     <h3 className="newCollectionHeading">NEW COLLECTION AVAILABLE</h3>
-                    <button className="shopNowButton">SHOP NOW</button>
+                    <Link to={"manOrWomenChoice"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"100%",display:"flex",justifyContent:"center" , width:"100%"}}><button className="shopNowButton">SHOP NOW</button></Link>
                 </div>
             </div>
             <div className="premiumBlendBox">

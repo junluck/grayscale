@@ -62,7 +62,7 @@ function Catergory({setIsClickedFive}){
                     <Link to={"items"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",display:"flex",justifyContent:"center"}}><button  onClick={()=>{
                             arraySetter(0,arrayOfBools,setIsClickedFive);
                             dispatcher(inventory.men.tops.tShirts)
-                         
+                            dispatch(isClickedBool(0))
                         }}>SHOP NOW</button></Link>
                 </div>
                 <div className="women">
@@ -94,8 +94,9 @@ function Catergory({setIsClickedFive}){
                     <h4>SKIRT</h4>
                     <Link to={"items"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",display:"flex",justifyContent:"center"}}>
                         <button onClick={()=>{
-                            arraySetter(16,arrayOfBools,setIsClickedFive)
-                            dispatcher(inventory.women.bottoms.skirts)
+                            arraySetter(16,arrayOfBools,setIsClickedFive);
+                            dispatcher(inventory.women.bottoms.skirts);
+                            dispatch(isClickedBool(1));
                         }}>SHOP NOW</button>
                     </Link>
                 </div>
