@@ -4,6 +4,25 @@ import { useSelector } from "react-redux";
 
 
 const initialState = []
+function inventorySorted(inventor){
+    let array = []
+    for (let clothingItem in inventor.men.tops){
+        array = [...inventor.men.tops[clothingItem]]
+    };
+    for (let clothingItem in inventor.men.bottoms){
+        array = [...array,...inventor.men.bottoms[clothingItem]]
+    };
+    for (let clothingItem in inventor.women.tops){
+        array = [...array,...inventor.women.tops[clothingItem]]
+    };
+    for (let clothingItem in inventor.women.bottoms){
+        array = [...array,...inventor.women.bottoms[clothingItem]]
+    };
+    return array
+}
+
+ inventorySorted(inventory)
+
 const ProductSlice = createSlice({
     name:"arraySort",
     initialState:initialState,
