@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const IsClickedSlice = createSlice({
     name:"isClicked",
-    initialState:[false,false,false,false],
+    initialState:[false,false,true,false],
     reducers:{
         isClickedBool:(state,action)=>{
             state = [false,false,false,false]

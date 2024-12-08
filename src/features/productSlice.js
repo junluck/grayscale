@@ -21,7 +21,41 @@ function inventorySorted(inventor){
     return array
 }
 
- inventorySorted(inventory)
+function sentenceIntoTwoDimen(array){
+    let arrayTwo = [];
+    let k = 0;
+    let j = 0;
+    let l = 0;
+    let arrayOne = [];
+    let arrayFinal = [];
+    for(let i = 0 ; i < array.length; i++){
+        if(array[i] != " "){
+            arrayOne[k] = array[i];
+            k++;
+        }
+        if(array[i] === " "){
+            k = 0;
+            arrayOne = [];
+            j++;
+        }
+        if(arrayOne.length > 0){
+            arrayTwo[j] = arrayOne;
+        }
+    }
+    arrayTwo.forEach((element)=>{
+        if(element.length > 0){
+            arrayFinal[l] = element;
+            l++;
+        }
+    })
+    return arrayFinal;
+}
+
+
+
+
+ let arrayOfClothes = inventorySorted(inventory)
+ console.log(arrayOfClothes)
 
 const ProductSlice = createSlice({
     name:"arraySort",
@@ -33,6 +67,10 @@ const ProductSlice = createSlice({
         },
         arrayReseter:(state,action)=>{
             state=[];
+            return state
+        },
+        arraySetter:(state,action)=>{
+            state = [...action.payload];
             return state
         }
 
@@ -151,6 +189,25 @@ const ProductSlicePageNumberCircle = createSlice({
             
         }
 
+    }
+})
+
+const ProductSearchSlice = createSlice({
+    name:"arrayOfClothesSearcher",
+    initialState:arrayOfClothes,
+    reducers:{
+        searchArraySorter:(state,action)=>{
+            let arrayOfSearchString = sentenceIntoTwoDimen(action.payload.searchString)
+            let arrayOfTitles = []
+            action.payload.array.forEach((element)=>{
+                let arrayOfChars = [element.title]
+                let arrayOfItem = sentenceIntoTwoDimen(arrayOfChars)
+                arrayOfItem.forEach((element,index)=>{
+                    
+                })
+
+            })
+        }
     }
 })
 
