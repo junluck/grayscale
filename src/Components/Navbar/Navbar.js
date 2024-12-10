@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Menu from "../Menu/Menu";
 import "./Navbar.css"
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { isClickedBool } from "../../features/isClicked";
 import { isClickedBoolTwo } from "../../features/isClicked";
-import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,pageDisplayerTrue,pageNumberCircleReset} from "../../features/productSlice";
+import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,pageDisplayerTrue,pageNumberCircleReset, searchArraySorter , arraySetter} from "../../features/productSlice";
 import inventory from "../../features/inventory";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -18,10 +19,33 @@ function Navbar({isClickedFive,setIsClickedFive}){
     const productSlice = useSelector((state)=> state.ProductSlice)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
+    const searchArray = useSelector(state => state.ProductSearchSlice)
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+    function inventorySorted(inventor){
+        let array = []
+        for (let clothingItem in inventor.men.tops){
+            array = [...array,...inventor.men.tops[clothingItem]]
+        };
+        for (let clothingItem in inventor.men.bottoms){
+            array = [...array,...inventor.men.bottoms[clothingItem]]
+        };
+        for (let clothingItem in inventor.women.tops){
+            array = [...array,...inventor.women.tops[clothingItem]]
+        };
+        for (let clothingItem in inventor.women.bottoms){
+            array = [...array,...inventor.women.bottoms[clothingItem]]
+        };
+        return array
+    }
     
 
-
-    const dispatch = useDispatch()
+    let arrayOfClothes = inventorySorted(inventory)
+    console.log(searchArray)
+    useEffect(()=>{
+        dispatch(arraySetter(searchArray))
+        navigate('items')
+    },[searchArray])
    
 
     return(
@@ -102,7 +126,8 @@ function Navbar({isClickedFive,setIsClickedFive}){
             </ul>
             <form className="magnifyerAndSearch" onSubmit={(e)=>{
                 e.preventDefault()
-                console.log(e)
+
+                dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
             }}>
                 <img src='assests/images/magnify.svg' className="magnify"/>
                 <input type="text" placeholder="search" id="search"/>
@@ -114,10 +139,13 @@ function Navbar({isClickedFive,setIsClickedFive}){
             </div>
             <form className="magnifyerAndSearchTwo" onSubmit={(e)=>{
                 e.preventDefault()
-                console.log(e)
+              
             }}>
                 <img src='assests/images/magnify.svg' className="magnify"/>
-                <input type="text" placeholder="search" id="search"/>
+                <input type="text" placeholder="search" id="search" onSubmit={(e)=>{
+                    dispatch(searchArraySorter({array:inventory,searchString:e.target.value}))
+
+                }}/>
                 <img src="assests/images/Cart.svg" className="cartLogo" />
             </form>
         

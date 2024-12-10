@@ -1,6 +1,6 @@
 import IsClickedSliceReducer  from './features/isClicked';
 import { IsClickedTwoReduce } from './features/isClicked';
-import { ProductSliceTwoReducer,  ProductIndexSliceReducer ,ProductPageNumberSliceReducer ,ProductPageIndexerSliceReducer, ProductSlicePageNumberCircleReducer} from './features/productSlice';
+import { ProductSliceTwoReducer,  ProductIndexSliceReducer ,ProductPageNumberSliceReducer ,ProductPageIndexerSliceReducer, ProductSlicePageNumberCircleReducer , ProductSearchSliceReducer} from './features/productSlice';
 import ProductSliceReducer from "./features/productSlice"
 import currencyReducer from "./features/currencySlice"
 import { configureStore } from '@reduxjs/toolkit';
@@ -15,7 +15,8 @@ const store = configureStore({
       ProductIndexSlice: ProductIndexSliceReducer, 
       ProductPageNumberSlice:ProductPageNumberSliceReducer,
       ProductPageIndexerSlice:ProductPageIndexerSliceReducer,
-      ProductSlicePageNumberCircle:ProductSlicePageNumberCircleReducer
+      ProductSlicePageNumberCircle:ProductSlicePageNumberCircleReducer,
+      ProductSearchSlice:ProductSearchSliceReducer
     }
   })
 

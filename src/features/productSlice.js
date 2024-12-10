@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import inventory from "./inventory";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 
 const initialState = []
+
 function inventorySorted(inventor){
     let array = []
     for (let clothingItem in inventor.men.tops){
-        array = [...inventor.men.tops[clothingItem]]
+        array = [...array,...inventor.men.tops[clothingItem]]
     };
     for (let clothingItem in inventor.men.bottoms){
         array = [...array,...inventor.men.bottoms[clothingItem]]
@@ -20,6 +22,7 @@ function inventorySorted(inventor){
     };
     return array
 }
+
 
 function sentenceIntoTwoDimen(array){
     let arrayTwo = [];
@@ -51,15 +54,61 @@ function sentenceIntoTwoDimen(array){
     return arrayFinal;
 }
 
+ 
+
+
+function compareTwoDimenArray(arrayOne,arrayTwo){
+    let bool = false;
+    let count = 0;
+    let mainCount = 0;
+    
+    arrayOne.forEach((element,index)=>{ 
+        arrayTwo.forEach((ele,inde)=>{
+                
+                if (element[0] === ele[0] && element[0] != undefined){
+                    console.log(element)
+                    console.log(ele)
+                    count += 1;
+                }
+
+                if (element[0] === ele[0] &&  element[1] === ele[1]  && element[1] != undefined){
+                    console.log(element)
+                    console.log(ele)
+                    count += 1;
+                }
+
+                if (element[0] === ele[0] &&  element[1] === ele[1] &&  element[2] === ele[2]  && element[2] != undefined){
+                    console.log(element)
+                    console.log(ele)
+                    count += 1;
+                }
+
+                if (element[0] === ele[0] &&  element[1] === ele[1] &&  element[2] === ele[2]  &&  element[3] === ele[3]  && element[3] != undefined){
+                    console.log(element)
+                    console.log(ele)
+                    count += 1;
+                }
+            
+                if (mainCount <= count){
+                    mainCount = count
+                }
+                count = 0;
+         
+        })
+    })
+    return mainCount
+       
+}
+
+
 
 
 
  let arrayOfClothes = inventorySorted(inventory)
- console.log(arrayOfClothes)
-
+ 
 const ProductSlice = createSlice({
     name:"arraySort",
-    initialState:initialState,
+    initialState:arrayOfClothes,
     reducers:{
         arrayOfSortedItems:(state,action)=>{
             state = [...state,...action.payload]
@@ -197,16 +246,37 @@ const ProductSearchSlice = createSlice({
     initialState:arrayOfClothes,
     reducers:{
         searchArraySorter:(state,action)=>{
-            let arrayOfSearchString = sentenceIntoTwoDimen(action.payload.searchString)
-            let arrayOfTitles = []
-            action.payload.array.forEach((element)=>{
-                let arrayOfChars = [element.title]
+            let array = [];
+            let arrayFinal = []
+            let i = 0;
+            let j = 0;
+            let lowerCaseSearchString = action.payload.searchString.toLowerCase()
+            let arrayOfSearchString = sentenceIntoTwoDimen([...lowerCaseSearchString])
+            console.log(action.payload.array)
+            action.payload.array.forEach((element,index)=>{
+                let bool = false
+                let lowerElementString = element.title.toLowerCase()
+                let arrayOfChars = [...lowerElementString]
                 let arrayOfItem = sentenceIntoTwoDimen(arrayOfChars)
-                arrayOfItem.forEach((element,index)=>{
-                    
-                })
-
+                let amount = compareTwoDimenArray(arrayOfItem,  arrayOfSearchString)
+                array[index] = amount
             })
+          
+            console.log(array)
+            let maxNumber = Math.max(...array);
+            array.forEach((element,index)=>{
+                if (maxNumber === 0 ){
+                    arrayFinal = []
+                }
+
+              
+                else if (element === maxNumber){
+                    arrayFinal[j] = action.payload.array[index];
+                    j++;
+                }
+            
+            })
+            return arrayFinal;
         }
     }
 })
@@ -215,11 +285,13 @@ export const ProductSliceTwoReducer = ProductSliceTwo.reducer;
 export const ProductIndexSliceReducer = ProductIndexSlice.reducer;
 export const ProductPageNumberSliceReducer = ProductPageNumberSlice.reducer;
 export const ProductPageIndexerSliceReducer = ProductPageIndexerSlice.reducer;
-export const ProductSlicePageNumberCircleReducer = ProductSlicePageNumberCircle.reducer
+export const ProductSlicePageNumberCircleReducer = ProductSlicePageNumberCircle.reducer;
+export const ProductSearchSliceReducer = ProductSearchSlice.reducer;
 export default ProductSlice.reducer;
 export const {arrayOfSortedItemsTwo} = ProductSliceTwo.actions;
-export const {arrayOfSortedItems, arrayReseter} = ProductSlice.actions;
+export const {arrayOfSortedItems, arrayReseter , arraySetter} = ProductSlice.actions;
 export const {reset,incermentByNine,decrementByNine,mutiplyier} = ProductIndexSlice.actions;
 export const {arrayPageNumbering} = ProductPageNumberSlice.actions;
 export const {pageDisplayerTrue,pageDisplayerFalse} = ProductPageIndexerSlice.actions;
-export const { pageNumberCircle,pageNumberCircleReset} = ProductSlicePageNumberCircle.actions
+export const { pageNumberCircle,pageNumberCircleReset} = ProductSlicePageNumberCircle.actions;
+export const {searchArraySorter} = ProductSearchSlice.actions;
