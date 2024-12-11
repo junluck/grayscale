@@ -14,6 +14,7 @@ function ItemFilter(){
     const pageNumbers = useSelector((state)=> state.ProductPageNumberSlice)
     const pageNumberActivator = useSelector(state => state.ProductPageIndexerSlice)
     const productSlicePageNumber = useSelector(state => state.ProductSlicePageNumberCircle)
+    const trueOrFalse = useSelector(state => state.ProductSliceNoProducts)
     console.log(pageNumberActivator)
     const [count,setCount] = useState(0)
     const [countStoper,setCountStoper] = useState(9)
@@ -46,7 +47,11 @@ function ItemFilter(){
 
     return(
         <div>
-        <div className="groupOfClothing">
+        <div className={trueOrFalse?"oopsActive":"oopsDeactive"}>
+            <img src="assests/images/no inventory.svg" className="noInventory"/>
+            <h3 className="oppsTitle">Oops looks like we don't have this product please try again...</h3>
+        </div>
+        <div className={trueOrFalse?"groupOfClothingDeactive":"groupOfClothing"}>
             {arrayOfSortedClothingTwo.map((element)=>{
                 return ( <div className="itemTwo">
                     <img src={element.picture} className="itemPictureTwo"/>

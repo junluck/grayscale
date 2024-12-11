@@ -156,8 +156,29 @@
     cursor: pointer;
 }
 
+.oopsActive{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+.oopsDeactive{
+    display: none;
+}
 
+.noInventory{
+    width: 500px;
+}
 
+.oppsTitle{
+    font-size: 2rem;
+}
+
+.groupOfClothingDeactive{
+    display: none;
+}
 @media (min-width:1541px){
     .groupOfItemsTwo{
         display: grid;
@@ -225,6 +246,14 @@
        
     }
 
+    .noInventory{
+        width: 400px;
+    }
+    
+    .oppsTitle{
+        font-size: 1.7rem;
+    }
+
 
 }
 
@@ -268,6 +297,13 @@
        
     }
 
+    .noInventory{
+        width: 400px;
+    }
+    
+    .oppsTitle{
+        font-size: 1.7rem;
+    }
  
 }
 
@@ -339,6 +375,13 @@
         color: white;
         position: absolute;
     }
+    .noInventory{
+        width: 400px;
+    }
+    
+    .oppsTitle{
+        font-size: 1.3rem;
+    }
 }
 
 @media (min-width:530px) and (max-width:700px){
@@ -408,6 +451,20 @@
         left: -1%;
         color: white;
         position: absolute;
+    }
+
+    .noInventory{
+        width: 400px;
+    }
+    
+    .oppsTitle{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .PageNumbersActive{
+        margin-bottom: 0px;
+        display: none;
     }
 }
 
@@ -499,5 +556,18 @@
 
     .itemPictureTwo{
        width: 220px;
+    }
+
+    .noInventory{
+        width: 300px;
+    }
+    
+    .oppsTitle{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .PageNumbersActive{
+        margin-bottom: 0px;
     }
 }

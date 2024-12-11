@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { isClickedBool } from "../../features/isClicked";
 import { isClickedBoolTwo } from "../../features/isClicked";
-import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,pageDisplayerTrue,pageNumberCircleReset, searchArraySorter , arraySetter} from "../../features/productSlice";
+import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,pageDisplayerTrue,pageNumberCircleReset, searchArraySorter , arraySetter,setToTrue, setToFalse} from "../../features/productSlice";
 import inventory from "../../features/inventory";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -19,7 +19,6 @@ function Navbar({isClickedFive,setIsClickedFive}){
     const productSlice = useSelector((state)=> state.ProductSlice)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
-    const searchArray = useSelector(state => state.ProductSearchSlice)
     const navigate = useNavigate();
     const dispatch = useDispatch()
     function inventorySorted(inventor){
@@ -41,11 +40,16 @@ function Navbar({isClickedFive,setIsClickedFive}){
     
 
     let arrayOfClothes = inventorySorted(inventory)
-    console.log(searchArray)
+   
+   
     useEffect(()=>{
-        dispatch(arraySetter(searchArray))
-        navigate('items')
-    },[searchArray])
+        if(productSlice.length === 0){
+            dispatch(setToTrue())
+        }
+        else{
+            dispatch(setToFalse())
+        }
+    },[productSlice])
    
 
     return(
@@ -126,8 +130,8 @@ function Navbar({isClickedFive,setIsClickedFive}){
             </ul>
             <form className="magnifyerAndSearch" onSubmit={(e)=>{
                 e.preventDefault()
-
                 dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
+                navigate("items")
             }}>
                 <img src='assests/images/magnify.svg' className="magnify"/>
                 <input type="text" placeholder="search" id="search"/>
@@ -139,6 +143,8 @@ function Navbar({isClickedFive,setIsClickedFive}){
             </div>
             <form className="magnifyerAndSearchTwo" onSubmit={(e)=>{
                 e.preventDefault()
+                dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
+                navigate("items")
               
             }}>
                 <img src='assests/images/magnify.svg' className="magnify"/>

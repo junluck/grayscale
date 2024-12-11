@@ -121,7 +121,39 @@ const ProductSlice = createSlice({
         arraySetter:(state,action)=>{
             state = [...action.payload];
             return state
+        },
+        searchArraySorter:(state,action)=>{
+            let array = [];
+            let arrayFinal = []
+            let i = 0;
+            let j = 0;
+            let lowerCaseSearchString = action.payload.searchString.toLowerCase()
+            let arrayOfSearchString = sentenceIntoTwoDimen([...lowerCaseSearchString])
+            console.log(action.payload.array)
+            action.payload.array.forEach((element,index)=>{
+                let bool = false
+                let lowerElementString = element.title.toLowerCase()
+                let arrayOfChars = [...lowerElementString]
+                let arrayOfItem = sentenceIntoTwoDimen(arrayOfChars)
+                let amount = compareTwoDimenArray(arrayOfItem,  arrayOfSearchString)
+                array[index] = amount
+            })
+            let maxNumber = Math.max(...array);
+            array.forEach((element,index)=>{
+                if (maxNumber === 0 ){
+                    arrayFinal = []
+                }
+
+              
+                else if (element === maxNumber){
+                    arrayFinal[j] = action.payload.array[index];
+                    j++;
+                }
+            
+            })
+            return arrayFinal;
         }
+        
 
     }
 })
@@ -241,43 +273,16 @@ const ProductSlicePageNumberCircle = createSlice({
     }
 })
 
-const ProductSearchSlice = createSlice({
-    name:"arrayOfClothesSearcher",
-    initialState:arrayOfClothes,
+const ProductSliceNoProducts = createSlice({
+    name:"noProducts",
+    initialState:false,
     reducers:{
-        searchArraySorter:(state,action)=>{
-            let array = [];
-            let arrayFinal = []
-            let i = 0;
-            let j = 0;
-            let lowerCaseSearchString = action.payload.searchString.toLowerCase()
-            let arrayOfSearchString = sentenceIntoTwoDimen([...lowerCaseSearchString])
-            console.log(action.payload.array)
-            action.payload.array.forEach((element,index)=>{
-                let bool = false
-                let lowerElementString = element.title.toLowerCase()
-                let arrayOfChars = [...lowerElementString]
-                let arrayOfItem = sentenceIntoTwoDimen(arrayOfChars)
-                let amount = compareTwoDimenArray(arrayOfItem,  arrayOfSearchString)
-                array[index] = amount
-            })
-          
-            console.log(array)
-            let maxNumber = Math.max(...array);
-            array.forEach((element,index)=>{
-                if (maxNumber === 0 ){
-                    arrayFinal = []
-                }
-
-              
-                else if (element === maxNumber){
-                    arrayFinal[j] = action.payload.array[index];
-                    j++;
-                }
-            
-            })
-            return arrayFinal;
-        }
+        setToTrue:(state,action)=>{
+            return true
+        },
+        setToFalse:(state,action)=>{
+            return false
+        },
     }
 })
 
@@ -286,12 +291,14 @@ export const ProductIndexSliceReducer = ProductIndexSlice.reducer;
 export const ProductPageNumberSliceReducer = ProductPageNumberSlice.reducer;
 export const ProductPageIndexerSliceReducer = ProductPageIndexerSlice.reducer;
 export const ProductSlicePageNumberCircleReducer = ProductSlicePageNumberCircle.reducer;
-export const ProductSearchSliceReducer = ProductSearchSlice.reducer;
+export const  ProductSliceNoProductsReducer =  ProductSliceNoProducts.reducer;
+
 export default ProductSlice.reducer;
 export const {arrayOfSortedItemsTwo} = ProductSliceTwo.actions;
-export const {arrayOfSortedItems, arrayReseter , arraySetter} = ProductSlice.actions;
+export const {arrayOfSortedItems, arrayReseter , arraySetter , searchArraySorter} = ProductSlice.actions;
 export const {reset,incermentByNine,decrementByNine,mutiplyier} = ProductIndexSlice.actions;
 export const {arrayPageNumbering} = ProductPageNumberSlice.actions;
 export const {pageDisplayerTrue,pageDisplayerFalse} = ProductPageIndexerSlice.actions;
 export const { pageNumberCircle,pageNumberCircleReset} = ProductSlicePageNumberCircle.actions;
-export const {searchArraySorter} = ProductSearchSlice.actions;
+export const {setToTrue,setToFalse} = ProductSliceNoProducts.actions
+
