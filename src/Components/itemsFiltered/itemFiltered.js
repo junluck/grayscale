@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect , useState } from "react";
 import { useSelector, useDispatch  } from "react-redux";
-import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle} from "../../features/productSlice";
+import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle,arraySetterTwo} from "../../features/productSlice";
+import { addToCart } from "../../features/cartSlice";
 import { arrayOfSortedItemsTwo } from "../../features/productSlice";
 import "./ItemFiltered.css"
 
@@ -32,10 +33,10 @@ function ItemFilter(){
     useEffect(()=>{
 
         localStorage.setItem("arrayOfSortedClothing", JSON.stringify(arrayOfSortedClothing));
-      
         dispatch(arrayOfSortedItemsTwo({index:index,arraySorted:arrayOfSortedClothing}))
         dispatch(arrayPageNumbering(arrayOfSortedClothing.length)) 
-        console.log(index)
+       
+       
     },[arrayOfSortedClothing])
 
     useEffect(()=>{
@@ -56,6 +57,9 @@ function ItemFilter(){
                 return ( <div className="itemTwo">
                     <img src={element.picture} className="itemPictureTwo"/>
                     <div className="arrowButtonAndPriceTwo">
+                    <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
+                        dispatch(addToCart({item:element.title,qauntity:1,price:element.price}))
+                    }}/>
                         <div className="titleAndPriceTwo">
                             <h4 className="elementTitleTwo">{element.title}</h4>
                             <h4 className="elementPriceTwo">{currency}{element.price}</h4>

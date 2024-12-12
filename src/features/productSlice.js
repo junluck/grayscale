@@ -172,13 +172,17 @@ const ProductSliceTwo = createSlice({
                
                 
             }
-            console.log(maxArrayIndex)
+            
             for(let i = action.payload.index; i < maxArrayIndex ; i++ ){
                 array[k] = action.payload.arraySorted[i];
                 k++;
             }
            
             return array
+        },
+        arraySetterTwo:(state,action)=>{
+            return action.payload
+
         }
 
     }

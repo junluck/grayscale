@@ -23,6 +23,7 @@ function ProductSlider(){
                             </div>
                             <img src={element.picture} className="itemPicture"/>
                             <div className="arrowButtonAndPrice">
+                                <img src="assests/images/addcart.svg" className="addCart"/>
                                 <div className="titleAndPrice">
                                     <h4 className="elementTitle">{element.title}</h4>
                                     <h4 className="elementPrice">{currency}{element.price}</h4>

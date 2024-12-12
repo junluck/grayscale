@@ -138,6 +138,22 @@
     
 }
 
+.addCart{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: center;
+    align-self: center;
+    width: 33px;
+    cursor: pointer;
+    opacity: 0.8
+}
+
+.addCart:hover{
+    opacity: 1
+}
+
 @media (min-width:1541px){
     .groupOfItems{
         display: grid;

@@ -133,7 +133,10 @@ function Navbar({isClickedFive,setIsClickedFive}){
                 dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
                 navigate("items")
             }}>
-                <img src='assests/images/magnify.svg' className="magnify"/>
+                <img src='assests/images/magnify.svg' className="magnify" onClick={(e)=>{
+                     dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.nativeEvent.srcElement.nextSibling.value}))
+                     navigate("items")
+                }}/>
                 <input type="text" placeholder="search" id="search"/>
                 <img src="assests/images/Cart.svg" className="cartLogo"/>
             </form>
@@ -147,11 +150,11 @@ function Navbar({isClickedFive,setIsClickedFive}){
                 navigate("items")
               
             }}>
-                <img src='assests/images/magnify.svg' className="magnify"/>
-                <input type="text" placeholder="search" id="search" onSubmit={(e)=>{
-                    dispatch(searchArraySorter({array:inventory,searchString:e.target.value}))
-
+                <img src='assests/images/magnify.svg' className="magnify" onClick={(e)=>{
+                   dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.nativeEvent.srcElement.nextSibling.value}))
+                   navigate("items")
                 }}/>
+                <input type="text" placeholder="search" id="search"/>
                 <img src="assests/images/Cart.svg" className="cartLogo" />
             </form>
         
