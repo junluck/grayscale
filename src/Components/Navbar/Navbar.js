@@ -17,6 +17,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
     const isClicked = useSelector((state)=> state.IsClickedSlice)
     const isClickedTwo = useSelector((state)=> state.IsClickedSliceTwo)
     const productSlice = useSelector((state)=> state.ProductSlice)
+    const numberSlice = useSelector((state)=> state.CartNumberSlice)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
     const navigate = useNavigate();
@@ -138,7 +139,10 @@ function Navbar({isClickedFive,setIsClickedFive}){
                      navigate("items")
                 }}/>
                 <input type="text" placeholder="search" id="search"/>
-                <img src="assests/images/Cart.svg" className="cartLogo"/>
+                <div className="cartLogDiv">
+                    <div className="number"><h4>{numberSlice}</h4></div>
+                    <img src="assests/images/Cart.svg" className="cartLogo" />
+                </div>
             </form>
           
             <div className="menuTwo">
@@ -155,7 +159,10 @@ function Navbar({isClickedFive,setIsClickedFive}){
                    navigate("items")
                 }}/>
                 <input type="text" placeholder="search" id="search"/>
-                <img src="assests/images/Cart.svg" className="cartLogo" />
+                <div className="cartLogDiv">
+
+                    <img src="assests/images/Cart.svg" className="cartLogo" />
+                </div>
             </form>
         
         </div>

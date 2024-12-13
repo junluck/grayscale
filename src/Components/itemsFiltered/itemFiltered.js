@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect , useState } from "react";
 import { useSelector, useDispatch  } from "react-redux";
 import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle,arraySetterTwo} from "../../features/productSlice";
-import { addToCart } from "../../features/cartSlice";
+import { addToCart,addNumberToCart } from "../../features/cartSlice";
 import { arrayOfSortedItemsTwo } from "../../features/productSlice";
 import "./ItemFiltered.css"
 
@@ -11,6 +11,7 @@ function ItemFilter(){
     const arrayOfSortedClothing = useSelector((state)=>state.ProductSlice)
     const currency =  useSelector((state)=> state.CurrencySlice);
     const arrayOfSortedClothingTwo = useSelector((state)=> state.ProductSliceTwo)
+    const cartSlice = useSelector(state => state.CartSlice)
     const index = useSelector((state)=> state.ProductIndexSlice)
     const pageNumbers = useSelector((state)=> state.ProductPageNumberSlice)
     const pageNumberActivator = useSelector(state => state.ProductPageIndexerSlice)
@@ -59,6 +60,7 @@ function ItemFilter(){
                     <div className="arrowButtonAndPriceTwo">
                     <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
                         dispatch(addToCart({item:element.title,qauntity:1,price:element.price}))
+                        dispatch(addNumberToCart())
                     }}/>
                         <div className="titleAndPriceTwo">
                             <h4 className="elementTitleTwo">{element.title}</h4>

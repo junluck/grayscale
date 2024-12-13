@@ -219,6 +219,33 @@
 .menuCompActive{
     
 }
+.number{
+    position: absolute;
+    color: #C2C1C1;
+    background-color: black;
+    width:20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   border-radius: 30px;
+    right:-40%;
+    top: -40%;
+    grid-template-rows: 1fr;
+}
+.number h4{
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    font-size: 0.9rem;
+    
+}
+.cartLogDiv{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
 @media(min-width:1162px){
     .navBar{
