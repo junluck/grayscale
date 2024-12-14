@@ -31,7 +31,24 @@ const CartNumberSlice = createSlice({
     }
 
 })
+
+const CartDisplayerSlice = createSlice({
+    name:"cartDisplay",
+    initialState:false,
+    reducers:{
+        cartDisplayTrueFalse:(state,acition)=>{
+            if (acition.payload > 0){
+                return true
+            }
+            else{
+                return false
+            }
+        }
+    }
+})
 export const {addToCart , removeFromCart} = CartSlice.actions;
 export const {addNumberToCart, removeNumberToCart} = CartNumberSlice.actions
+export const {cartDisplayTrueFalse} = CartDisplayerSlice.actions
 export const  CartNumberSliceReducer = CartNumberSlice.reducer;
+export const  CartDisplayerSliceReducer = CartDisplayerSlice.reducer
 export default CartSlice.reducer;

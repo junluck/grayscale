@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect , useState } from "react";
 import { useSelector, useDispatch  } from "react-redux";
 import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle,arraySetterTwo} from "../../features/productSlice";
-import { addToCart,addNumberToCart } from "../../features/cartSlice";
+import { addToCart,addNumberToCart,cartDisplayTrueFalse } from "../../features/cartSlice";
 import { arrayOfSortedItemsTwo } from "../../features/productSlice";
 import "./ItemFiltered.css"
 
@@ -12,6 +12,7 @@ function ItemFilter(){
     const currency =  useSelector((state)=> state.CurrencySlice);
     const arrayOfSortedClothingTwo = useSelector((state)=> state.ProductSliceTwo)
     const cartSlice = useSelector(state => state.CartSlice)
+    const CartNumberSlice = useSelector(state => state.CartNumberSlice)
     const index = useSelector((state)=> state.ProductIndexSlice)
     const pageNumbers = useSelector((state)=> state.ProductPageNumberSlice)
     const pageNumberActivator = useSelector(state => state.ProductPageIndexerSlice)
@@ -39,6 +40,9 @@ function ItemFilter(){
        
        
     },[arrayOfSortedClothing])
+    useEffect(()=>{
+        dispatch(cartDisplayTrueFalse(CartNumberSlice))  
+    },[CartNumberSlice])
 
     useEffect(()=>{
 

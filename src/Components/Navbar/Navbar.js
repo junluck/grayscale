@@ -18,6 +18,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
     const isClickedTwo = useSelector((state)=> state.IsClickedSliceTwo)
     const productSlice = useSelector((state)=> state.ProductSlice)
     const numberSlice = useSelector((state)=> state.CartNumberSlice)
+    const CartDisplayer = useSelector(state => state.CartDisplayerSlice)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
     const navigate = useNavigate();
@@ -140,7 +141,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                 }}/>
                 <input type="text" placeholder="search" id="search"/>
                 <div className="cartLogDiv">
-                    <div className="number"><h4>{numberSlice}</h4></div>
+                    <div className={CartDisplayer?"number":"numberDeactive"}><h4>{numberSlice}</h4></div>
                     <img src="assests/images/Cart.svg" className="cartLogo" />
                 </div>
             </form>

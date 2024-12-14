@@ -2,10 +2,18 @@ import React from "react";
 import inventory from "../../features/inventory";
 import "./ProductSlider.css"
 import { useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cartSlice";
+import { addNumberToCart } from "../../features/cartSlice";
+import { useEffect } from "react";
+import { cartDisplayTrueFalse } from "../../features/cartSlice";
 function ProductSlider(){
+    const dispatch = useDispatch()
     const currency =  useSelector((state)=> state.CurrencySlice)
-    console.log(currency)
+    const CartNumberSlice = useSelector(state => state.CartNumberSlice)
+    useEffect(()=>{
+           dispatch(cartDisplayTrueFalse(CartNumberSlice))  
+       },[CartNumberSlice])
     return(
         <div className="groupOfItemsOuter">
             <div className="groupOfItemsInner">
@@ -23,7 +31,12 @@ function ProductSlider(){
                             </div>
                             <img src={element.picture} className="itemPicture"/>
                             <div className="arrowButtonAndPrice">
-                                <img src="assests/images/addcart.svg" className="addCart"/>
+                                <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
+                                 dispatch(addToCart({item:element.title,qauntity:1,price:element.price}));
+                                 dispatch(addNumberToCart());
+                                 
+                                 
+                                }}/>
                                 <div className="titleAndPrice">
                                     <h4 className="elementTitle">{element.title}</h4>
                                     <h4 className="elementPrice">{currency}{element.price}</h4>

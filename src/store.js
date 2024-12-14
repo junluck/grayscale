@@ -4,7 +4,7 @@ import { ProductSliceTwoReducer,  ProductIndexSliceReducer ,ProductPageNumberSli
 import ProductSliceReducer from "./features/productSlice"
 import currencyReducer from "./features/currencySlice"
 import { configureStore } from '@reduxjs/toolkit';
-import CartSliceReducer, { CartNumberSliceReducer } from './features/cartSlice';
+import CartSliceReducer, { CartNumberSliceReducer ,  CartDisplayerSliceReducer } from './features/cartSlice';
 
 
 const store = configureStore({
@@ -20,7 +20,8 @@ const store = configureStore({
       ProductSlicePageNumberCircle:ProductSlicePageNumberCircleReducer,
       ProductSliceNoProducts:ProductSliceNoProductsReducer,
       CartSlice:CartSliceReducer,
-      CartNumberSlice:CartNumberSliceReducer 
+      CartNumberSlice:CartNumberSliceReducer,
+      CartDisplayerSlice:CartDisplayerSliceReducer
     }
   })
 

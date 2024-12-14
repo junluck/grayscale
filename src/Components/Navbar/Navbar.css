@@ -233,12 +233,31 @@
     top: -40%;
     grid-template-rows: 1fr;
 }
+
+.numberDeactive{
+    position: absolute;
+    color: #C2C1C1;
+    background-color: black;
+    width:20px;
+    height: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    right:-40%;
+    top: -40%;
+    grid-template-rows: 1fr;
+    opacity: 0;
+    z-index: -1;
+}
 .number h4{
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0px;
     font-size: 0.9rem;
     
 }
+
+
 .cartLogDiv{
 
     display: flex;
