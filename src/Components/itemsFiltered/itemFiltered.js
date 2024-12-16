@@ -63,7 +63,7 @@ function ItemFilter(){
                     <img src={element.picture} className="itemPictureTwo"/>
                     <div className="arrowButtonAndPriceTwo">
                     <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
-                        dispatch(addToCart({item:element.title,quantity:1,price:element.price}))
+                        dispatch(addToCart({picture:element.picture,title:element.title,quantity:1,price:element.price,catergory:element.catergory}))
                         dispatch(addNumberToCart())
                     }}/>
                         <div className="titleAndPriceTwo">

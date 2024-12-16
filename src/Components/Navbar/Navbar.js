@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { incermentByNine, reset } from "../../features/productSlice";
+import Checkout from "../Checkout/Checkout";
 function Navbar({isClickedFive,setIsClickedFive}){
 
     const isClicked = useSelector((state)=> state.IsClickedSlice)
@@ -149,6 +150,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
             <div className="menuTwo">
                 <Menu isClickedFour={isClickedFour} isClickedFive={isClickedFive} setIsClickedFive={setIsClickedFive}/>
             </div>
+            <div>
             <form className="magnifyerAndSearchTwo" onSubmit={(e)=>{
                 e.preventDefault()
                 dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
@@ -164,10 +166,13 @@ function Navbar({isClickedFive,setIsClickedFive}){
 
                     <img src="assests/images/Cart.svg" className="cartLogo" />
                 </div>
+                
             </form>
-        
+            
+            </div>
+            
         </div>
-        
+        <Checkout/>
         <div className="space">
             
         </div>

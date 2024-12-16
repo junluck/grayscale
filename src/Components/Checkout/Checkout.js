@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "./Checkout.css"
 
 function Checkout(){
     const cart = useSelector(state=> state.CartSlice);
@@ -37,3 +38,5 @@ function Checkout(){
         </div>
     )
 }
+
+export default Checkout
