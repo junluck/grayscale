@@ -7,10 +7,25 @@ import { addToCart } from "../../features/cartSlice";
 import { addNumberToCart } from "../../features/cartSlice";
 import { useEffect } from "react";
 import { cartDisplayTrueFalse } from "../../features/cartSlice";
+import { addToQuantity } from "../../features/cartSlice";
+import { isClickedBoolThreeFalse } from "../../features/isClicked";
+
 function ProductSlider(){
-    const dispatch = useDispatch()
-    const currency =  useSelector((state)=> state.CurrencySlice)
-    const CartNumberSlice = useSelector(state => state.CartNumberSlice)
+    const dispatch = useDispatch();
+    const currency =  useSelector((state)=> state.CurrencySlice);
+    const CartNumberSlice = useSelector(state => state.CartNumberSlice);
+    const CartQuantitySlice = useSelector(state => state.CartQuantitySlice)
+     const cartSlice = useSelector(state => state.CartSlice)
+     useEffect(()=>{
+             dispatch(addNumberToCart(cartSlice));
+             if(cartSlice.length <= 0){
+                 dispatch(isClickedBoolThreeFalse()) 
+             }
+         },[cartSlice])
+         
+         useEffect(()=>{
+             dispatch(cartDisplayTrueFalse(CartNumberSlice))  
+         },[CartNumberSlice])
     useEffect(()=>{
            dispatch(cartDisplayTrueFalse(CartNumberSlice))  
        },[CartNumberSlice])
@@ -32,8 +47,13 @@ function ProductSlider(){
                             <img src={element.picture} className="itemPicture"/>
                             <div className="arrowButtonAndPrice">
                                 <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
-                                 dispatch(addToCart({item:element.title,qauntity:1,price:element.price}));
-                                 dispatch(addNumberToCart());
+                                 dispatch(addToCart({picture:element.picture,title:element.title,quantity:CartQuantitySlice[element.indexOf],price:element.price,catergory:element.catergory,indexOf:element.indexOf}))
+                                                         cartSlice.forEach(elemen => {
+                                                             if(element.title === elemen.title ){
+                                                                 dispatch(addToQuantity(element.indexOf))
+                                                             }
+                                                             
+                                                         });
                                  
                                  
                                 }}/>

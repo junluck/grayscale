@@ -20,6 +20,11 @@ function inventorySorted(inventor){
     for (let clothingItem in inventor.women.bottoms){
         array = [...array,...inventor.women.bottoms[clothingItem]]
     };
+
+    array.forEach((element,index)=>{
+        element["indexOf"] = index
+
+    })
     return array
 }
 
@@ -104,7 +109,7 @@ function compareTwoDimenArray(arrayOne,arrayTwo){
 
 
 
- let arrayOfClothes = inventorySorted(inventory)
+ export let arrayOfClothes = inventorySorted(inventory)
  
 const ProductSlice = createSlice({
     name:"arraySort",

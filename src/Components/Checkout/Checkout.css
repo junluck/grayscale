@@ -1,11 +1,20 @@
-.checkOut{
+.checkout{
     position: fixed;
     background-color: white;
-    right: 8%;
+    right: 0%;
     z-index: 1;
     top:60px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 510px;
+    height: 470px;
+    display: grid;
+    grid-template-rows:85% 15%;
+    justify-content: center;
+    flex-direction: column;
     
+}
+.checkoutDeactive{
+    display: none;
 }
 .groupOfCheckouts{
     height: 400px;
@@ -16,25 +25,26 @@
     justify-content: start;
     align-items: center;
     box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.25);
+    justify-self: center;
+    align-self: center;
    
  
 }
 
 .groupOfCheckouts::-webkit-scrollbar  {
-   width: 5px;
+   width: 8px;
   }
 
   .groupOfCheckouts::-webkit-scrollbar-track {
-    background: #fcfcfc;
+    display: none;
   }
   
   .groupOfCheckouts::-webkit-scrollbar-thumb {
-    background: #000000;
-    border-radius: 10px;
+    display: none;
   }
   
   .groupOfCheckouts::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    display: none;
   }
   
 .checkoutItem{
@@ -44,7 +54,8 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     width: 470px;
     height: 100px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .checkoutImage{
     grid-column-start: 1;
@@ -106,6 +117,10 @@
     grid-column-end: 3;
     justify-self: center;
     align-self: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
 }
 
 .minusVect{
@@ -119,7 +134,8 @@
     background-color: black;
     width:18px;
     height: 18px;
-    border-radius: 80px;    
+    border-radius: 80px;   
+    cursor: pointer; 
 }
 .plusVect{
     width: 10px;
@@ -135,6 +151,7 @@
     width:18px;
     height: 18px;
     border-radius: 80px;  
+    cursor: pointer;
     
 }
 .plusVector{
@@ -153,5 +170,59 @@
 }
 
 .exitVector{
-    width:13px
+    width:13px;
+    cursor: pointer;
+}
+
+.checkoutButton{
+    height: 60%;
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+@media(min-width:1621px){
+   
+}
+
+@media(min-width:1310px) and (max-width:1620px){
+   
+    
+}
+
+@media(min-width:1109px) and (max-width:1309px){
+
+    
+    
+}
+@media(min-width:701px) and (max-width:1108px){
+    
+    
+}
+
+@media(min-width:320px) and (max-width:701px){
+    .checkout{
+        display: none;
+    }
+    
 }

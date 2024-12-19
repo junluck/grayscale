@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { incermentByNine, reset } from "../../features/productSlice";
+import { isClickedBoolThree} from "../../features/isClicked";
 import Checkout from "../Checkout/Checkout";
 function Navbar({isClickedFive,setIsClickedFive}){
 
@@ -20,6 +21,8 @@ function Navbar({isClickedFive,setIsClickedFive}){
     const productSlice = useSelector((state)=> state.ProductSlice)
     const numberSlice = useSelector((state)=> state.CartNumberSlice)
     const CartDisplayer = useSelector(state => state.CartDisplayerSlice)
+    const cartSlice = useSelector(state => state.CartSlice)
+    const isClickedCheckout = useSelector (state => state)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
     const navigate = useNavigate();
@@ -57,6 +60,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
 
     return(
         <div>
+        <div className="navBarBackground"></div>
         <div className="navBar">
             <div className="menu" onClick={()=>{
                 dispatch(isClickedBoolTwo())
@@ -141,36 +145,36 @@ function Navbar({isClickedFive,setIsClickedFive}){
                      navigate("items")
                 }}/>
                 <input type="text" placeholder="search" id="search"/>
-                <div className="cartLogDiv">
+                
+            </form>
+            <div className="cartLogDiv" onClick={(e)=>{
+                    if(cartSlice.length > 0){
+                        dispatch(isClickedBoolThree())
+                        console.log(isClickedCheckout)
+                    }
+                }}>
                     <div className={CartDisplayer?"number":"numberDeactive"}><h4>{numberSlice}</h4></div>
                     <img src="assests/images/Cart.svg" className="cartLogo" />
                 </div>
-            </form>
-          
             <div className="menuTwo">
                 <Menu isClickedFour={isClickedFour} isClickedFive={isClickedFive} setIsClickedFive={setIsClickedFive}/>
             </div>
-            <div>
-            <form className="magnifyerAndSearchTwo" onSubmit={(e)=>{
-                e.preventDefault()
-                dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
-                navigate("items")
-              
-            }}>
-                <img src='assests/images/magnify.svg' className="magnify" onClick={(e)=>{
-                   dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.nativeEvent.srcElement.nextSibling.value}))
-                   navigate("items")
-                }}/>
-                <input type="text" placeholder="search" id="search"/>
-                <div className="cartLogDiv">
-
-                    <img src="assests/images/Cart.svg" className="cartLogo" />
-                </div>
+            <div className="magnifyParent">
+                <form className="magnifyerAndSearchTwo" onSubmit={(e)=>{
+                    e.preventDefault()
+                    dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
+                    navigate("items")
                 
-            </form>
+                }}>
+                   
+                    <input type="text" placeholder="search" id="search"/>
+                    <img src="assests/images/home.svg" className="homeLogoTwo"/>
+                    
+                </form>
             
             </div>
-            
+             
+    
         </div>
         <Checkout/>
         <div className="space">

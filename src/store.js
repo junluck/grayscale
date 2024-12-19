@@ -1,10 +1,11 @@
 import IsClickedSliceReducer  from './features/isClicked';
-import { IsClickedTwoReduce } from './features/isClicked';
+import { IsClickedTwoReduce , IsClickedThreeReduce} from './features/isClicked';
 import { ProductSliceTwoReducer,  ProductIndexSliceReducer ,ProductPageNumberSliceReducer ,ProductPageIndexerSliceReducer, ProductSlicePageNumberCircleReducer , ProductSliceNoProductsReducer } from './features/productSlice';
 import ProductSliceReducer from "./features/productSlice"
 import currencyReducer from "./features/currencySlice"
 import { configureStore } from '@reduxjs/toolkit';
 import CartSliceReducer, { CartNumberSliceReducer ,  CartDisplayerSliceReducer } from './features/cartSlice';
+import { CartQuantitySliceReducer } from './features/cartSlice';
 
 
 const store = configureStore({
@@ -21,7 +22,9 @@ const store = configureStore({
       ProductSliceNoProducts:ProductSliceNoProductsReducer,
       CartSlice:CartSliceReducer,
       CartNumberSlice:CartNumberSliceReducer,
-      CartDisplayerSlice:CartDisplayerSliceReducer
+      CartDisplayerSlice:CartDisplayerSliceReducer,
+      CartQuantitySlice:CartQuantitySliceReducer,
+      IsClickedThreeSlice:IsClickedThreeReduce
     }
   })
 

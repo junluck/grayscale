@@ -2,16 +2,52 @@ import React from "react";
 import { useEffect , useState } from "react";
 import { useSelector, useDispatch  } from "react-redux";
 import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle,arraySetterTwo} from "../../features/productSlice";
-import { addToCart,addNumberToCart,cartDisplayTrueFalse } from "../../features/cartSlice";
+import { addToCart,addNumberToCart,cartDisplayTrueFalse, addToQuantity } from "../../features/cartSlice";
 import { arrayOfSortedItemsTwo } from "../../features/productSlice";
+import { isClickedBoolThreeFalse } from "../../features/isClicked";
 import "./ItemFiltered.css"
 
 function ItemFilter(){
+    class CartItem{
+        constructor(picture,title,quantity,price,catergory,indexOf){
+            this._picture = picture
+            this._title = title
+            this._quantity = quantity
+            this._price = price
+            this._catergory = catergory
+            this._indexOf = indexOf
+        }
+        get picture(){
+            return this._picture
+        }
+        get title(){
+            return this._title
+        }
+        get quantity(){
+            return this._quantity
+        }
+        set quantity(newQuantity){
+            this._quantity += newQuantity
+        }
+        get price(){
+            return this._price
+        }
+        get catergory(){
+            return this._catergory
+        }
+        get indexOf(){
+            return this._indexOf
+        }
+
+
+
+    }
     const dispatch = useDispatch()
     const arrayOfSortedClothing = useSelector((state)=>state.ProductSlice)
     const currency =  useSelector((state)=> state.CurrencySlice);
     const arrayOfSortedClothingTwo = useSelector((state)=> state.ProductSliceTwo)
     const cartSlice = useSelector(state => state.CartSlice)
+    const CartQuantitySlice = useSelector(state => state.CartQuantitySlice)
     const CartNumberSlice = useSelector(state => state.CartNumberSlice)
     const index = useSelector((state)=> state.ProductIndexSlice)
     const pageNumbers = useSelector((state)=> state.ProductPageNumberSlice)
@@ -33,11 +69,17 @@ function ItemFilter(){
     },[])
 
     useEffect(()=>{
+        dispatch(addNumberToCart(cartSlice));
+        if(cartSlice.length <= 0){
+            dispatch(isClickedBoolThreeFalse()) 
+        }
+    },[cartSlice])
+    useEffect(()=>{
 
         localStorage.setItem("arrayOfSortedClothing", JSON.stringify(arrayOfSortedClothing));
         dispatch(arrayOfSortedItemsTwo({index:index,arraySorted:arrayOfSortedClothing}))
         dispatch(arrayPageNumbering(arrayOfSortedClothing.length)) 
-       
+        console.log(arrayOfSortedClothing)
        
     },[arrayOfSortedClothing])
     useEffect(()=>{
@@ -51,6 +93,13 @@ function ItemFilter(){
         dispatch(arrayOfSortedItemsTwo({index:index,arraySorted:arrayOfSortedClothing}))
     },[index])
 
+    useEffect(()=>{
+
+        //localStorage.setItem("arrayOfSortedClothing", JSON.stringify(arrayOfSortedClothing));
+        console.log(arrayOfSortedClothingTwo)
+       
+    },[arrayOfSortedClothingTwo])
+
     return(
         <div>
         <div className={trueOrFalse?"oopsActive":"oopsDeactive"}>
@@ -58,13 +107,19 @@ function ItemFilter(){
             <h3 className="oppsTitle">Oops looks like we don't have this product please try again...</h3>
         </div>
         <div className={trueOrFalse?"groupOfClothingDeactive":"groupOfClothing"}>
-            {arrayOfSortedClothingTwo.map((element)=>{
+            {arrayOfSortedClothingTwo.map((element,inde)=>{
                 return ( <div className="itemTwo">
                     <img src={element.picture} className="itemPictureTwo"/>
                     <div className="arrowButtonAndPriceTwo">
                     <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
-                        dispatch(addToCart({picture:element.picture,title:element.title,quantity:1,price:element.price,catergory:element.catergory}))
-                        dispatch(addNumberToCart())
+                        dispatch(addToCart({picture:element.picture,title:element.title,quantity:CartQuantitySlice[element.indexOf],price:element.price,catergory:element.catergory,indexOf:element.indexOf}))
+                        cartSlice.forEach(elemen => {
+                            if(element.title === elemen.title ){
+                                dispatch(addToQuantity(element.indexOf))
+                            }
+                            
+                        });
+                       
                     }}/>
                         <div className="titleAndPriceTwo">
                             <h4 className="elementTitleTwo">{element.title}</h4>
@@ -81,7 +136,7 @@ function ItemFilter(){
         <div className={pageNumberActivator?"PageNumbersActive":"PageNumbersDeactive"}>{pageNumbers.map((element)=>{
             console.log(productSlicePageNumber[element])
                 return(
-                    <div className={productSlicePageNumber[element-1]?"numberActive":"numberDeactive"} onClick={()=>{
+                    <div className={productSlicePageNumber[element-1]?"numberActive":"numberDeactiver"} onClick={()=>{
                         dispatch(arrayOfSortedItemsTwo({index:index,arraySorted:arrayOfSortedClothing}))
                         dispatch(mutiplyier(element-1));
                         dispatch(pageNumberCircle({ele:element-1,length:arrayOfSortedClothing.length}))
