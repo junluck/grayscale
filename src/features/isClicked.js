@@ -41,6 +41,20 @@ export const IsClickedSliceThree = createSlice({
     }
 })
 
+export const isClickedSliceFour = createSlice({
+    name:"isClickedFour",
+    initialState:false,
+    reducers:{
+        isBoolFourFalse:(state,action)=>{
+            return false
+        },
+        isBoolFourTrue:(state,action)=>{
+            return false
+        }
+
+    }
+
+})
 export const {isClickedBool} = IsClickedSlice.actions;
 export const {isClickedBoolTwo} = IsClickedSliceTwo.actions;
 export const {isClickedBoolThree, isClickedBoolThreeFalse} = IsClickedSliceThree.actions;

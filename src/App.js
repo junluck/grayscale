@@ -7,7 +7,7 @@ import Items from './Pages/Items/Items';
 import Product from './Pages/Product/Product';
 import { useState } from 'react';
 import MaleAndFemale from './Pages/MaleAndFemale/MaleAndFemale';
-
+import CheckoutPage from './Pages/Checkout/CheckoutPage';
 
 function App() {
 const [isClickedFive,setIsClickedFive] = useState([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
@@ -18,6 +18,7 @@ const appRouter =  createBrowserRouter(createRoutesFromElements(
     <Route path='items' element={<Items />}/>
     <Route path="manOrWomenChoice" element={<MaleAndFemale />}/>
     <Route path='Product' element={<Product />}/>
+    <Route path="checkout" element={<CheckoutPage />}/>
   </Route>  
 ))
 

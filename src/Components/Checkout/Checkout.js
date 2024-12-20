@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import "./Checkout.css"
 import { addToQuantity, substractToQuantity, setQuantity, removeFromCart} from "../../features/cartSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Checkout(){
     const dispatch = useDispatch()
@@ -36,13 +37,13 @@ function Checkout(){
                                         dispatch(setQuantity({indexOf:element.indexOf,setValue:1}))
                                     }
                                 }} onChange={(e)=>{
-                                    
+                                         
                                     if(e.target.value.length > 0){
                                         
                                         dispatch(setQuantity({indexOf:element.indexOf,setValue:Number(e.target.value)}))
                                     }
                                     else{
-                                        dispatch(setQuantity({indexOf:element.indexOf,setValue:1}))
+                                        dispatch(setQuantity({indexOf:element.indexOf,setValue:""}))
                                     }
                                    
                                 }}/>
@@ -69,7 +70,7 @@ function Checkout(){
                 })}
 
             </div>
-        <button className="checkoutButton">CHECKOUT</button>
+        <Link to={"checkout"} className="checkoutButtonAnchor"><button className="checkoutButton">CHECKOUT</button></Link>
         </div>
     )
 }
