@@ -1,5 +1,5 @@
 import IsClickedSliceReducer  from './features/isClicked';
-import { IsClickedTwoReduce , IsClickedThreeReduce} from './features/isClicked';
+import { IsClickedTwoReduce , IsClickedThreeReduce ,IsClickedFourReduce} from './features/isClicked';
 import { ProductSliceTwoReducer,  ProductIndexSliceReducer ,ProductPageNumberSliceReducer ,ProductPageIndexerSliceReducer, ProductSlicePageNumberCircleReducer , ProductSliceNoProductsReducer } from './features/productSlice';
 import ProductSliceReducer from "./features/productSlice"
 import currencyReducer from "./features/currencySlice"
@@ -24,7 +24,8 @@ const store = configureStore({
       CartNumberSlice:CartNumberSliceReducer,
       CartDisplayerSlice:CartDisplayerSliceReducer,
       CartQuantitySlice:CartQuantitySliceReducer,
-      IsClickedThreeSlice:IsClickedThreeReduce
+      IsClickedThreeSlice:IsClickedThreeReduce,
+      IsClickedFourSlice:IsClickedFourReduce
     }
   })
 

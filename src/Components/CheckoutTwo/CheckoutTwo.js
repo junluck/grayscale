@@ -8,7 +8,9 @@ import { removeFromCart } from "../../features/cartSlice";
 import { cartDisplayTrueFalse } from "../../features/cartSlice";
 import { useEffect } from "react";
 import { addNumberToCart } from "../../features/cartSlice";
-import { isClickedBoolThreeFalse } from "../../features/isClicked";
+import { isClickedBoolThreeFalse , isClickedBoolFourTrue, isClickedBoolFourFalse} from "../../features/isClicked";
+import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 import "./CheckoutTwo.css"
  
 
@@ -16,28 +18,43 @@ function CheckoutTwo(){
     const CartNumberSlice = useSelector(state => state.CartNumberSlice)
     const cartSlice = useSelector(state => state.CartSlice);
     const dispatch = useDispatch();
-     const currency =  useSelector((state)=> state.CurrencySlice);
+    const currency =  useSelector((state)=> state.CurrencySlice);
     const quantityGroup = useSelector(state => state.CartQuantitySlice);
     const isClickedThree = useSelector(state => state.IsClickedThreeSlice);
+    const isClickedFour = useSelector(state => state.IsClickedFourSlice)
       useEffect(()=>{
                  dispatch(addNumberToCart(cartSlice));
                  if(cartSlice.length <= 0){
-                     dispatch(isClickedBoolThreeFalse()) 
+                     dispatch(isClickedBoolThreeFalse())
+                    dispatch(isClickedBoolFourFalse())
                  }
+                 else{
+                    dispatch(isClickedBoolFourTrue())
+                 }
+
              },[cartSlice])
              
-             useEffect(()=>{
+     useEffect(()=>{
                  dispatch(cartDisplayTrueFalse(CartNumberSlice))  
              },[CartNumberSlice])
-        useEffect(()=>{
+    useEffect(()=>{
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    },[]) 
+     
+    useEffect(()=>{
                dispatch(cartDisplayTrueFalse(CartNumberSlice))  
            },[CartNumberSlice])
     
     return(
-        <div className="mainCheckoutTwo">
+        <div className={isClickedFour?"mainCheckoutTwo":"mainCheckoutTwoActive"}>
             <div className="checkoutUnderline">
                 <h2>CHECKOUT</h2>
                 <span></span>
+            </div>
+            <div className={isClickedFour?"emptyCartAndTitleDeactive":"emptyCartAndTitle"}>
+                <img src="assests/images/empty cart.svg" className="emptyCartLogo"/>
+                <h3>Your cart is emtpy</h3>
+                <Link to={"/manOrWomenChoice"}><button className="continueShopping">CONTINUE SHOPPING</button></Link>
             </div>
             <div className="groupCheckoutsTwo">
                {cartSlice.map((element,index)=>{
@@ -94,6 +111,10 @@ function CheckoutTwo(){
                                       </div>
                                   )
                               })}
+            </div>
+            <button className={isClickedFour?"checkoutButtonTwo":"checkoutButtonTwoDeactive"}>CHECKOUT</button>
+            <div className={isClickedFour?"":"footerTwo"}>
+                <Footer/>
             </div>
         </div>
     )

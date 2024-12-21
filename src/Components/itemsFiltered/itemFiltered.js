@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect , useState } from "react";
 import { useSelector, useDispatch  } from "react-redux";
-import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle,arraySetterTwo} from "../../features/productSlice";
+import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle,arraySetterTwo}from "../../features/productSlice";
 import { addToCart,addNumberToCart,cartDisplayTrueFalse, addToQuantity } from "../../features/cartSlice";
 import { arrayOfSortedItemsTwo } from "../../features/productSlice";
 import { isClickedBoolThreeFalse } from "../../features/isClicked";
@@ -96,7 +96,7 @@ function ItemFilter(){
     useEffect(()=>{
 
         //localStorage.setItem("arrayOfSortedClothing", JSON.stringify(arrayOfSortedClothing));
-        console.log(arrayOfSortedClothingTwo)
+       
        
     },[arrayOfSortedClothingTwo])
 
@@ -140,6 +140,9 @@ function ItemFilter(){
                         dispatch(arrayOfSortedItemsTwo({index:index,arraySorted:arrayOfSortedClothing}))
                         dispatch(mutiplyier(element-1));
                         dispatch(pageNumberCircle({ele:element-1,length:arrayOfSortedClothing.length}))
+                        window.scrollTo({ top: 0, behavior: "smooth" })
+
+
                    }}>
                         <p>{element}</p>
                     </div>

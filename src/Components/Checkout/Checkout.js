@@ -4,6 +4,7 @@ import "./Checkout.css"
 import { addToQuantity, substractToQuantity, setQuantity, removeFromCart} from "../../features/cartSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { isClickedBoolThreeFalse } from "../../features/isClicked";
 
 function Checkout(){
     const dispatch = useDispatch()
@@ -70,7 +71,9 @@ function Checkout(){
                 })}
 
             </div>
-        <Link to={"checkout"} className="checkoutButtonAnchor"><button className="checkoutButton">CHECKOUT</button></Link>
+        <Link to={"checkout"} className="checkoutButtonAnchor"><button className="checkoutButton" onClick={(e)=>{
+            dispatch(isClickedBoolThreeFalse())
+        }}>CHECKOUT</button></Link>
         </div>
     )
 }

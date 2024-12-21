@@ -84,6 +84,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
             <Link to={""} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{   
                 dispatch(isClickedBool(2))
                 setIsClickedFive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
+                window.scrollTo({ top: 0, behavior: "smooth" })  
             }} className={isClicked[2]?"menActive":"menDeactive"}>HOME</li></Link>
                 <span></span>
                 <li onClick={()=>{
@@ -109,7 +110,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                         dispatch(arrayOfSortedItems(array))
 
                         }
-                            
+                        window.scrollTo({ top: 0, behavior: "smooth" })  
                         }} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li></Link>
                 <span></span>
                 <Link to={"items"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{
@@ -129,7 +130,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                         dispatch(arrayOfSortedItems(array))
 
                     }
-                    console.log(productSlice)
+                    window.scrollTo({ top: 0, behavior: "smooth" })  
                     
                 }} className={isClicked[1]?"menActive":"menDeactive"}>WOMEN</li></Link>
                 <span></span>
