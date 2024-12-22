@@ -9,6 +9,7 @@ import { cartDisplayTrueFalse } from "../../features/cartSlice";
 import { useEffect } from "react";
 import { addNumberToCart } from "../../features/cartSlice";
 import { isClickedBoolThreeFalse , isClickedBoolFourTrue, isClickedBoolFourFalse} from "../../features/isClicked";
+
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import "./CheckoutTwo.css"
@@ -65,6 +66,16 @@ function CheckoutTwo(){
                                               <h3 className="catergoryCheckout">{element.catergory}</h3>
                                               <h4 className="titleCheckout">{element.title}</h4>
                                           </div>
+                                          <form className="sizesForm">
+                                            <select id="options" name="options">
+                                                <option value={"XS"}>XS</option>
+                                                <option value={"S"}>S</option>
+                                                <option value={"M"} selected>M</option>
+                                                <option value={"L"}>L</option>
+                                                <option value={"XL"}>XL</option>
+                                                <option value={"XXL"}>XXL</option>
+                                            </select>
+                                          </form>
                                           <form className="plusQuantityMinus">
                                               <div className="minusVect" onClick={()=>{
                                                       dispatch(substractToQuantity(element.indexOf))
@@ -98,10 +109,10 @@ function CheckoutTwo(){
                                                   <img src="assests/images/plusVector.svg" className="plusVector"/>
                                               </div>
                                           </form>
-                                          <div className="priceOfItem">
+                                          <div className="priceOfItemTwo">
                                               <h4 className="price">{currency}{element.price * quantityGroup[element.indexOf]}</h4>
                                           </div>
-                                          <img src="assests/images/exit.svg" className="exitVector" onClick={(e)=>{
+                                          <img src="assests/images/exit.svg" className="exitVectorTwo" onClick={(e)=>{
                                               dispatch(removeFromCart(index))
                                               dispatch(setQuantity({indexOf:element.indexOf,setValue:1}))
                                               

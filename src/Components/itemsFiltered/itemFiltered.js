@@ -1,49 +1,18 @@
 import React from "react";
 import { useEffect , useState } from "react";
 import { useSelector, useDispatch  } from "react-redux";
-import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle,arraySetterTwo}from "../../features/productSlice";
+import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumberCircle,arraySetterTwo, pageNumberCircleReset,pageDisplayerFalse}from "../../features/productSlice";
 import { addToCart,addNumberToCart,cartDisplayTrueFalse, addToQuantity } from "../../features/cartSlice";
 import { arrayOfSortedItemsTwo } from "../../features/productSlice";
 import { isClickedBoolThreeFalse } from "../../features/isClicked";
+
 import "./ItemFiltered.css"
 
 function ItemFilter(){
-    class CartItem{
-        constructor(picture,title,quantity,price,catergory,indexOf){
-            this._picture = picture
-            this._title = title
-            this._quantity = quantity
-            this._price = price
-            this._catergory = catergory
-            this._indexOf = indexOf
-        }
-        get picture(){
-            return this._picture
-        }
-        get title(){
-            return this._title
-        }
-        get quantity(){
-            return this._quantity
-        }
-        set quantity(newQuantity){
-            this._quantity += newQuantity
-        }
-        get price(){
-            return this._price
-        }
-        get catergory(){
-            return this._catergory
-        }
-        get indexOf(){
-            return this._indexOf
-        }
 
-
-
-    }
     const dispatch = useDispatch()
     const arrayOfSortedClothing = useSelector((state)=>state.ProductSlice)
+    const clothingSizeSlice = useSelector(state => state.clothingSize)
     const currency =  useSelector((state)=> state.CurrencySlice);
     const arrayOfSortedClothingTwo = useSelector((state)=> state.ProductSliceTwo)
     const cartSlice = useSelector(state => state.CartSlice)
@@ -59,15 +28,6 @@ function ItemFilter(){
     const [countStoper,setCountStoper] = useState(9)
     let newArray = [];
 
-
-    useEffect(()=>{
-       const data =  localStorage.getItem("arrayOfSortedClothing");
-       newArray = [...JSON.parse(data)]
-       /*
-       dispatch(arrayOfSortedItems(JSON.parse(data)))
-       dispatch(arrayOfSortedItemsTwo(JSON.parse(data)))*/
-    },[])
-
     useEffect(()=>{
         dispatch(addNumberToCart(cartSlice));
         if(cartSlice.length <= 0){
@@ -80,7 +40,11 @@ function ItemFilter(){
         dispatch(arrayOfSortedItemsTwo({index:index,arraySorted:arrayOfSortedClothing}))
         dispatch(arrayPageNumbering(arrayOfSortedClothing.length)) 
         console.log(arrayOfSortedClothing)
-       
+        dispatch(arrayOfSortedItemsTwo({arraySorted:arrayOfSortedClothing,index:0}))
+        dispatch(pageNumberCircleReset())
+        if (arrayOfSortedClothing.length < 9){
+            dispatch(pageDisplayerFalse())
+        }
     },[arrayOfSortedClothing])
     useEffect(()=>{
         dispatch(cartDisplayTrueFalse(CartNumberSlice))  
@@ -112,7 +76,7 @@ function ItemFilter(){
                     <img src={element.picture} className="itemPictureTwo"/>
                     <div className="arrowButtonAndPriceTwo">
                     <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
-                        dispatch(addToCart({picture:element.picture,title:element.title,quantity:CartQuantitySlice[element.indexOf],price:element.price,catergory:element.catergory,indexOf:element.indexOf}))
+                        dispatch(addToCart({picture:element.picture,title:element.title,quantity:CartQuantitySlice[element.indexOf],price:element.price,catergory:element.catergory,indexOf:element.indexOf,size:clothingSizeSlice[element.indexOf]}))
                         cartSlice.forEach(elemen => {
                             if(element.title === elemen.title ){
                                 dispatch(addToQuantity(element.indexOf))

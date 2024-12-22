@@ -87,13 +87,41 @@
   
 .checkoutItemTwo{
     display: grid;
-    grid-template-columns: 20% 30% 10% 20% 10%;
+    grid-template-columns: 20% 35% 10% 15% 10% 10%;
     grid-template-rows: 100%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     width: 80%;
     height:120px;
     margin-top: 4px;
     margin-bottom: 4px;
+    justify-self: center;
+    align-self: center;
+}
+
+/* Style the select dropdown */
+select {
+   width: 57px;
+    padding: 5px;
+    font-size: 12px;
+    border: 2px solid ;
+    border-radius: 5px;
+    background-color: transparent;
+    color: grey;
+    border-radius: 0px;
+    background: none;
+  }
+
+  /* Change the style of the dropdown when focused */
+  select:focus {
+    outline: none;
+    border-color: #009688;
+    background-color: #e0f7fa;
+  }
+.sizesForm{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 4;
+    grid-column-end: 5;
     justify-self: center;
     align-self: center;
 }
@@ -138,9 +166,9 @@
 
 }
 
-.priceOfItem{
-    grid-column-start: 4;
-    grid-column-end: 5;
+.priceOfItemTwo{
+    grid-column-start: 5;
+    grid-column-end: 6;
     display: flex;
     justify-self: center;
     align-self: center;
@@ -148,9 +176,9 @@
     align-items: center;
 }
 
-.exitVector{
-    grid-column-start: 5;
-    grid-column-end: 6;
+.exitVectorTwo{
+    grid-column-start: 6;
+    grid-column-end: 7;
     justify-self: center;
     align-self: center;
 }
@@ -213,7 +241,7 @@
    
 }
 
-.exitVector{
+.exitVectorTwo{
     width:13px;
     cursor: pointer;
 }
@@ -389,6 +417,28 @@ input[type="number"] {
     .catergoryCheckout{
         font-size: 1.2rem;
     }
+
+    .emptyCartLogo{
+        width: 200px;
+    }
+
+    .continueShopping{
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 0.7rem;
+        width: 150px;
+        height: 40px;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        justify-self: center;
+        align-self: center;
+        cursor: pointer;
+    }
+
+    .emptyCartAndTitle{
+        min-width: 310px;
+    }
 }
 
 @media(min-width:320px) and (max-width:428px){
@@ -413,5 +463,30 @@ input[type="number"] {
     }
     .catergoryCheckout{
         font-size: 1.2rem;
+    }
+    .emptyCartLogo{
+        width: 150px;
+    }
+
+    .emptyCartAndTitle h3{
+        font-size: 1.2rem;
+    }
+
+    .continueShopping{
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 0.6rem;
+        width: 130px;
+        height: 30px;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        justify-self: center;
+        align-self: center;
+        cursor: pointer;
+    }
+
+    .emptyCartAndTitle{
+        min-width: 310px;
     }
 }

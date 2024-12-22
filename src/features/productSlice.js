@@ -235,7 +235,7 @@ const ProductPageNumberSlice = createSlice({
     reducers:{
         arrayPageNumbering:(state,action)=>{
             let array = [];
-            let maxPages = Math.ceil(action.payload/9)
+            let maxPages = Math.ceil(action.payload / 9)
             for(let i = 0 ; i < maxPages ; i++){
                 array[i] = i + 1
             }
@@ -266,7 +266,8 @@ const ProductSlicePageNumberCircle = createSlice({
     reducers:{
         pageNumberCircle:(state,action)=>{
             let array = []
-            for(let i = 0;i < action.payload.length; i++){
+            let maxPages = Math.ceil(action.payload.length / 9 )
+            for(let i = 0;i < maxPages; i++){
                 array[i] = false
             }
             array[action.payload.ele] = true
