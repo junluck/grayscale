@@ -9,6 +9,7 @@ import { cartDisplayTrueFalse } from "../../features/cartSlice";
 import { useEffect } from "react";
 import { addNumberToCart } from "../../features/cartSlice";
 import { isClickedBoolThreeFalse , isClickedBoolFourTrue, isClickedBoolFourFalse} from "../../features/isClicked";
+import { addSizeClothing } from "../../features/clothingSizeSlice";
 
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
@@ -23,6 +24,7 @@ function CheckoutTwo(){
     const quantityGroup = useSelector(state => state.CartQuantitySlice);
     const isClickedThree = useSelector(state => state.IsClickedThreeSlice);
     const isClickedFour = useSelector(state => state.IsClickedFourSlice)
+    const clothingSizeSlice = useSelector(state => state.clothingSize)
       useEffect(()=>{
                  dispatch(addNumberToCart(cartSlice));
                  if(cartSlice.length <= 0){
@@ -66,14 +68,17 @@ function CheckoutTwo(){
                                               <h3 className="catergoryCheckout">{element.catergory}</h3>
                                               <h4 className="titleCheckout">{element.title}</h4>
                                           </div>
-                                          <form className="sizesForm">
+                                          <form className="sizesForm" value={clothingSizeSlice[element.indexOf]} onChange={(e)=>{
+                                               e.target.value = e.target.value;
+                                               dispatch(addSizeClothing({index:element.indexOf,size:clothingSizeSlice[element.indexOf]}))
+                                            }}>
                                             <select id="options" name="options">
-                                                <option value={"XS"}>XS</option>
-                                                <option value={"S"}>S</option>
-                                                <option value={"M"} selected>M</option>
-                                                <option value={"L"}>L</option>
-                                                <option value={"XL"}>XL</option>
-                                                <option value={"XXL"}>XXL</option>
+                                                <option value={"XS"} selected={clothingSizeSlice[element.indexOf]==="XS"}>XS</option>
+                                                <option value={"S"} selected={clothingSizeSlice[element.indexOf]==="S"}>S</option>
+                                                <option value={"M"} selected={clothingSizeSlice[element.indexOf]==="M"}>M</option>
+                                                <option value={"L"} selected={clothingSizeSlice[element.indexOf]==="L"}>L</option>
+                                                <option value={"XL"} selected={clothingSizeSlice[element.indexOf]==="XL"}>XL</option>
+                                                <option value={"XXL"} selected={clothingSizeSlice[element.indexOf]==="XXL"}>XXL</option>
                                             </select>
                                           </form>
                                           <form className="plusQuantityMinus">

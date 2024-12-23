@@ -7,6 +7,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import CartSliceReducer, { CartNumberSliceReducer ,  CartDisplayerSliceReducer } from './features/cartSlice';
 import { CartQuantitySliceReducer } from './features/cartSlice';
 import  clothingSizeReducer  from './features/clothingSizeSlice';
+import singleProductSliceReducer from './features/singleProductSlice';
 
 
 
@@ -28,7 +29,8 @@ const store = configureStore({
       CartQuantitySlice:CartQuantitySliceReducer,
       IsClickedThreeSlice:IsClickedThreeReduce,
       IsClickedFourSlice:IsClickedFourReduce,
-      clothingSize:clothingSizeReducer 
+      clothingSize:clothingSizeReducer,
+      singleProductSlice:singleProductSliceReducer
     }
   })
 

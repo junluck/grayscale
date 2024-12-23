@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 let array = [];
 
 for(let i = 0; i < 94; i++){
-    array[i] = "M"
+    array[i] = "M";
 }
 
 const clothingSizeSlice = createSlice({

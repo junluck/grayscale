@@ -100,15 +100,20 @@
 
 /* Style the select dropdown */
 select {
-   width: 57px;
-    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 57px;
+    height: 26px;
+    padding: 0px;
     font-size: 12px;
     border: 2px solid ;
     border-radius: 5px;
     background-color: transparent;
-    color: grey;
+    color: #636363;
     border-radius: 0px;
     background: none;
+    text-align: center;
   }
 
   /* Change the style of the dropdown when focused */
@@ -162,6 +167,7 @@ select {
     justify-self: center;
     align-self: center;
     width: 80%;
+    max-width: 70px;
 
 
 }
@@ -360,7 +366,7 @@ input[type="number"] {
 @media(min-width:701px) and (max-width:1108px){
     .checkoutItemTwo {
         display: grid;
-        grid-template-columns: 20% 41% 14% 10% 15%;
+        grid-template-columns: 20% 32% 14% 14% 14% 6%;
         grid-template-rows: 100%;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
         width: 80%;
@@ -371,24 +377,52 @@ input[type="number"] {
         align-self: center;
         min-width: 680px;
     }
-    
+
+    .checkoutButtonTwo {
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        width: 250px;
+        height: 50px;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        justify-self: center;
+        align-self: center;
+        cursor: pointer;
+    }
 }
 
 @media(min-width:629px) and (max-width:701px){
     .checkoutItemTwo {
         display: grid;
-        grid-template-columns: 20% 41% 14% 10% 15%;
+        grid-template-columns: 20% 32% 14% 14% 14% 6%;
         grid-template-rows: 100%;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-        width: 90%;
+        width: 80%;
         height: 120px;
         margin-top: 4px;
         margin-bottom: 4px;
         justify-self: center;
         align-self: center;
+        min-width: 580px;
     }
     .checkout{
         display: none;
+    }
+
+    .checkoutButtonTwo {
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        width: 250px;
+        height: 50px;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        justify-self: center;
+        align-self: center;
+        cursor: pointer;
     }
     
 }
@@ -397,25 +431,25 @@ input[type="number"] {
 @media(min-width:429px) and (max-width:628px){
     .checkoutItemTwo {
         display: grid;
-        grid-template-columns: 20% 41% 24% 10% 5%;
+        grid-template-columns: 20% 22% 21% 21% 10% 6%;
         grid-template-rows: 100%;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-        width: 90%;
+        width: 80%;
         height: 120px;
         margin-top: 4px;
         margin-bottom: 4px;
         justify-self: center;
         align-self: center;
-        min-width: 410px;
+        min-width: 420px;
     }
     .checkout{
         display: none;
     }
     .titleCheckout{
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
     .catergoryCheckout{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .emptyCartLogo{
@@ -439,27 +473,41 @@ input[type="number"] {
     .emptyCartAndTitle{
         min-width: 310px;
     }
+
+    .checkoutButtonTwo {
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        width: 250px;
+        height: 50px;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        justify-self: center;
+        align-self: center;
+        cursor: pointer;
+    }
 }
 
 @media(min-width:320px) and (max-width:428px){
     .checkoutItemTwo {
         display: grid;
-        grid-template-columns: 30% 30% 25% 10% 5%;
+        grid-template-columns: 20% 22% 24% 18% 10% 6%;
         grid-template-rows: 100%;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-        width: 98%;
+        width: 80%;
         height: 120px;
         margin-top: 4px;
         margin-bottom: 4px;
         justify-self: center;
         align-self: center;
-      
+        min-width: 310px;
     }
     .checkout{
         display: none;
     }
     .titleCheckout{
-        font-size: 0.9rem;
+        font-size: 0.6rem;
     }
     .catergoryCheckout{
         font-size: 1.2rem;
@@ -489,4 +537,102 @@ input[type="number"] {
     .emptyCartAndTitle{
         min-width: 310px;
     }
+
+    .checkoutImageTwo{
+        width: 60px;
+        height: 70px;
+    }
+
+    .plusVector{
+        width: 8px;
+        height: 30px;
+     
+    }
+    .minusVector{
+        width: 8px;
+        height: 30px;
+     
+    }
+
+    .minusVect{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        justify-self: center;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        width:14px;
+        height: 14px;
+        border-radius: 80px;   
+        cursor: pointer; 
+    }
+    .plusVect{
+        
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: center;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        width:14px;
+        height: 14px;
+        border-radius: 80px;  
+        cursor: pointer;
+        
+    }
+
+    select {
+         width: 47px;
+         padding: 0px;
+         height: 26px;
+         font-size: 12px;
+         border: 2px solid ;
+         border-radius: 5px;
+         background-color: transparent;
+         color: #636363;
+         border-radius: 0px;
+         background: none;
+         font-size: 0.6rem;
+         
+         text-align: left;
+         text-align-last: left;
+       
+       }
+
+       option{
+        margin-left: 0px;
+        text-align: left;
+        text-align-last: left;
+       }
+       
+       .price{
+        font-size: 0.7rem;
+       }
+
+       .exitVectorTwo{
+        width: 10px;
+       }
+
+       .checkoutButtonTwo {
+            background-color: black;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            width: 200px;
+            height: 40px;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            justify-self: center;
+            align-self: center;
+            cursor: pointer;
+        }
+
+        .catergoryCheckout{
+            font-size: 0.8rem;
+        }
+    
 }

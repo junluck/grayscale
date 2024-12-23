@@ -5,8 +5,10 @@ import { arrayOfSortedItems,arrayReseter,arrayPageNumbering,mutiplyier,pageNumbe
 import { addToCart,addNumberToCart,cartDisplayTrueFalse, addToQuantity } from "../../features/cartSlice";
 import { arrayOfSortedItemsTwo } from "../../features/productSlice";
 import { isClickedBoolThreeFalse } from "../../features/isClicked";
+import { choosenProduct } from "../../features/singleProductSlice";
 
 import "./ItemFiltered.css"
+import { Link } from "react-router-dom";
 
 function ItemFilter(){
 
@@ -89,9 +91,11 @@ function ItemFilter(){
                             <h4 className="elementTitleTwo">{element.title}</h4>
                             <h4 className="elementPriceTwo">{currency}{element.price}</h4>
                         </div>
-                        <div className="arrowButtoBackgroundTwo">
+                        <Link to={"/Product"}><div className="arrowButtoBackgroundTwo" onClick={(e)=>{
+                            dispatch(choosenProduct(element))
+                        }}>
                             <img src="assests/images/arrowRight.svg" className="arrowPicTwo"/>
-                        </div>
+                        </div></Link>
                     </div>
                 </div>)
             })}
