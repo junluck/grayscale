@@ -55,12 +55,26 @@ export const IsClickedSliceFour = createSlice({
     }
 
 })
+
+export const IsClickedSliceFive = createSlice({
+    name:"isClickedFive",
+    initialState:[false,false,false],
+    reducers:{
+        isClickedBoolFive:(state,action)=>{
+            let array = [...state];
+            array[action.payload] = !array[action.payload];
+            return array;
+        }
+
+    }
+})
 export const {isClickedBool} = IsClickedSlice.actions;
 export const {isClickedBoolTwo} = IsClickedSliceTwo.actions;
 export const {isClickedBoolThree, isClickedBoolThreeFalse} = IsClickedSliceThree.actions;
 export const {isClickedBoolFourFalse,isClickedBoolFourTrue} =  IsClickedSliceFour.actions;
+export const {isClickedBoolFive} = IsClickedSliceFive.actions;
 export const IsClickedTwoReduce = IsClickedSliceTwo.reducer;
 export const IsClickedThreeReduce = IsClickedSliceThree.reducer;
-export const IsClickedFourReduce = IsClickedSliceFour.reducer
-
+export const IsClickedFourReduce = IsClickedSliceFour.reducer;
+export const IsClickedFiveReduce = IsClickedSliceFive.reducer
 export default IsClickedSlice.reducer

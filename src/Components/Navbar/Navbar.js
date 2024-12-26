@@ -139,7 +139,8 @@ function Navbar({isClickedFive,setIsClickedFive}){
             <form className="magnifyerAndSearch" onSubmit={(e)=>{
                 e.preventDefault()
                 dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
-                navigate("items")
+                navigate("items");
+                window.scrollTo({ top: 0, behavior: "smooth" });
             }}>
                 <img src='assests/images/magnify.svg' className="magnify" onClick={(e)=>{
                      dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.nativeEvent.srcElement.nextSibling.value}))

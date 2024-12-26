@@ -1,5 +1,5 @@
 import IsClickedSliceReducer  from './features/isClicked';
-import { IsClickedTwoReduce , IsClickedThreeReduce ,IsClickedFourReduce} from './features/isClicked';
+import { IsClickedTwoReduce , IsClickedThreeReduce ,IsClickedFourReduce , IsClickedFiveReduce} from './features/isClicked';
 import { ProductSliceTwoReducer,  ProductIndexSliceReducer ,ProductPageNumberSliceReducer ,ProductPageIndexerSliceReducer, ProductSlicePageNumberCircleReducer , ProductSliceNoProductsReducer } from './features/productSlice';
 import ProductSliceReducer from "./features/productSlice"
 import currencyReducer from "./features/currencySlice"
@@ -8,6 +8,8 @@ import CartSliceReducer, { CartNumberSliceReducer ,  CartDisplayerSliceReducer }
 import { CartQuantitySliceReducer } from './features/cartSlice';
 import  clothingSizeReducer  from './features/clothingSizeSlice';
 import singleProductSliceReducer from './features/singleProductSlice';
+import recentlyViewedArrayReducer from './features/RecentlyViewedSlice';
+
 
 
 
@@ -30,7 +32,10 @@ const store = configureStore({
       IsClickedThreeSlice:IsClickedThreeReduce,
       IsClickedFourSlice:IsClickedFourReduce,
       clothingSize:clothingSizeReducer,
-      singleProductSlice:singleProductSliceReducer
+      singleProductSlice:singleProductSliceReducer,
+      recentlyViewedArraySlice:recentlyViewedArrayReducer,
+      IsClicedFiveSlice: IsClickedFiveReduce
+
     }
   })
 

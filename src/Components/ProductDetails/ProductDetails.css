@@ -1,0 +1,240 @@
+.singleProductOuter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.singleProduct{
+    display: grid;
+    grid-template-columns: 49% 2% 49%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1000px;
+}
+
+.productPicture{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: center;
+    align-self: start;
+    width: 400px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.productDetails{
+    margin-top: 0px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: start;
+    align-self: start;
+    width: 100%;
+    max-width:500px;
+    
+}
+
+.itemNameAndPrice{
+    display: grid;
+    flex-direction: column;
+}
+
+.productTitle{
+    margin-top: 0px;
+    margin-bottom:  0px;
+}
+
+.priceTwo{
+    margin-top: -5px;
+    margin-bottom:  0px;
+    padding: 0px;
+    font-weight: 400;
+    font-size: 1.2rem;
+    align-self: start;
+    justify-self: start
+    
+}
+
+.sizingAndGuide{
+    display: grid;
+    margin-top: 0px;
+    grid-template-columns: 30% 40% 30%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sizing{
+    font-weight: 400;
+    margin-top: 0px;
+}
+
+.sizesSpan{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: flex;
+    justify-self: end;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    
+}
+.sizesSpan h5{
+    font-weight: 400;
+    
+
+}
+
+.spanner{
+    width: 70px;
+    height: 1px;
+    background-color: black;
+
+}
+
+.sizes{
+    display: flex;
+    flex-direction: column;
+}
+
+.sizes h5{
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 3px;
+}
+
+.sizeGuide{
+    margin-bottom: 0px;
+}
+
+.sizesButtons{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-row-gap: 8px;
+    width: 260px;
+}
+
+
+.XS,.S,.M,.L,.XL,.XXL{
+    height: 40px;
+    width: 40px;
+    background-color: grey;
+    border: 1px solid grey; 
+    cursor: pointer;
+    color: white;
+}
+.XSDeactive,.SDeactive,.MDeactive,.LDeactive,.XLDeactive,.XXLDeactive{
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: 1px solid grey; 
+    cursor: pointer;
+}
+.sizesButtons button:hover{
+    background-color: grey;
+    color: white;
+
+}
+.inStock{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #159A46;
+    font-weight: 500;
+}
+
+.addToCart{
+    border: none;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.addToCartAndShipping{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shipping{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight:500;
+}
+.meterialArrow, .FeaturesArrow, .ReturnsArrow{
+    display: grid;
+    grid-template-columns: 30% 50% 20%;
+    cursor: pointer;
+}
+.meterialArrow h5, .FeaturesArrow h5, .ReturnsArrow h5{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-top:5px;
+    font-weight: 500;
+    
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+.dropDownArrow{
+    width:10px;
+    justify-self: end;
+    align-self: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.dropDownArrowDeactive{
+    width:10px;
+    justify-self: end;
+    align-self: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    cursor: pointer;
+   
+}
+.spanMaterial{
+    display: flex;
+    height:1px;
+    width:100%;
+    background-color: black;
+}
+
+.softMaterial,.softFeatures,.softReturns{
+    font-size: 0.7rem;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.softMaterialDeactive, .softFeaturesDeactive, .softReturnsDeactive{
+    display: none;
+}
+
+.sizeGuideParagraph{
+    font-size: 0.7rem;
+    text-align: center;
+    background-color: rgb(207, 206, 206);
+    position: absolute;
+    width: 200px;
+    top: 30px;
+    transition: all 0.4s ease;
+    opacity: 1;
+}
+
+.sizeGuideParagraphDeactive{
+    font-size: 0.7rem;
+    text-align: center;
+    background-color: rgb(207, 206, 206);
+    position: absolute;
+    width: 200px;
+    top: 30px;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
