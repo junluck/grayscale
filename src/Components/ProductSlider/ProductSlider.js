@@ -9,13 +9,16 @@ import { useEffect } from "react";
 import { cartDisplayTrueFalse } from "../../features/cartSlice";
 import { addToQuantity } from "../../features/cartSlice";
 import { isClickedBoolThreeFalse } from "../../features/isClicked";
+import { useState } from "react";
+import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 
 function ProductSlider(){
     const dispatch = useDispatch();
     const currency =  useSelector((state)=> state.CurrencySlice);
     const CartNumberSlice = useSelector(state => state.CartNumberSlice);
     const CartQuantitySlice = useSelector(state => state.CartQuantitySlice)
-     const cartSlice = useSelector(state => state.CartSlice)
+    const cartSlice = useSelector(state => state.CartSlice);
+    const [loading, setLoading] = useState(true);
      useEffect(()=>{
              dispatch(addNumberToCart(cartSlice));
              if(cartSlice.length <= 0){
@@ -44,7 +47,14 @@ function ProductSlider(){
                             <div className="bestSeller">
                                 <h3>BEST SELLER</h3>
                             </div>
-                            <img src={element.picture} className="itemPicture"/>
+                                {loading && (
+                            <div className="itemPicture">
+                                <LoadingAnimation/>
+                            </div>
+                            )}
+                            <img src={element.picture} style={loading?{visibility:"hidden"}:{}} className="itemPicture" onLoad={(e)=>{
+                                setLoading(false)
+                            }}/>
                             <div className="arrowButtonAndPrice">
                                 <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
                                  dispatch(addToCart({picture:element.picture,title:element.title,quantity:CartQuantitySlice[element.indexOf],price:element.price,catergory:element.catergory,indexOf:element.indexOf}))

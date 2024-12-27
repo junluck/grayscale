@@ -74,10 +74,14 @@ function ItemFilter(){
             <h3 className="oppsTitle">Oops looks like we don't have this product please try again...</h3>
         </div>
         <div className={trueOrFalse?"groupOfClothingDeactive":"groupOfClothing"}>
-        {loading && (<LoadingAnimation/>)}
+        
             {arrayOfSortedClothingTwo.map((element,inde)=>{
                 return ( <div className="itemTwo">
-                    
+                    {loading && (
+                        <div className="itemPictureTwo">
+                            <LoadingAnimation/>
+                        </div>
+                        )}
                     <img src={element.picture} className="itemPictureTwo"  style={loading?{visibility:"hidden"}:{}} onLoad={(e)=>{
                         setLoading(false)
                         console.log("test")

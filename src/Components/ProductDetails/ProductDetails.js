@@ -22,7 +22,7 @@ function ProductDetails(){
     const CartQuantitySlice = useSelector(state => state.CartQuantitySlice);
     const cartSlice = useSelector(state => state.CartSlice);
     const CartNumberSlice = useSelector(state => state.CartNumberSlice);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
             dispatch(addNumberToCart(cartSlice));
@@ -43,7 +43,9 @@ function ProductDetails(){
         <div className="singleProductOuter">
             <div className="singleProduct">
             {loading && (
+                <div className="productPicture">
                 <LoadingAnimation />
+                </div>
             )}
                 <img src={`${singleProductSlice.picture}`}  style={loading ? { visibility: "hidden" } : {}} className="productPicture" onLoad={(e)=>{
                     setLoading(false)
