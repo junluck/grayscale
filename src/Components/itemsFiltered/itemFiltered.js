@@ -29,7 +29,8 @@ function ItemFilter(){
     const [count,setCount] = useState(0)
     const [countStoper,setCountStoper] = useState(9)
     let newArray = [];
-     const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
+    console.log(loading)
 
     useEffect(()=>{
         dispatch(addNumberToCart(cartSlice));

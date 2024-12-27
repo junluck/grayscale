@@ -6,7 +6,7 @@ function Header(){
         <div className="headerOuter">
             <div className="headerInner">
                 <img src="assests/images/GRAYSCALE.svg" className="grayScaleLogo"/>
-                <img src="assests/images/headerPicture.png" className="backgroundPicture"/>
+                
                 <div className="newColllection">
                     <h3 className="newCollectionHeading">NEW COLLECTION AVAILABLE</h3>
                     <Link to={"manOrWomenChoice"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"100%",display:"flex",justifyContent:"center" , width:"100%"}}><button className="shopNowButton">SHOP NOW</button></Link>
