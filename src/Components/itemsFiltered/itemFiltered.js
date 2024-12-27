@@ -6,7 +6,7 @@ import { addToCart,addNumberToCart,cartDisplayTrueFalse, addToQuantity } from ".
 import { arrayOfSortedItemsTwo } from "../../features/productSlice";
 import { isClickedBoolThreeFalse } from "../../features/isClicked";
 import { choosenProduct } from "../../features/singleProductSlice";
-
+import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 import "./ItemFiltered.css"
 import { Link } from "react-router-dom";
 
@@ -29,6 +29,7 @@ function ItemFilter(){
     const [count,setCount] = useState(0)
     const [countStoper,setCountStoper] = useState(9)
     let newArray = [];
+     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
         dispatch(addNumberToCart(cartSlice));
@@ -73,9 +74,14 @@ function ItemFilter(){
             <h3 className="oppsTitle">Oops looks like we don't have this product please try again...</h3>
         </div>
         <div className={trueOrFalse?"groupOfClothingDeactive":"groupOfClothing"}>
+        {loading && (<LoadingAnimation/>)}
             {arrayOfSortedClothingTwo.map((element,inde)=>{
                 return ( <div className="itemTwo">
-                    <img src={element.picture} className="itemPictureTwo"/>
+                    
+                    <img src={element.picture} className="itemPictureTwo"  style={loading?{visibility:"hidden"}:{}} onLoad={(e)=>{
+                        setLoading(false)
+                        console.log("test")
+                    }}/>
                     <div className="arrowButtonAndPriceTwo">
                     <img src="assests/images/addcart.svg" className="addCart" onClick={(e)=>{
                         dispatch(addToCart({picture:element.picture,title:element.title,quantity:CartQuantitySlice[element.indexOf],price:element.price,catergory:element.catergory,indexOf:element.indexOf,size:clothingSizeSlice[element.indexOf]}))
