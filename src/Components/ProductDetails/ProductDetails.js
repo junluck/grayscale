@@ -10,17 +10,20 @@ import { useEffect } from "react";
 import { addNumberToCart } from "../../features/cartSlice";
 import { isClickedBoolThreeFalse } from "../../features/isClicked";
 import { cartDisplayTrueFalse } from "../../features/cartSlice";
+import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 
 function ProductDetails(){
     const singleProductSlice  = useSelector(state=> state.singleProductSlice);
     const currency = useSelector(state => state.CurrencySlice);
     const isClickedFive = useSelector(state => state.IsClicedFiveSlice);
-    const [arrayOfSizes,setArrayOfSizes] = useState([false,false,false,false,false,false])
-    const [isHoverSix,setHoverSix] = useState(false)
+    const [arrayOfSizes,setArrayOfSizes] = useState([false,false,false,false,false,false]);
+    const [isHoverSix,setHoverSix] = useState(false);
     const clothingSizeSlice = useSelector(state => state.clothingSize);
-    const CartQuantitySlice = useSelector(state => state.CartQuantitySlice)
-    const cartSlice = useSelector(state => state.CartSlice)
-     const CartNumberSlice = useSelector(state => state.CartNumberSlice)
+    const CartQuantitySlice = useSelector(state => state.CartQuantitySlice);
+    const cartSlice = useSelector(state => state.CartSlice);
+    const CartNumberSlice = useSelector(state => state.CartNumberSlice);
+    const [loading, setLoading] = useState(false);
+
     useEffect(()=>{
             dispatch(addNumberToCart(cartSlice));
             if(cartSlice.length <= 0){
@@ -39,7 +42,12 @@ function ProductDetails(){
     return(
         <div className="singleProductOuter">
             <div className="singleProduct">
-                <img src={`${singleProductSlice.picture}`} className="productPicture"/>
+            {loading && (
+                <LoadingAnimation />
+            )}
+                <img src={`${singleProductSlice.picture}`}  style={loading ? { visibility: "hidden" } : {}} className="productPicture" onLoad={(e)=>{
+                    setLoading(false)
+                }} />
                 <div className="productDetails">
                     <div className="itemNameAndPrice">
                         <h3 className="productTitle">{singleProductSlice.title}</h3>
