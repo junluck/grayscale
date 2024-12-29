@@ -103,7 +103,7 @@ function Catergory({setIsClickedFive}){
             </div>
             <div className="joinUsVoucherEmail">
                 <div className="joinUsTen">
-                    <h5>join us and recieve a voucher code</h5>
+                    <h5>Join us and recieve a voucher code</h5>
                     <p>10% off on your first purchase and free shipping for all new newsletter subscribers</p>
                 </div>
                 <div className="subscribeNewsLetter">

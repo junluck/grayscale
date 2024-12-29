@@ -9,6 +9,7 @@ function Product(){
         <div>
             <ProductDetails />
             <RecentlyViewed />
+            <Footer />
         </div>
     )
    

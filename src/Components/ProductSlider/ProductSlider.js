@@ -10,6 +10,9 @@ import { cartDisplayTrueFalse } from "../../features/cartSlice";
 import { addToQuantity } from "../../features/cartSlice";
 import { isClickedBoolThreeFalse } from "../../features/isClicked";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { choosenProduct } from "../../features/singleProductSlice";
+import { recentlyViewedArray } from "../../features/RecentlyViewedSlice";
 import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 
 function ProductSlider(){
@@ -71,9 +74,12 @@ function ProductSlider(){
                                     <h4 className="elementTitle">{element.title}</h4>
                                     <h4 className="elementPrice">{currency}{element.price}</h4>
                                 </div>
-                                <div className="arrowButtoBackground">
-                                    <img src="assests/images/arrowRight.svg" className="arrowPic"/>
-                                </div>
+                                 <Link to={"/Product"} className="arrowButtoBackgroundTwo" ><div className="arrowButtoBackgroundTwo" onClick={(e)=>{
+                                            dispatch(choosenProduct(element));
+                                            dispatch(recentlyViewedArray(element));
+                                        }}>
+                                    <img src="assests/images/arrowRight.svg" className="arrowPicTwo"/>
+                                </div></Link>
                             </div>
                         </div>
                     )

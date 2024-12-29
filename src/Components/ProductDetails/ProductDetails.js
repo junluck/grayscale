@@ -157,7 +157,19 @@ function ProductDetails(){
                     <h5 className="inStock">In Stock</h5>
                     <div className="addToCartAndShipping">
                         <button className="addToCart" onClick={(e)=>{
-                            dispatch(addToCart({picture:singleProductSlice.picture,title:singleProductSlice.title,quantity:CartQuantitySlice[singleProductSlice.indexOf],price:singleProductSlice.price,catergory:singleProductSlice.catergory,indexOf:singleProductSlice.indexOf,size:clothingSizeSlice[singleProductSlice.indexOf]}))
+                            let bool = true
+                            arrayOfSizes.forEach((element)=>{
+                                if(element === true){
+                                    bool = false
+                                }
+                            })
+                            if(bool === false){
+                                dispatch(addToCart({picture:singleProductSlice.picture,title:singleProductSlice.title,quantity:CartQuantitySlice[singleProductSlice.indexOf],price:singleProductSlice.price,catergory:singleProductSlice.catergory,indexOf:singleProductSlice.indexOf,size:clothingSizeSlice[singleProductSlice.indexOf]}))
+                            }
+
+                            else{
+                                alert("Please select a size")
+                            }
                         }}>ADD TO CART</button>
                         <h5 className="shipping">FREE SHIPPING</h5>
                     </div>

@@ -9,6 +9,7 @@ import { CartQuantitySliceReducer } from './features/cartSlice';
 import  clothingSizeReducer  from './features/clothingSizeSlice';
 import singleProductSliceReducer from './features/singleProductSlice';
 import recentlyViewedArrayReducer from './features/RecentlyViewedSlice';
+import { RecentlyViewedSliceBoolReducer } from './features/RecentlyViewedSlice';
 
 
 
@@ -34,7 +35,8 @@ const store = configureStore({
       clothingSize:clothingSizeReducer,
       singleProductSlice:singleProductSliceReducer,
       recentlyViewedArraySlice:recentlyViewedArrayReducer,
-      IsClicedFiveSlice: IsClickedFiveReduce
+      IsClicedFiveSlice: IsClickedFiveReduce,
+      RecentlyViewedSliceBool:RecentlyViewedSliceBoolReducer
 
     }
   })

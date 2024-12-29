@@ -87,6 +87,7 @@
     grid-column-start: 1;
     grid-column-end: 4;
     grid-template-rows: 100%;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -104,11 +105,13 @@
 .elementTitle{
     margin-bottom: 0px;
     margin-top: 0;
+    font-weight: 500;
 }
 
 .elementPrice{
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 1.5rem;
 }
 
 .arrowButtoBackground{
@@ -492,6 +495,6 @@
     
 
     .itemPicture{
-       width: 220px;
+       width: 200px;
     }
 }

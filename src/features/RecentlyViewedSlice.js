@@ -29,5 +29,22 @@ const RecentlyViewedSlice = createSlice({
     }
 })
 
+
+const RecentlyViewedSliceBool = createSlice({
+    name:"RecentlyViewedSliceBool",
+    initialState:true,
+    reducers:{
+        RecentlyViewedBoolTrue:(state,action)=>{
+            return true
+        },
+        RecentlyViewedBoolFalse:(state,action)=>{
+            return false
+        }
+    }
+})
+
+
+export const {RecentlyViewedBoolTrue, RecentlyViewedBoolFalse} = RecentlyViewedSliceBool.actions
 export const {recentlyViewedArray} = RecentlyViewedSlice.actions
 export default  RecentlyViewedSlice.reducer;
+export const RecentlyViewedSliceBoolReducer = RecentlyViewedSliceBool.reducer
