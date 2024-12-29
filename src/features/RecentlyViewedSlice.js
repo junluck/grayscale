@@ -6,14 +6,24 @@ const RecentlyViewedSlice = createSlice({
     reducers:{
         recentlyViewedArray:(state,action)=>{
             let array = [...state];
-            if(action.payload.length === 5){
+            let bool = false
+            
+            array.forEach((element,index)=>{
+                if(element.title === action.payload.title){
+                    bool = true
+                }
+
+               
+            })
+            if(array.length === 5 && bool === false){
                 array.pop();
                 array.unshift(action.payload)
             }
-            else{
+            else if(bool === false){
                 array.unshift(action.payload)
             }
-
+            
+            
             return array;
         }
     }

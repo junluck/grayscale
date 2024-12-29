@@ -66,6 +66,9 @@
     grid-column-end: 4;
     grid-template-rows: 100%;
     margin-bottom: 10px;
+    width: 90%;
+    justify-self: center;
+    align-self: center;
 }
 
 .titleAndPriceTwo{

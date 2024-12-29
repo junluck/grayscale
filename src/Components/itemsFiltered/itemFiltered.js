@@ -9,6 +9,7 @@ import { choosenProduct } from "../../features/singleProductSlice";
 import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 import "./ItemFiltered.css"
 import { Link } from "react-router-dom";
+import { recentlyViewedArray } from "../../features/RecentlyViewedSlice";
 
 function ItemFilter(){
 
@@ -102,8 +103,9 @@ function ItemFilter(){
                             <h4 className="elementTitleTwo">{element.title}</h4>
                             <h4 className="elementPriceTwo">{currency}{element.price}</h4>
                         </div>
-                        <Link to={"/Product"}><div className="arrowButtoBackgroundTwo" onClick={(e)=>{
+                        <Link to={"/Product"} className="arrowButtoBackgroundTwo" ><div className="arrowButtoBackgroundTwo" onClick={(e)=>{
                             dispatch(choosenProduct(element))
+                            dispatch(recentlyViewedArray(element))
                         }}>
                             <img src="assests/images/arrowRight.svg" className="arrowPicTwo"/>
                         </div></Link>
