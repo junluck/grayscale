@@ -25,6 +25,26 @@ function CheckoutTwo(){
     const isClickedThree = useSelector(state => state.IsClickedThreeSlice);
     const isClickedFour = useSelector(state => state.IsClickedFourSlice)
     const clothingSizeSlice = useSelector(state => state.clothingSize)
+    const sendDataToBackend = async (data,quantity) =>{
+        let finalData = [data,quantity];
+        try{
+            const response = await fetch('http://localhost:5000/api/submit',{
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json",
+                },
+                body:JSON.stringify(finalData)
+            })
+            const result = await response.json();
+            console.log(result);
+            if(response.ok){
+                window.location = result.url
+            }
+        }
+        catch(error){
+            console.error("Eroor sending data", error)
+        }
+    }
       useEffect(()=>{
                  dispatch(addNumberToCart(cartSlice));
                  if(cartSlice.length <= 0){
@@ -51,7 +71,7 @@ function CheckoutTwo(){
     return(
         <div className={isClickedFour?"mainCheckoutTwo":"mainCheckoutTwoActive"}>
             <div className="checkoutUnderline">
-                <h2>CHECKOUT</h2>
+                <h2>CART</h2>
                 <span></span>
             </div>
             <div className={isClickedFour?"emptyCartAndTitleDeactive":"emptyCartAndTitle"}>
@@ -128,7 +148,9 @@ function CheckoutTwo(){
                                   )
                               })}
             </div>
-            <button className={isClickedFour?"checkoutButtonTwo":"checkoutButtonTwoDeactive"}>CHECKOUT</button>
+            <button className={isClickedFour?"checkoutButtonTwo":"checkoutButtonTwoDeactive"} onClick={(e)=>{
+                sendDataToBackend(cartSlice, quantityGroup);
+            }}>CHECKOUT</button>
             <div className={isClickedFour?"":"footerTwo"}>
                 <Footer/>
             </div>
