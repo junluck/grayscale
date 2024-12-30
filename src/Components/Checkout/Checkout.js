@@ -71,7 +71,7 @@ function Checkout(){
                 })}
 
             </div>
-        <Link to={"checkout"} className="checkoutButtonAnchor"><button className="checkoutButton" onClick={(e)=>{
+        <Link to={"cart"} className="checkoutButtonAnchor"><button className="checkoutButton" onClick={(e)=>{
             dispatch(isClickedBoolThreeFalse())
         }}>CHECKOUT</button></Link>
         </div>

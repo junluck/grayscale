@@ -67,7 +67,7 @@
     margin-top: 5px;
     background-color: black;
     height:2px;
-    width:180px
+    width:100px
 }
 .groupCheckoutsTwo::-webkit-scrollbar  {
    width: 8px;
