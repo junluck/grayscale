@@ -340,7 +340,7 @@
         grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 2;
-        width: 280px;
+        
         justify-self: center;
         align-self: center;
         opacity: 0.6;
