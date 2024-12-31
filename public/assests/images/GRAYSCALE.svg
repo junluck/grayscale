@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1429.91 404.37">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 903.6 397.97">
   <defs>
     <style>
       .cls-1, .cls-2 {
         isolation: isolate;
-      }
-
-      .cls-3 {
-        letter-spacing: -.07em;
       }
 
       .cls-2 {
@@ -17,11 +13,15 @@
         stroke: #000;
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke-width: 26px;
+        stroke-width: 19.6px;
+      }
+
+      .cls-3 {
+        letter-spacing: -.07em;
       }
     </style>
   </defs>
   <g id="GRAYSCALE" class="cls-1">
-    <text class="cls-2" transform="translate(13 268.03)"><tspan x="0" y="0">GR</tspan><tspan class="cls-3" x="385.25" y="0">A</tspan><tspan x="558.25" y="0">YSCAL</tspan></text>
+    <text class="cls-2" transform="translate(9.8 264.83) scale(.57 1)"><tspan x="0" y="0">GR</tspan><tspan class="cls-3" x="385.25" y="0">A</tspan><tspan x="558.25" y="0">YSCALE</tspan></text>
   </g>
 </svg>
