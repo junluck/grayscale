@@ -491,7 +491,7 @@
        
     }
     
-    h2{
+    .catergoryHeading h2,.bestSellers h2{
         font-size: 1rem;
     }
 
