@@ -280,7 +280,7 @@
         justify-content: center;
         grid-template-columns: 50% 50%;
         grid-template-rows: 50% 50%;
-        width: 100%;
+        width: 95%;
     }
     .newCollectionHeading{
         font-size: 0.53rem;
