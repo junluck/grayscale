@@ -756,8 +756,36 @@
        
     }
 
+    .joinUsVoucherEmail{
+        margin-bottom: 0px;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
 
+    #emailLabel{
+        font-size: 0.7rem;
+    }
 
+    #emailInput {
+        border: 2px solid black;
+        height: 20px;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .buttonInput button {
+        background-color: black;
+        border: 0px;
+        color: white;
+        font-weight: 500;
+        width: 30%;
+        font-size: 0.7rem;
+        cursor: pointer;
+    }
+
+    .buttonInput{
+
+    }
     .catergoryHeading span {
         margin-top: 6px;
         width: 90px;
