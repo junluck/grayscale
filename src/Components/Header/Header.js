@@ -5,7 +5,7 @@ function Header(){
     return(
         <div className="headerOuter">
             <div className="headerInner">
-                <img src="assests/images/GRAYSCALE.svg" className="grayScaleLogo"/>
+                <img src="assests/images/GRAYSCALE.png" className="grayScaleLogo"/>
                 <img src="assests/images/headerPicture.png" className="backgroundPicture"/>
                 <div className="newColllection">
                     <h3 className="newCollectionHeading">NEW COLLECTION AVAILABLE</h3>
