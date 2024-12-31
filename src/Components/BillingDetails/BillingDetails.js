@@ -11,7 +11,7 @@ function BillingDetails(){
                 <input type="email" id="email" name="email" required/>
                 <input type="text" id="address" name="address"  required/>
                 <input type="number" id="number" name="number" required/>
-
+                <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message" />
             </form>
         </div>
     )
