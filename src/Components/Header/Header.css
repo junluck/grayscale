@@ -276,6 +276,7 @@
 
 @media (min-width:320px) and (max-width:529px){
     .headerInner{
+        margin-top: 5px;
         display: grid;
         justify-content: center;
         grid-template-columns: 50% 50%;
