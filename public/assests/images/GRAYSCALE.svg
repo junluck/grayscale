@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 903.6 397.97">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1339.65 393.68">
   <defs>
     <style>
-      .cls-1, .cls-2 {
+      .cls-1 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
         isolation: isolate;
       }
 
-      .cls-2 {
-        fill: none;
+      .cls-3, .cls-4 {
         font-family: SegoeUI, 'Segoe UI';
-        font-size: 300px;
+        font-size: 293.39px;
+      }
+
+      .cls-4 {
+        fill: none;
         stroke: #000;
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke-width: 19.6px;
-      }
-
-      .cls-3 {
-        letter-spacing: -.07em;
+        stroke-width: 23.65px;
       }
     </style>
   </defs>
-  <g id="GRAYSCALE" class="cls-1">
-    <text class="cls-2" transform="translate(9.8 264.83) scale(.57 1)"><tspan x="0" y="0">GR</tspan><tspan class="cls-3" x="385.25" y="0">A</tspan><tspan x="558.25" y="0">YSCALE</tspan></text>
+  <g id="GRAYSCALE" class="cls-2">
+    <text class="cls-3" transform="translate(11.82 261.23) scale(.87 1)"><tspan x="0" y="0">GR</tspan><tspan class="cls-1" x="376.76" y="0">A</tspan><tspan x="545.95" y="0">YSCALE</tspan></text>
+    <text class="cls-4" transform="translate(11.82 261.23) scale(.87 1)"><tspan x="0" y="0">GR</tspan><tspan class="cls-1" x="376.76" y="0">A</tspan><tspan x="545.95" y="0">YSCALE</tspan></text>
   </g>
 </svg>
