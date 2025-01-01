@@ -262,6 +262,7 @@ select {
     color: white;
     font-size: 1.3rem;
     cursor: pointer;
+    font-weight: 600;
 }
 .checkoutButtonTwo{
     background-color: black;
@@ -275,6 +276,7 @@ select {
     justify-self: center;
     align-self: center;
     cursor: pointer;
+    font-weight: 600;
 }
 .emptyCartLogo{
     width: 300px;

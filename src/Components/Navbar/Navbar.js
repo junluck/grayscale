@@ -77,7 +77,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                
             </div>
             <div className="homeAndContact">
-                <img src="assests/images/home.svg" className="homeLogo"/>
+            <Link to={""} className="homeLogo"><img src="assests/images/home.svg" className="homeLogo"/></Link>
                 <img src="assests/images/contact us.svg" className="contactLogo"/>
             </div>
             <ul className="menuList">
@@ -179,7 +179,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                 }}>
                    
                     <input type="text" placeholder="search" id="search"/>
-                    <img src="assests/images/home.svg" className="homeLogoTwo"/>
+                    <Link to={""} className="homeLogoTwo"><img src="assests/images/home.svg" className="homeLogoTwo"/></Link>
                     
                 </form>
             

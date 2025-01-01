@@ -323,7 +323,9 @@
     .magnifyerAndSearchTwo{
         display: none;
     }
-    .homeLogo{}
+    .homeLogo{
+        display: flex;
+    }
 
     .cartLogDivTwo{
         display: none;

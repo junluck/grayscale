@@ -1,0 +1,168 @@
+.billingDetailsOuter{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 1380px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 800px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.billingDetailsForm{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:1fr 1fr 1fr 1fr 2fr 1fr 1fr;
+    grid-row-gap: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; 
+    
+}
+
+.firstNameAndSurname{
+    display: grid;
+    grid-template-columns: 1fr 50px 1fr;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+#firstName{
+    border: solid 2px black;
+    width: 100%;
+    border-radius: 0px;
+    outline: none;
+    height: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: center;
+    Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+}
+
+
+#surname{
+    border: solid 2px black;
+    width: 100%;
+    border-radius: 0px;
+    outline: none;
+    height: 50px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: end;
+    align-self: center;
+    Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+}
+
+
+#email{
+  
+    border: solid 2px black;
+    
+    border-radius: 0px;
+    outline: none;
+    height: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    
+}
+
+#address{
+    border: solid 2px black;
+    border-radius: 0px;
+    outline: none;
+    height: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+}
+
+#number{
+    border: solid 2px black;
+    border-radius: 0px;
+    outline: none;
+    height: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+}
+
+#message{
+    border: solid 2px black;
+    border-radius: 0px;
+    outline: none;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+
+}
+
+#checkout{
+    border: 0px;
+    border-radius: 0px;
+    outline: none;
+    height: 60px;
+    width: 300px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    justify-self: center;
+    background-color: black;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-weight: 600;
+    
+    
+}
+
+.headingCheckOutAndSpan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.headingCheckout{
+    margin-bottom: 0px;
+}
+.checkoutSpan{
+
+    height: 2px;
+    width: 120px;
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+#checkout::placeholder,#message::placeholder,#number::placeholder,#address::placeholder,#email::placeholder,#surname::placeholder,#firstName::placeholder{
+    Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    
+}
