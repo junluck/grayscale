@@ -3,6 +3,7 @@ import "./BillingDetails.css"
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
+
 function BillingDetails(){
     const cartSlice = useSelector(state => state.CartSlice);
     const quantity = useSelector(state => state.CartQuantitySlice);
@@ -11,7 +12,7 @@ function BillingDetails(){
      const sendDataToBackend = async (data,quantity) =>{
             let finalData = [data,quantity];
             try{
-                const response = await fetch('http://localhost:5000/api/submit',{
+                const response = await fetch(`${process.env.SERVER_URL}/api/submit`,{
                     method: "POST",
                     headers:{
                         "Content-Type": "application/json",
@@ -25,7 +26,7 @@ function BillingDetails(){
                 }
             }
             catch(error){
-                console.error("Eroor sending data", error)
+                console.error("Error sending data", error)
             }
         }
     useEffect(()=>{ 
