@@ -12,7 +12,7 @@ function BillingDetails(){
      const sendDataToBackend = async (data,quantity) =>{
             let finalData = [data,quantity];
             try{
-                const response = await fetch(`${process.env.SERVER_URL}/api/submit`,{
+                const response = await fetch(`/api/submit`,{
                     method: "POST",
                     headers:{
                         "Content-Type": "application/json",
