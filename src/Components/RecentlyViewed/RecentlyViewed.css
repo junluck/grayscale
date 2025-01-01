@@ -10,8 +10,10 @@
     grid-row-start: 1;
     grid-row-end: 2;
     justify-self: center;
+    align-self: center;
     opacity: 0.9;
     margin-top: 0px;
+  
 
 }
 .recentlyViewedItems{

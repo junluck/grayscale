@@ -6,10 +6,11 @@ app.use(express.json());
 app.use(express.static("src"));
 const inventory = require('./inventory.js');
 const stripe = require("stripe")([process.env.STRIPE_PRIVATE_KEY])
+const url = process.env.CLIENT_URL;
 
 
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow frontend to access the backend
+    origin: url, // Allow frontend to access the backend
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
     credentials: true, // Allow cookies and credentials (optional)
 }));

@@ -158,7 +158,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                     <div className={CartDisplayer?"number":"numberDeactive"}><h4>{numberSlice}</h4></div>
                     <img src="assests/images/Cart.svg" className="cartLogo" />
                 </div>
-                <Link to={"checkout"} className="cartLogDivTwo"><div className="cartLogDivTwo" onClick={(e)=>{
+                <Link to={"cart"} className="cartLogDivTwo"><div className="cartLogDivTwo" onClick={(e)=>{
                     if(cartSlice.length > 0){
                         dispatch(isClickedBoolThree())
                         console.log(isClickedCheckout)

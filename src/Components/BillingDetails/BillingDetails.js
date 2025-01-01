@@ -12,6 +12,7 @@ function BillingDetails(){
                 <input type="text" id="address" name="address"  required/>
                 <input type="number" id="number" name="number" required/>
                 <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message" />
+                <button type="submit" id="checkout">CHECKOUT</button>
             </form>
         </div>
     )
