@@ -12,7 +12,7 @@ function BillingDetails(){
      const sendDataToBackend = async (data,quantity) =>{
             let finalData = [data,quantity];
             try{
-                const response = await fetch(`/api/submit`,{
+                const response = await fetch(`https://grayscale-mu.vercel.app/api/submit`,{
                     method: "POST",
                     headers:{
                         "Content-Type": "application/json",
