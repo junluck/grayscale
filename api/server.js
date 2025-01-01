@@ -15,11 +15,11 @@ app.use(cors({
     credentials: true, // Allow cookies and credentials (optional)
 }));
 
-app.get("/api",(req,res)=>{
+app.get("https://grayscale-mu.vercel.app/api/submit",(req,res)=>{
     res.json({"users":"Junain"})
 })
 
-app.post("/api/submit",async (req,res) => {
+app.post("https://grayscale-mu.vercel.app/api/submit",async (req,res) => {
     try{ 
         const body = req.body[0];
         const quantities = req.body[1]
