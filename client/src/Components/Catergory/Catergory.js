@@ -53,7 +53,7 @@ function Catergory({setIsClickedFive}){
                         dispatch(arrayOfSortedItems(array))
 
                         }
-                            
+                        window.scrollTo({ top: 0, behavior: "smooth" })
                         }}>SHOP NOW</button></Link>
                 </div>
                 <div className="tShirt">
@@ -63,6 +63,7 @@ function Catergory({setIsClickedFive}){
                             arraySetter(0,arrayOfBools,setIsClickedFive);
                             dispatcher(inventory.men.tops.tShirts)
                             dispatch(isClickedBool(0))
+                            window.scrollTo({ top: 0, behavior: "smooth" })
                         }}>SHOP NOW</button></Link>
                 </div>
                 <div className="women">
@@ -85,7 +86,7 @@ function Catergory({setIsClickedFive}){
                         dispatch(arrayOfSortedItems(array))
 
                     }
-                    
+                    window.scrollTo({ top: 0, behavior: "smooth" })
                     
                 }}>SHOP NOW</button></Link>
                 </div>
@@ -97,6 +98,7 @@ function Catergory({setIsClickedFive}){
                             arraySetter(16,arrayOfBools,setIsClickedFive);
                             dispatcher(inventory.women.bottoms.skirts);
                             dispatch(isClickedBool(1));
+                            window.scrollTo({ top: 0, behavior: "smooth" })
                         }}>SHOP NOW</button>
                     </Link>
                 </div>

@@ -146,6 +146,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                 <img src='assests/images/magnify.svg' className="magnify" onClick={(e)=>{
                      dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.nativeEvent.srcElement.nextSibling.value}))
                      navigate("items")
+                     window.scrollTo({ top: 0, behavior: "smooth" })
                 }}/>
                 <input type="text" placeholder="search" id="search"/>
                 
@@ -176,6 +177,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                     e.preventDefault()
                     dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
                     navigate("items")
+                    window.scrollTo({ top: 0, behavior: "smooth" })
                 
                 }}>
                    
