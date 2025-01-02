@@ -7,6 +7,7 @@ import inventory from "../../features/inventory";
 import { Link } from "react-router-dom";
 import { isClickedBool } from "../../features/isClicked";
 import { useOutletContext } from "react-router-dom";
+import { isClickedBoolTwo } from "../../features/isClicked";
 
 function Menu({isClickedFour,isClickedFive,setIsClickedFive,setIsClickedThreee,setIsClickedFour}){
     const dispatch = useDispatch()
@@ -30,6 +31,7 @@ function Menu({isClickedFour,isClickedFive,setIsClickedFive,setIsClickedThreee,s
     function setThreeAndFourToFalse(){
         setIsClickedThreee(false);
         setIsClickedFour(false);
+        dispatch(isClickedBoolTwo())
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
     return(
