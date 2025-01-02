@@ -418,6 +418,10 @@
 }
 
 @media (min-width:320px) and (max-width:529px){
+    .bestSellers h2{
+       
+    
+    }
 
     .groupOfItems{
         display: grid;
@@ -493,6 +497,7 @@
     
     .catergoryHeading h2,.bestSellers h2{
         font-size: 1rem;
+       
     }
 
     

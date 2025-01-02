@@ -25,6 +25,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
     const isClickedCheckout = useSelector (state => state)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
+  
     const navigate = useNavigate();
     const dispatch = useDispatch()
     function inventorySorted(inventor){
@@ -168,7 +169,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                     <img src="assests/images/Cart.svg" className="cartLogo" />
                 </div></Link>
             <div className="menuTwo">
-                <Menu isClickedFour={isClickedFour} isClickedFive={isClickedFive} setIsClickedFive={setIsClickedFive}/>
+                <Menu isClickedFour={isClickedFour} isClickedFive={isClickedFive} setIsClickedFive={setIsClickedFive} setIsClickedThreee={setIsClickedThree} setIsClickedFour={setIsClickedFour}/>
             </div>
             <div className="magnifyParent">
                 <form className="magnifyerAndSearchTwo" onSubmit={(e)=>{

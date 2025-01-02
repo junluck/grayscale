@@ -497,7 +497,7 @@ input[type="number"] {
         grid-template-columns: 20% 22% 24% 18% 10% 6%;
         grid-template-rows: 100%;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-        width: 80%;
+        width: 90%;
         height: 120px;
         margin-top: 4px;
         margin-bottom: 4px;
