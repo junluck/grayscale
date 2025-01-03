@@ -23,7 +23,7 @@ const SuccessAnimation = () =>{
     },[])
 
     return(
-        <div ref={containerRef} style={{width:"350px",height:"350px",marginBottom:"0px"}}/>)
+        <div ref={containerRef} style={{width:"450px",height:"450px",marginBottom:"0px"}}/>)
 }
 
 export default SuccessAnimation
