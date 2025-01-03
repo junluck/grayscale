@@ -10,7 +10,7 @@ const url = process.env.CLIENT_URL;
 
 
 app.use(cors({
-    origin: url,// Allow frontend to access the backend
+    origin:"https://grayscale-five.vercel.app",// Allow frontend to access the backend
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
     credentials: true, // Allow cookies and credentials (optional)
 }));
