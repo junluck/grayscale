@@ -299,6 +299,9 @@
 }
 
 @media (min-width:530px) and (max-width:700px){
+    .productTitle{
+        margin-bottom:  5px;
+    }
    
     .singleProduct{
         display: grid;
@@ -332,6 +335,9 @@
 }
 
 @media (min-width:320px) and (max-width:529px){
+    .productTitle{
+        margin-bottom:  5px;
+    }
     .singleProductOuter{
         width: 100%;
         display: flex;
