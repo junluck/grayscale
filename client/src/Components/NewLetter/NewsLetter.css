@@ -147,6 +147,13 @@
         margin-top: 0px;
         margin-bottom: 10px;
     }
+
+    #emailInputTwo {
+        border: 2px solid black;
+        height: 30px;
+        width: 100%;
+        border-radius: 0px;
+    }
    
 }
 

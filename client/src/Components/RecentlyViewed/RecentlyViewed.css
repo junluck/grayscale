@@ -1,7 +1,7 @@
 .recentlyViewed{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 5% 55% 40%;
+    grid-template-rows: 8% 52% 40%;
     flex-direction: column;
     margin-top: 50px;
 }
@@ -50,7 +50,7 @@
 .joinUsVoucherEmailTwo{
     
     justify-self: center;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 .recentlyViewedTitle{
     margin-top: 0px;
@@ -123,10 +123,24 @@
 
 
 @media (min-width:1541px){
-
+    .joinUsVoucherEmailTwo{
+        grid-row-start: 3;
+        justify-self: center;
+        align-self: center;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        
+    }
 }
 @media (min-width:1150px) and (max-width:1540px){
-    
+    .joinUsVoucherEmailTwo{
+        grid-row-start: 3;
+        justify-self: center;
+        align-self: center;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        
+    }
 }
 
 @media (min-width:830px) and  (max-width:1149px){
@@ -138,14 +152,24 @@
         
         width: 700px;
     }
-    
-}
-@media (min-width:701px) and (max-width:829px){
+
     .joinUsVoucherEmailTwo{
         grid-row-start: 3;
         justify-self: center;
         align-self: center;
-        padding-bottom: 100px;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        
+    }
+    
+}
+@media (min-width:756px) and (max-width:829px){
+    .joinUsVoucherEmailTwo{
+        grid-row-start: 3;
+        justify-self: center;
+        align-self: center;
+        padding-top: 30px;
+        padding-bottom: 50px;
         
     }
     .joinUsTenTwo h5 {
@@ -167,11 +191,19 @@
     }
 }
 
-@media (min-width:530px) and (max-width:700px){
+@media (min-width:530px) and (max-width:755px){
+    .recentlyViewed {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 2% 58% 40%;
+        flex-direction: column;
+        margin-top: 80px;
+    }
     .joinUsVoucherEmailTwo{
         grid-row-start: 3;
         justify-self: center;
         align-self: center;
+        padding-top: 20px;
         padding-bottom: 50px;
     }
     .joinUsTenTwo h5 {
@@ -205,11 +237,19 @@
 }
 
 @media (min-width:320px) and (max-width:529px){
+    .recentlyViewed {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 2% 58% 40%;
+        flex-direction: column;
+        margin-top: 80px;
+    }
 
     .joinUsVoucherEmailTwo{
         grid-row-start: 3;
         justify-self: center;
         align-self: center;
+        padding-top: 20px;
         padding-bottom: 50px;
     }
     .joinUsTenTwo h5 {

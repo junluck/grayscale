@@ -58,8 +58,8 @@ function ProductDetails(){
                     <div className="sizes">
                         <div className="sizingAndGuide">
                             <h5 className="sizing">Sizing</h5>
-                            <div className="sizesSpan" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                                <h5 className="sizeGuide">Size Guide</h5>
+                            <div className="sizesSpan">
+                                <h5 className="sizeGuide"  onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>Size Guide</h5>
                                 <span className="spanner"></span>
                                 <div className={isHoverSix?"sizeGuideParagraph":"sizeGuideParagraphDeactive"}>
                                     <p className="CheckYourChest">Check your chest, waist, and measurements against the brand's size chart to ensure the perfect fit!</p>
