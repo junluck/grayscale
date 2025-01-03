@@ -230,7 +230,7 @@
     width: 200px;
     top: 30px;
     transition: all 0.4s ease;
-    opacity: 0;
+    display: none;
 }
 
 @media (min-width:1541px){
