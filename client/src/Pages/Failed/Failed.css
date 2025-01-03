@@ -1,4 +1,4 @@
-.successDiv{
+.failedDiv{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
     
 }
 
-.successTitle{
+.failedTitle{
     font-size: 3rem;
     margin-top: 0px;
     font-weight: 500;

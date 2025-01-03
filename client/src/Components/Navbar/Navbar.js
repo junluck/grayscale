@@ -85,7 +85,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
             <Link to={""} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{   
                 dispatch(isClickedBool(2))
                 setIsClickedFive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
-                window.scrollTo({ top: 0, behavior: "smooth" })  
+                window.scrollTo({ top: 0})  
             }} className={isClicked[2]?"menActive":"menDeactive"}>HOME</li></Link>
                 <span></span>
                 <li onClick={()=>{
@@ -111,7 +111,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                         dispatch(arrayOfSortedItems(array))
 
                         }
-                        window.scrollTo({ top: 0, behavior: "smooth" })  
+                        window.scrollTo({ top: 0})  
                         }} className={isClicked[0]?"menActive":"menDeactive"}>MEN</li></Link>
                 <span></span>
                 <Link to={"items"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{
@@ -131,7 +131,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                         dispatch(arrayOfSortedItems(array))
 
                     }
-                    window.scrollTo({ top: 0, behavior: "smooth" })  
+                    window.scrollTo({ top: 0})  
                     
                 }} className={isClicked[1]?"menActive":"menDeactive"}>WOMEN</li></Link>
                 <span></span>
@@ -141,12 +141,12 @@ function Navbar({isClickedFive,setIsClickedFive}){
                 e.preventDefault()
                 dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
                 navigate("items");
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.scrollTo({ top: 0});
             }}>
                 <img src='assests/images/magnify.svg' className="magnify" onClick={(e)=>{
                      dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.nativeEvent.srcElement.nextSibling.value}))
                      navigate("items")
-                     window.scrollTo({ top: 0, behavior: "smooth" })
+                     window.scrollTo({ top: 0})
                 }}/>
                 <input type="text" placeholder="search" id="search"/>
                 
@@ -177,7 +177,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
                     e.preventDefault()
                     dispatch(searchArraySorter({array:arrayOfClothes,searchString:e.target[0].value}))
                     navigate("items")
-                    window.scrollTo({ top: 0, behavior: "smooth" })
+                    window.scrollTo({ top: 0})
                 
                 }}>
                    

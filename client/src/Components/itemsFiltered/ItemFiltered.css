@@ -271,6 +271,7 @@
         grid-column-gap: 10px;
         grid-row-gap: 10px;
         width: 80%;
+        min-width: 750px;
         margin-left: auto;
         margin-right: auto;
         padding-top: 50px;
@@ -321,6 +322,7 @@
         grid-column-gap: 10px;
         grid-row-gap: 10px;
         width: 80%;
+        min-width: 695px;
         margin-left: auto;
         margin-right: auto;
         padding-top: 50px;

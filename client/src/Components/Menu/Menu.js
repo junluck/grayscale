@@ -32,7 +32,7 @@ function Menu({isClickedFour,isClickedFive,setIsClickedFive,setIsClickedThreee,s
         setIsClickedThreee(false);
         setIsClickedFour(false);
         dispatch(isClickedBoolTwo())
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({top: 0});
     }
     return(
     <div className={isClickedFour?"menuDivActive":"menuDivDeactive"}>
