@@ -28,7 +28,7 @@
 
 .mainCheckoutTwoActive{
     display: grid;
-    grid-template-rows: 10% 70% 20%;
+    grid-template-rows: 10% 45% 20%;
     grid-template-columns: 100%;
     height: 93vh;
     min-height: 850px;
