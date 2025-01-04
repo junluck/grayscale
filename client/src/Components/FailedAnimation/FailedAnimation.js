@@ -23,7 +23,7 @@ const FailedAnimation = () =>{
     },[])
 
     return(
-        <div ref={containerRef} style={{width:"450px",height:"450px",marginBottom:"0px"}}/>)
+        <div ref={containerRef} className="failedAnimationDiv"/>)
 }
 
 export default FailedAnimation

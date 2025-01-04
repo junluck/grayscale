@@ -1,10 +1,10 @@
-.failedAnimationDiv{
+.successAnimationDiv{
     width: 450px;
    height: 450px;
 }
 
 @media(max-width:700px){
-    .failedAnimationDiv{
+    .successAnimationDiv{
         width: 250px;
        height: 250px;
     }

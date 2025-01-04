@@ -11,6 +11,7 @@
     justify-content: center;
     flex-direction: column;
     
+    
 }
 .checkoutDeactive{
     display: none;
@@ -277,6 +278,7 @@ select {
     align-self: center;
     cursor: pointer;
     font-weight: 600;
+  
 }
 .emptyCartLogo{
     width: 300px;
