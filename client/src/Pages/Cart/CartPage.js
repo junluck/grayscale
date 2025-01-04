@@ -1,9 +1,9 @@
 import React from "react";
 import CheckoutTwo from "../../Components/CheckoutTwo/CheckoutTwo";
 
-
 function CartPage(){
-    
+   
+   
     return(
 
         <div className="mainCheckout">

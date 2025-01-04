@@ -6,10 +6,10 @@ let array = []
 for (let i = 0; i < arrayOfClothes.length ; i++){
     array[i] = 1
 }
-
+let initialState = JSON.parse(sessionStorage.getItem("cart")) || []
 const CartSlice = createSlice({
     name:"cart",
-    initialState:[],
+    initialState:initialState,
     reducers:{
         addToCart:(state,action)=>{
             let arrayOne = [...state];

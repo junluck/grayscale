@@ -10,6 +10,7 @@ import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 import "./ItemFiltered.css"
 import { Link } from "react-router-dom";
 import { recentlyViewedArray } from "../../features/RecentlyViewedSlice";
+import { cartAssign } from "../../features/cartSlice";
 
 function ItemFilter(){
 
@@ -39,8 +40,14 @@ function ItemFilter(){
             dispatch(isClickedBoolThreeFalse()) 
         }
         sessionStorage.setItem("cart",JSON.stringify(cartSlice))
-    },[cartSlice])
+      },[cartSlice])
   
+      useEffect(()=>{
+        if(JSON.parse(sessionStorage.getItem("cart")) != null)
+        {
+            dispatch(cartAssign(JSON.parse(sessionStorage.getItem("cart"))))
+        };
+    },[])
     useEffect(()=>{
 
         localStorage.setItem("arrayOfSortedClothing", JSON.stringify(arrayOfSortedClothing));

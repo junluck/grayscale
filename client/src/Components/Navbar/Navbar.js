@@ -59,20 +59,20 @@ function Navbar({isClickedFive,setIsClickedFive}){
         }
         sessionStorage.setItem("productSlice",JSON.stringify(productSlice))
     },[productSlice])
+     useEffect(()=>{
+            if(cartSlice.length > 0)
+            {
+                sessionStorage.setItem("cart",JSON.stringify(cartSlice));
+            }
+        },[cartSlice])
+    
+        useEffect(()=>{
+            if(JSON.parse(sessionStorage.getItem("cart")) != null)
+            {
+                dispatch(cartAssign(JSON.parse(sessionStorage.getItem("cart"))))
+            };
+        },[])
    
-    useEffect(()=>{
-        if(cartSlice.length > 0)
-        {
-            sessionStorage.setItem("cart",JSON.stringify(cartSlice));
-        }
-    },[cartSlice])
-
-    useEffect(()=>{
-        if(JSON.parse(sessionStorage.getItem("cart")) != null)
-        {
-            dispatch(cartAssign(JSON.parse(sessionStorage.getItem("cart"))))
-        };
-    },[])
     
 
     return(
