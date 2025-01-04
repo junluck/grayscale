@@ -22,12 +22,18 @@ const CartSlice = createSlice({
             if(bool != true){
                 let arrayTwo = [...state,action.payload];
                 return arrayTwo;
+                
             }
             
         },
         removeFromCart:(state,action)=>{
             let array = [...state];
             array.splice(action.payload,1);
+            return array;
+           
+        },
+        cartAssign:(state,action)=>{
+            let array = [...action.payload];
             return array;
         }
         
@@ -41,6 +47,7 @@ const CartNumberSlice = createSlice({
         addNumberToCart:(state,action)=>{
             let number = action.payload.length
             return number
+            sessionStorage.setItem("cartNumber",number)
         }
        
     }
@@ -85,7 +92,7 @@ const CartQuantitySlice = createSlice({
         }
     }
 })
-export const {addToCart , removeFromCart, addQuantity, subtractQuantity} = CartSlice.actions;
+export const {addToCart , removeFromCart, addQuantity, subtractQuantity, cartAssign} = CartSlice.actions;
 export const {addNumberToCart, removeNumberToCart} = CartNumberSlice.actions
 export const {cartDisplayTrueFalse} = CartDisplayerSlice.actions
 export const {addToQuantity, substractToQuantity, setQuantity} = CartQuantitySlice.actions

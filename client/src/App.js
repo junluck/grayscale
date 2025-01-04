@@ -11,8 +11,17 @@ import CartPage from './Pages/Cart/CartPage';
 import CheckoutPage from './Pages/Checkout/CheckoutPage';
 import Success from './Pages/Success/Success';
 import Failed from './Pages/Failed/Failed';
+import { cartAssign } from './features/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 function App() {
+const dispatch = useDispatch()
 const [isClickedFive,setIsClickedFive] = useState([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
+const cartSlice = useSelector(state => state.CartSlice)
+
+ 
+
 
 const appRouter =  createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Navbar isClickedFive={isClickedFive} setIsClickedFive={setIsClickedFive} />}>

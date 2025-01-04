@@ -38,7 +38,9 @@ function ItemFilter(){
         if(cartSlice.length <= 0){
             dispatch(isClickedBoolThreeFalse()) 
         }
+        sessionStorage.setItem("cart",JSON.stringify(cartSlice))
     },[cartSlice])
+  
     useEffect(()=>{
 
         localStorage.setItem("arrayOfSortedClothing", JSON.stringify(arrayOfSortedClothing));

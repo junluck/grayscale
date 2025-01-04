@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import { incermentByNine, reset } from "../../features/productSlice";
 import { isClickedBoolThree} from "../../features/isClicked";
 import Checkout from "../Checkout/Checkout";
+import { cartAssign } from "../../features/cartSlice";
 function Navbar({isClickedFive,setIsClickedFive}){
 
     const isClicked = useSelector((state)=> state.IsClickedSlice)
@@ -56,8 +57,23 @@ function Navbar({isClickedFive,setIsClickedFive}){
         else{
             dispatch(setToFalse())
         }
+        sessionStorage.setItem("productSlice",JSON.stringify(productSlice))
     },[productSlice])
    
+    useEffect(()=>{
+        if(cartSlice.length > 0)
+        {
+            sessionStorage.setItem("cart",JSON.stringify(cartSlice));
+        }
+    },[cartSlice])
+
+    useEffect(()=>{
+        if(JSON.parse(sessionStorage.getItem("cart")) != null)
+        {
+            dispatch(cartAssign(JSON.parse(sessionStorage.getItem("cart"))))
+        };
+    },[])
+    
 
     return(
         <div>
