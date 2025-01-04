@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 313 393.68">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c1c1c1;
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 23.65px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        isolation: isolate;
+      }
+
+      .cls-2, .cls-4 {
+        font-family: SegoeUI, 'Segoe UI';
+        font-size: 293.39px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <circle class="cls-1" cx="156.5" cy="160.84" r="156.5"/>
+  </g>
+  <g id="Layer_1" data-name="Layer 1">
+    <g id="GRAYSCALE">
+      <g class="cls-3">
+        <text class="cls-4" transform="translate(68.95 261.24) scale(.87 1)"><tspan x="0" y="0">G</tspan></text>
+      </g>
+      <g class="cls-3">
+        <text class="cls-2" transform="translate(68.95 261.24) scale(.87 1)"><tspan x="0" y="0">G</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
