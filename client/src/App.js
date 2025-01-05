@@ -14,6 +14,7 @@ import Failed from './Pages/Failed/Failed';
 import { cartAssign } from './features/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 function App() {
 const dispatch = useDispatch()
@@ -33,6 +34,7 @@ const appRouter =  createBrowserRouter(createRoutesFromElements(
     <Route path="checkout" element={<CheckoutPage />}/>
     <Route path="Success" element={<Success />}/>
     <Route path="Failed" element={<Failed />}/>
+    <Route path="ContactUs" element={<ContactUs />}/>
   </Route>  
 ))
 

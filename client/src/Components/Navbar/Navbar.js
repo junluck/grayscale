@@ -109,10 +109,10 @@ function Navbar({isClickedFive,setIsClickedFive}){
                 window.scrollTo({ top: 0})  
             }} className={isClicked[2]?"menActive":"menDeactive"}>HOME</li></Link>
                 <span></span>
-                <li onClick={()=>{
+                <Link to={"/ContactUs"} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{
                     dispatch(isClickedBool(3))
                     setIsClickedFive([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])}
-                } className={isClicked[3]?"menActive":"menDeactive"}>CONTACT US</li>
+                } className={isClicked[3]?"menActive":"menDeactive"}>CONTACT US</li></Link>
                 <span></span>
                 <Link to="/items" style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={
                     ()=>{

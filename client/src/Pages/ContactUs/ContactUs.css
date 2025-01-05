@@ -1,4 +1,4 @@
-.billingDetailsOuter{
+.contactOuter{
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     width: 90%;
     max-width: 1380px;
@@ -12,10 +12,10 @@
     margin-top: 30px;
 }
 
-.billingDetailsForm{
+.contactForm{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows:1fr 1fr 1fr 1fr 2fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 2fr 1fr 1fr;
     grid-row-gap: 20px;
     width: 90%;
     margin-left: auto;
@@ -23,7 +23,7 @@
     
 }
 
-.firstNameAndSurname{
+.firstNameAndSurnameTwo{
     display: grid;
     grid-template-columns: 1fr 80px 1fr;
     width: 100%;
@@ -33,7 +33,7 @@
     
 }
 
-#firstName{
+#firstNameTwo{
     border: solid 2px black;
     width: 100%;
     border-radius: 0px;
@@ -50,7 +50,7 @@
 }
 
 
-#surname{
+#surnameTwo{
     border: solid 2px black;
     width: 100%;
     border-radius: 0px;
@@ -67,7 +67,7 @@
 }
 
 
-#email{
+#emailTwo{
   
     border: solid 2px black;
     
@@ -85,7 +85,9 @@
     
 }
 
-#address{
+
+
+#numberTwo{
     border: solid 2px black;
     border-radius: 0px;
     outline: none;
@@ -100,11 +102,10 @@
     
 }
 
-#number{
+#messageTwo{
     border: solid 2px black;
     border-radius: 0px;
     outline: none;
-    height: 50px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 4;
@@ -115,21 +116,7 @@
     
 }
 
-#message{
-    border: solid 2px black;
-    border-radius: 0px;
-    outline: none;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 5;
-    grid-row-end: 6;
-    Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
-    padding-left: 20px;
-    
-}
-
-#checkout{
+#sendMessage{
     border: 0px;
     border-radius: 0px;
     outline: none;
@@ -137,8 +124,8 @@
     width: 300px;
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 7;
-    grid-row-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 7;
     justify-self: center;
     background-color: black;
     color: white;
@@ -150,23 +137,23 @@
     
 }
 
-.headingCheckOutAndSpan{
+.headingContactAndSpan{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.headingCheckout{
+.headingContact{
     margin-bottom: 0px;
 }
-.checkoutSpan{
+.contactSpan{
 
     height: 2px;
-    width: 135px;
+    width: 160px;
     background-color: black;
 }
 
-#checkout::placeholder,#message::placeholder,#number::placeholder,#address::placeholder,#email::placeholder,#surname::placeholder,#firstName::placeholder{
+#checkoutTwo::placeholder,#messageTwo::placeholder,#numberTwo::placeholder,#addressTwo::placeholder,#emailTwo::placeholder,#surnameTwo::placeholder,#firstNameTwo::placeholder{
     Font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-size: 1rem;
     
@@ -183,7 +170,7 @@
 }
 
 @media(min-width:320px) and (max-width:530px){
-    #checkout{
+    #sendMessage{
         border: 0px;
         border-radius: 0px;
         outline: none;

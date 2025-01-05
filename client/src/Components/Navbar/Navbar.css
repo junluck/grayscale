@@ -272,7 +272,7 @@
 }
 
 
-@media(min-width:1162px){
+@media(min-width:1193px){
     .navBar{
         display: grid;
         grid-template-rows: 100%;
@@ -294,7 +294,7 @@
 }
 
 
-@media(max-width:1161px) and (min-width:701px){
+@media(max-width:1192px) and (min-width:701px){
     .navBar{
         display: grid;
         grid-template-rows: 100%;
