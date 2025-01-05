@@ -15,6 +15,7 @@ import { incermentByNine, reset } from "../../features/productSlice";
 import { isClickedBoolThree} from "../../features/isClicked";
 import Checkout from "../Checkout/Checkout";
 import { cartAssign } from "../../features/cartSlice";
+import { clearCart } from "../../features/cartSlice";
 function Navbar({isClickedFive,setIsClickedFive}){
 
     const isClicked = useSelector((state)=> state.IsClickedSlice)
@@ -26,7 +27,8 @@ function Navbar({isClickedFive,setIsClickedFive}){
     const isClickedCheckout = useSelector (state => state)
     const [isClickedThree,setIsClickedThree] = useState(false)
     const [isClickedFour, setIsClickedFour] = useState(false)
-  
+    const SuccessAndFailure = useSelector(state => state.SuccessAndFailure)
+
     const navigate = useNavigate();
     const dispatch = useDispatch()
     function inventorySorted(inventor){
@@ -49,7 +51,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
 
     let arrayOfClothes = inventorySorted(inventory)
    
-   
+    
     useEffect(()=>{
         if(productSlice.length === 0){
             dispatch(setToTrue())
@@ -61,23 +63,15 @@ function Navbar({isClickedFive,setIsClickedFive}){
     },[productSlice])
 
     useEffect(()=>{
-            if(cartSlice.length > 0)
-            {
                 sessionStorage.setItem("cart",JSON.stringify(cartSlice));
-            }
         },[cartSlice])
-        
+
     useEffect(()=>{
         sessionStorage.setItem("isClicked",JSON.stringify(isClicked))
     },[isClicked])
     
     
-    useEffect(()=>{
-            if(JSON.parse(sessionStorage.getItem("cart")) != null)
-            {
-                dispatch(cartAssign(JSON.parse(sessionStorage.getItem("cart"))))
-            };
-        },[])
+ 
    
     
 

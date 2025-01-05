@@ -5,8 +5,12 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import { clearCart } from "../../features/cartSlice";
 import { useDispatch } from "react-redux";
+import { SuccessAndFailure } from "../../features/successAndFailure";
 function Success(){
+    const dispatch = useDispatch()
     const navigate = useNavigate();
+
+
     
     useEffect(()=>{
         const timer = setTimeout(()=>{ 

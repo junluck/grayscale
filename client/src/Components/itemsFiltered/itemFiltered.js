@@ -11,6 +11,7 @@ import "./ItemFiltered.css"
 import { Link } from "react-router-dom";
 import { recentlyViewedArray } from "../../features/RecentlyViewedSlice";
 import { cartAssign } from "../../features/cartSlice";
+import { addMemoryToCart } from "../../features/cartSlice";
 
 function ItemFilter(){
 
@@ -42,12 +43,8 @@ function ItemFilter(){
         sessionStorage.setItem("cart",JSON.stringify(cartSlice))
       },[cartSlice])
   
-      useEffect(()=>{
-        if(JSON.parse(sessionStorage.getItem("cart")) != null)
-        {
-            dispatch(cartAssign(JSON.parse(sessionStorage.getItem("cart"))))
-        };
-    },[])
+        
+        
     useEffect(()=>{
 
         localStorage.setItem("arrayOfSortedClothing", JSON.stringify(arrayOfSortedClothing));
