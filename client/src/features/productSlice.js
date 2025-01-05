@@ -113,7 +113,7 @@ function compareTwoDimenArray(arrayOne,arrayTwo){
  
 const ProductSlice = createSlice({
     name:"arraySort",
-    initialState:arrayOfClothes,
+    initialState:JSON.parse(sessionStorage.getItem("productSlice")) || arrayOfClothes,
     reducers:{
         arrayOfSortedItems:(state,action)=>{
             state = [...state,...action.payload]

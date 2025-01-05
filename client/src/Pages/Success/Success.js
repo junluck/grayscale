@@ -3,13 +3,18 @@ import SuccessAnimation from "../../Components/SuccessAnimatuion/SuccessAnimatui
 import "./Success.css"
 import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
+import { clearCart } from "../../features/cartSlice";
+import { useDispatch } from "react-redux";
 function Success(){
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    
     useEffect(()=>{
         const timer = setTimeout(()=>{ 
             navigate("/");
         },3000);
+        
         return() => clearTimeout(timer);
+        
     },[navigate]);
 
 

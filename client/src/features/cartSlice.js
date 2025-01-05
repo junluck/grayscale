@@ -35,6 +35,10 @@ const CartSlice = createSlice({
         cartAssign:(state,action)=>{
             let array = [...action.payload];
             return array;
+        },
+        clearCart:(state,action)=>{
+            sessionStorage.removeItem("cart");
+            return []
         }
         
     }
@@ -92,7 +96,7 @@ const CartQuantitySlice = createSlice({
         }
     }
 })
-export const {addToCart , removeFromCart, addQuantity, subtractQuantity, cartAssign} = CartSlice.actions;
+export const {addToCart , removeFromCart, addQuantity, subtractQuantity, cartAssign, clearCart} = CartSlice.actions;
 export const {addNumberToCart, removeNumberToCart} = CartNumberSlice.actions
 export const {cartDisplayTrueFalse} = CartDisplayerSlice.actions
 export const {addToQuantity, substractToQuantity, setQuantity} = CartQuantitySlice.actions
