@@ -94,13 +94,16 @@ const CartQuantitySlice = createSlice({
             let array = [...state]
             array[action.payload.indexOf] = action.payload.setValue
             return array
+        },
+        resetQuantity:(state,action) =>{
+            return array
         }
     }
 })
 export const {addToCart , removeFromCart, addQuantity, subtractQuantity, cartAssign, clearCart} = CartSlice.actions;
 export const {addNumberToCart, removeNumberToCart} = CartNumberSlice.actions
 export const {cartDisplayTrueFalse} = CartDisplayerSlice.actions
-export const {addToQuantity, substractToQuantity, setQuantity} = CartQuantitySlice.actions
+export const {addToQuantity, substractToQuantity, setQuantity, resetQuantity} = CartQuantitySlice.actions
 export const  CartNumberSliceReducer = CartNumberSlice.reducer;
 export const  CartDisplayerSliceReducer = CartDisplayerSlice.reducer;
 export const  CartQuantitySliceReducer = CartQuantitySlice.reducer

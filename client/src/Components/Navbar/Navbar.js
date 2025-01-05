@@ -23,6 +23,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
     const productSlice = useSelector((state)=> state.ProductSlice)
     const numberSlice = useSelector((state)=> state.CartNumberSlice)
     const CartDisplayer = useSelector(state => state.CartDisplayerSlice)
+    const quantity = useSelector(state => state.CartQuantitySlice)
     const cartSlice = useSelector(state => state.CartSlice)
     const isClickedCheckout = useSelector (state => state)
     const [isClickedThree,setIsClickedThree] = useState(false)
@@ -64,12 +65,16 @@ function Navbar({isClickedFive,setIsClickedFive}){
 
     useEffect(()=>{
                 sessionStorage.setItem("cart",JSON.stringify(cartSlice));
-        },[cartSlice])
+    },[cartSlice])
 
     useEffect(()=>{
         sessionStorage.setItem("isClicked",JSON.stringify(isClicked))
     },[isClicked])
+
     
+    useEffect(()=>{
+        sessionStorage.setItem("quantity",JSON.stringify(quantity))
+    },[quantity])
     
  
    

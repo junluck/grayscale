@@ -4,8 +4,15 @@ import "./Failed.css"
 import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 function Failed(){
-   
-
+    const navigate = useNavigate()
+    useEffect(()=>{
+            const timer = setTimeout(()=>{ 
+                navigate("/");
+            },3000);
+            
+            return() => clearTimeout(timer);
+            
+    },[navigate]);
 
     return(
         <div>

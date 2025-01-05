@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { reset } from "./productSlice";
 
 export const IsClickedSlice = createSlice({
     name:"isClicked",
@@ -8,6 +9,9 @@ export const IsClickedSlice = createSlice({
             state = [false,false,false,false]
             state[action.payload] = !state[action.payload];
             return state
+        },
+        resetIsClicked:(state,action)=>{
+            return [false,false,true,false]
         }
     }
 })
@@ -68,7 +72,7 @@ export const IsClickedSliceFive = createSlice({
 
     }
 })
-export const {isClickedBool} = IsClickedSlice.actions;
+export const {isClickedBool ,resetIsClicked} = IsClickedSlice.actions;
 export const {isClickedBoolTwo} = IsClickedSliceTwo.actions;
 export const {isClickedBoolThree, isClickedBoolThreeFalse} = IsClickedSliceThree.actions;
 export const {isClickedBoolFourFalse,isClickedBoolFourTrue} =  IsClickedSliceFour.actions;
