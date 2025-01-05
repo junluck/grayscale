@@ -7,7 +7,6 @@ const animationData = {"v":"5.10.2","fr":29.9700012207031,"ip":0,"op":449.000018
 const SuccessAnimation = () =>{
     const containerRef = useRef(null);
     const animationRef = useRef(null);
-
     useEffect(()=>{
         animationRef.current = Lottie.loadAnimation({
             container: containerRef.current,

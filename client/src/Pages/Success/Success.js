@@ -10,7 +10,7 @@ function Success(){
             navigate("/");
         },3000);
         return() => clearTimeout(timer);
-    },[]);
+    },[navigate]);
 
 
     return(
