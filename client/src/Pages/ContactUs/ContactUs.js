@@ -32,9 +32,8 @@ function ContactUs(){
                     e.preventDefault()
                     try{
                         const response = await sendDataToBackend({name:e.target[0].value, surname:e.target[1].value,email:e.target[2].value , subject:e.target[3].value, message:e.target[4].value});
-                        if(response.ok){
-                            console.log(response)
-                        }
+                        console.log(response)
+                        
                     }catch(e){
                         console.log(e)
                     }
