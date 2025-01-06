@@ -91,7 +91,7 @@ app.post("/api/sendEmail",async (req,res) => {
             text:message
         }
        
-        const info = await transporter.sendMail(mailOptions)
+        //const info = await transporter.sendMail(mailOptions)
         
         connsole.log("Email sent:" + info.response);
         res.status(200).json(
