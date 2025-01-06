@@ -3,7 +3,7 @@ import "./ContactUs.css"
 import Footer from "../../Components/Footer/Footer";
 function ContactUs(){
     const sendDataToBackend = async (dataObject) =>{
-       
+       console.log(dataObject)
         try{
             const response = await fetch(`https://grayscale-server.vercel.app/api/sendEmail`,{
                 method: "POST",
