@@ -67,9 +67,26 @@ app.post("/api/submit",async (req,res) => {
 
 app.post("/api/sendEmail",async (req,res) => {
     try{ 
-        
+        const {name, surname,email , subject, message} = req.body
         console.log(req.body)
-        
+        const transporter = nodeMailer.createTransport({
+            service:"gmail",
+            auth:{
+                user:"appemailer786@gmail.com",
+                pass:"Khai2013!"
+
+            }
+        })
+
+        const mailOptions = {
+            from:`${name} ${surname} from:${email}`,
+            to:"junaindavidsvickerman@gmail.com",
+            subject:subject,
+            text:message
+        }
+
+        const info = await transporter.sendMail(mailOptions)
+        console.log("Email sent:" + info.response);
         res.status(200).json({emailSent:"Email sent Successfully.We will be with you in a moment."})}catch(e){
             res.status(500).json({error:"Email was not sent please try again"})
             console.log(e)
