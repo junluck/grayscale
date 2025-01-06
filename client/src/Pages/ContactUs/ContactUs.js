@@ -12,7 +12,7 @@ function ContactUs(){
                 body:JSON.stringify(dataObject)
             })
             const result = await response.json();
-            if(result.ok){
+            if(response.ok){
                 console.log(result)
             }
         }
