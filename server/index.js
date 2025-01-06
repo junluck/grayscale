@@ -65,7 +65,7 @@ app.post("/api/submit",async (req,res) => {
    
 })
 
-pp.post("/api/sendEmail",async (req,res) => {
+app.post("/api/sendEmail",async (req,res) => {
     try{ 
         const {name, surname,email , subject, message} = req.body
 
