@@ -68,7 +68,7 @@ app.post("/api/submit",async (req,res) => {
 app.post("/api/sendEmail",async (req,res) => {
     try{ 
         const {name, surname,email , subject, message} = req.body
-
+        console.log(req.body)
         const transporter = nodeMailer.createTransport({
             service:"gmail",
             auth:{
