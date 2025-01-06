@@ -14,7 +14,7 @@ function ContactUs(){
             })
             const result = await response.json();
             if(response.ok){
-                window.location = result.url
+                return result;
             }
         }
         catch(error){
