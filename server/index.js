@@ -65,7 +65,6 @@ app.post("/api/submit",async (req,res) => {
 
 app.post("/api/sendEmail",async (req,res) => {
     try{ 
-        /*
         const {name, surname,email , subject, message} = req.body
         if (!name || !surname || !email || !subject || !message)
         {
@@ -94,7 +93,7 @@ app.post("/api/sendEmail",async (req,res) => {
        
         const info = await transporter.sendMail(mailOptions)
         
-        connsole.log("Email sent:" + info.response);*/
+        connsole.log("Email sent:" + info.response);
         res.status(200).json(
         {
             emailSent:"Email sent Successfully.We will be with you in a moment."}
