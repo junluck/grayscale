@@ -14,6 +14,7 @@ function ContactUs(){
             const result = await response.json();
             if(response.ok){
                 console.log(response)
+                return response
             }
         }
         catch(error){
