@@ -30,14 +30,7 @@ function ContactUs(){
                 
                 <form className="contactForm" onSubmit={async (e)=>{
                     e.preventDefault()
-                    try{
-                        const response = await sendDataToBackend({name:e.target[0].value, surname:e.target[1].value,email:e.target[2].value , subject:e.target[3].value, message:e.target[4].value});
-                        if(response.ok){
-                            console.log(response)
-                        }
-                    }catch(e){
-                        console.log(e)
-                    }
+                    sendDataToBackend({name:e.target[0].value, surname:e.target[1].value,email:e.target[2].value , subject:e.target[3].value, message:e.target[4].value});
                 }}>
                     <div className="firstNameAndSurnameTwo">
                         <input type="text" id="firstNameTwo" name="firstName" placeholder="First Name" required/>
