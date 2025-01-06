@@ -16,7 +16,7 @@ app.use(cors({
     credentials: true, // Allow cookies and credentials (optional)
 }));
 
-app.get("/api/submit",(req,res)=>{
+app.get("/api/sendEmail",(req,res)=>{
     res.json({"users":"Junain"})
 })
 
