@@ -85,7 +85,7 @@ app.post("/api/sendEmail",async (req,res) => {
         })
 
         const mailOptions = {
-            from:`${email}`,
+            from:"junaindavidsvickerman@gmail.com",
             to:"junaindavidsvickerman@gmail.com",
             subject:subject,
             text:message
