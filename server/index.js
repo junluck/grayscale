@@ -85,7 +85,7 @@ app.post("/api/sendEmail",async (req,res) => {
         })
 
         const mailOptions = {
-            from:"junaindavidsvickerman@gmail.com",
+            from:`${email}`,
             to:"junaindavidsvickerman@gmail.com",
             subject:subject,
             text:message
@@ -98,10 +98,8 @@ app.post("/api/sendEmail",async (req,res) => {
         {
             emailSent:"Email sent Successfully.We will be with you in a moment."}
         )}catch(e){
-            console.log(e)
-            res.status(500).json({
-                error: "Email was not sent. Please try again.",
-              });
+            
+            res.status(500).json(console.log("s"));
         }
    
 })
