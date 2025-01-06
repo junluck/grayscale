@@ -77,9 +77,8 @@ app.post("/api/sendEmail",async (req,res) => {
             port: 465,
             secure: true, // true for port 465, false for other p
             auth:{
-                user:"appemailer786@gmail.com",
-                pass:"nscktxcxdcffwgvz"
-
+                user:process.env.EMAIL_ADDRESS,
+                pass:process.env.EMAIL_KEY
 
             }
         })
@@ -93,7 +92,7 @@ app.post("/api/sendEmail",async (req,res) => {
        
         const info = await transporter.sendMail(mailOptions)
         
-        console.log("Email sent:" + info.response);
+        //console.log("Email sent:" + info.response);
         
         res.status(200).json(
         {
