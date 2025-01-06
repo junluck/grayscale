@@ -70,7 +70,7 @@ app.post("/api/sendEmail",async (req,res) => {
         {
             return res.status(400).json({ error: "All fields are required." });
         }
-        /*
+        
         const transporter = nodeMailer.createTransport({
             service:"gmail",
             host: "smtp.gmail.email",
@@ -94,7 +94,7 @@ app.post("/api/sendEmail",async (req,res) => {
         const info = await transporter.sendMail(mailOptions)
         
         console.log("Email sent:" + info.response);
-        */
+        
         res.status(200).json(
         {
             emailSent:"Email sent Successfully.We will be with you in a moment."}
