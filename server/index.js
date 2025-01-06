@@ -65,37 +65,37 @@ app.post("/api/submit",async (req,res) => {
    
 })
 
-app.post("/api/sendEmail", async (req, res) => {
-    try {
-      const { name, surname, email, subject, message } = req.body;
-  
-      if (!name || !surname || !email || !subject || !message) {
-        return res.status(400).json({ error: "Missing required fields" });
-      }
-  
-      const transporter = nodeMailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: "appemailer786@gmail.com",
-          pass: "Khai2013!" // Use an App Password for better security
+app.post("/api/sendEmail",async (req,res) => {
+    try{ 
+        const {name, surname,email , subject, message} = req.body
+        console.log(req.body)
+        const transporter = nodeMailer.createTransport({
+            service:"gmail",
+            host: "smtp.gmail.email",
+            port: 587,
+            secure: false, // true for port 465, false for other p
+            auth:{
+                user:"appemailer786@gmail.com",
+                pass:"Khai2013!"
+
+            }
+        })
+
+        const mailOptions = {
+            from:`${name} ${surname} from:${email}`,
+            to:"junaindavidsvickerman@gmail.com",
+            subject:subject,
+            text:message
         }
-      });
-  
-      const mailOptions = {
-        from: `"${name} ${surname}" <${email}>`,
-        to: "junaindavidsvickerman@gmail.com",
-        subject: subject,
-        text: message
-      };
-  
-      const info = await transporter.sendMail(mailOptions);
-      console.log("Email sent:", info.response);
-      res.status(200).json({ emailSent: "Email sent successfully. We will be with you in a moment." });
-    } catch (e) {
-      console.error("Error sending email:", e);
-      res.status(500).json({ error: "Email was not sent. Please try again." });
-    }
-  });
+
+        const info = await transporter.sendMail(mailOptions)
+        connsole.log("Email sent:" + info.response);
+        res.status(200).json({emailSent:"Email sent Successfully.We will be with you in a moment."})}catch(e){
+            res.status(500).json({error:"Email was not sent please try again"})
+            console.log(e)
+        }
+   
+})
 
 app.listen(5000,()=>{
     console.log("server is running 5000")
