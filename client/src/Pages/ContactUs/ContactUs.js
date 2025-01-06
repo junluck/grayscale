@@ -12,8 +12,8 @@ function ContactUs(){
                 body:JSON.stringify(dataObject)
             })
             const result = await response.json();
-            if(response.ok){
-                return result;
+            if(result.ok){
+                console.log(result)
             }
         }
         catch(error){
