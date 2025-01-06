@@ -73,10 +73,11 @@ app.post("/api/sendEmail",async (req,res) => {
             service:"gmail",
             host: "smtp.gmail.email",
             port: 587,
-            secure: false, // true for port 465, false for other p
+            secure: true, // true for port 465, false for other p
             auth:{
                 user:"appemailer786@gmail.com",
-                pass:"Khai2013!"
+                pass:"nscktxcxdcffwgvz"
+
 
             }
         })
