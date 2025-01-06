@@ -1,6 +1,7 @@
 require("dotenv").config()
 const cors = require('cors');
 const express = require("express");
+const nodeMailer = require("nodemailer");
 const app = express();
 app.use(express.json());
 app.use(express.static("src"));
@@ -63,6 +64,36 @@ app.post("/api/submit",async (req,res) => {
         }
    
 })
+
+pp.post("/api/sendEmail",async (req,res) => {
+    try{ 
+        const {name, surname,email , subject, message} = req.body
+
+        const transporter = nodeMailer.createTransport({
+            service:"gmail",
+            auth:{
+                user:"appemailer786@gmail.com",
+                pass:"Khai2013!"
+
+            }
+        })
+
+        const mailOptions = {
+            from:`${name} ${surname} from:${email}`,
+            to:"junaindavidsvickerman@gmail.com",
+            subject:subject,
+            text:message
+        }
+
+        const info = await transporter.sendMail(mailOptions)
+        connsole.log("Email sent:" + info.response);
+        res.status(200).json({emailSent:"Email sent Successfully.We will be with you in a moment."})}catch(e){
+            res.status(500).json({error:"Email was not sent please try again"})
+            console.log(e)
+        }
+   
+})
+
 app.listen(5000,()=>{
     console.log("server is running 5000")
 }
