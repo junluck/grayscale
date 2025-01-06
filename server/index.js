@@ -70,12 +70,12 @@ app.post("/api/sendEmail",async (req,res) => {
         {
             return res.status(400).json({ error: "All fields are required." });
         }
-        
+        /*
         const transporter = nodeMailer.createTransport({
             service:"gmail",
             host: "smtp.gmail.email",
-            port: 587,
-            secure: false, // true for port 465, false for other p
+            port: 465,
+            secure: true, // true for port 465, false for other p
             auth:{
                 user:"appemailer786@gmail.com",
                 pass:"nscktxcxdcffwgvz"
@@ -93,13 +93,16 @@ app.post("/api/sendEmail",async (req,res) => {
        
         const info = await transporter.sendMail(mailOptions)
         
-        connsole.log("Email sent:" + info.response);
+        console.log("Email sent:" + info.response);
+        */
         res.status(200).json(
         {
             emailSent:"Email sent Successfully.We will be with you in a moment."}
         )}catch(e){
             
-            res.status(500).json(console.log("s"));
+            res.status(500).json({
+                error: "Email was not sent. Please try again.",
+              });
         }
    
 })
