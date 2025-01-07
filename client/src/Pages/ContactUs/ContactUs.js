@@ -11,13 +11,10 @@ function ContactUs(){
     const [mailSuccessFailed,setMailSuccessFailed] = useState(false)
     useEffect(()=>{
             
-                const timer = setTimeout(()=>
-                {
-                    if(setMailSuccessFailed === true)
-                    {
-                        setMailSuccessFailed(false)
-                    }
-                },4000)
+        const timer = setTimeout(()=>
+        {
+            setMailSuccessFailed(false)
+        },4000)
         
         return () => clearTimeout(timer)
     },[mailSuccessFailed])
