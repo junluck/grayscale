@@ -6,7 +6,7 @@ function MailSuccess(){
     return(
         <div className="mailSuccessMessage">
             <MailAnimation />
-            <h3 className="mailSent">Your mail has been sent.We will get back to you as soon as possible.</h3>
+            <h3 className="mailSent">Your mail has been sent.<br/>We will get back to you as soon as possible.</h3>
         </div>
     )
 }
