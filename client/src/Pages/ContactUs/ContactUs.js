@@ -1,7 +1,9 @@
 import React from "react";
 import "./ContactUs.css"
 import Footer from "../../Components/Footer/Footer";
+import { useState } from "react";
 function ContactUs(){
+    const [contactLoading,setcontactLoading] = useState(true)
     const sendDataToBackend = async (dataObject) =>{
         try{
             const response = await fetch(`https://grayscale-server.vercel.app/api/sendEmail`,{
