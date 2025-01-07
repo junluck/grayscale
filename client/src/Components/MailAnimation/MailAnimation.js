@@ -23,7 +23,7 @@ const MailAnimation = () =>{
     },[])
 
     return(
-        <div ref={containerRef} style={{width:"300px",height:"300px"}}/>)
+        <div ref={containerRef} style={{width:"600px",height:"600px"}}/>)
 }
 
 export default MailAnimation 
