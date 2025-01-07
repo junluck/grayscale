@@ -96,11 +96,11 @@ app.post("/api/sendEmail",async (req,res) => {
         
         res.status(200).json(
         {
-            emailSent:"Email sent Successfully.We will be with you in a moment."}
+            emailSent:true}
         )}catch(e){
             
             res.status(500).json({
-                error: "Email was not sent. Please try again.",
+                error: false,
               });
         }
    

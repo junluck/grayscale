@@ -1,9 +1,26 @@
 import React from "react";
 import "./ContactUs.css"
 import Footer from "../../Components/Footer/Footer";
+import { useEffect } from "react";
 import { useState } from "react";
+import MailFailed from "../../Components/MailFailed/MailFailed";
+import MailSuccess from "../../Components/MailSuccess/MailSuccess";
+
 function ContactUs(){
-    const [contactLoading,setcontactLoading] = useState(true)
+    
+    const [mailSuccessFailed,setMailSuccessFailed] = useState(false)
+    useEffect(()=>{
+            
+                const timer = setTimeout(()=>
+                {
+                    if(setMailSuccessFailed === true)
+                    {
+                        setMailSuccessFailed(false)
+                    }
+                },4000)
+        
+        return () => clearTimeout(timer)
+    },[mailSuccessFailed])
     const sendDataToBackend = async (dataObject) =>{
         try{
             const response = await fetch(`https://grayscale-server.vercel.app/api/sendEmail`,{
@@ -15,7 +32,9 @@ function ContactUs(){
             })
             const result = await response.json();
             if(response.ok){
-                console.log(response)
+                if(result === false){
+                    alert("Please try again email was not sent.")
+                }
                 return response
             }
         }
@@ -29,13 +48,14 @@ function ContactUs(){
                 <h2 className="headingContact">CONTACT US</h2>
                 <span className="contactSpan"></span>
             </div>
-            <div className="contactOuter">
+            {mailSuccessFailed && <MailSuccess />}
+            {!mailSuccessFailed && <div className="contactOuter">
                 
                 <form className="contactForm" onSubmit={async (e)=>{
                     e.preventDefault()
                     try{
                         const response = await sendDataToBackend({name:e.target[0].value, surname:e.target[1].value,email:e.target[2].value , subject:e.target[3].value, message:e.target[4].value});
-                        console.log(response)
+                        setMailSuccessFailed(response)
                         
                     }catch(e){
                         console.log(e)
@@ -53,7 +73,7 @@ function ContactUs(){
                     }}>SEND MESSAGE</button>
                 </form>
                 
-            </div>
+            </div>}
             <Footer />
         </div>
     )
