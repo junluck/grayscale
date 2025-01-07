@@ -45,8 +45,8 @@ function ContactUs(){
                 <h2 className="headingContact">CONTACT US</h2>
                 <span className="contactSpan"></span>
             </div>
-            {mailSuccessFailed && <MailSuccess />}
-            {!mailSuccessFailed && <div className="contactOuter">
+            {!mailSuccessFailed && <MailSuccess />}
+            {mailSuccessFailed && <div className="contactOuter">
                 
                 <form className="contactForm" onSubmit={async (e)=>{
                     e.preventDefault()
