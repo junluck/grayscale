@@ -31,6 +31,7 @@ function NewsLetter(){
                         </div>
                         <div className="subscribeNewsLetterTwo">
                             <form className="formVoucherTwo" onSubmit={async (e)=>{
+                                    e.preventDefault()
                                     try{
                                         const response = await sendDataToBackend({email:e.target.value[0]});
                                             if(response.ok){
