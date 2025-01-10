@@ -215,7 +215,7 @@ const ProductIndexSlice = createSlice({
         decrementByNine:(state,action)=>{
             
             let index = state - 9
-            if (index<0){
+            if (index < 0){
                 index = 0
             }
             return index

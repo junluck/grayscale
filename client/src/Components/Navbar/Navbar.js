@@ -100,7 +100,7 @@ function Navbar({isClickedFive,setIsClickedFive}){
             </div>
             <div className="homeAndContact">
             <Link to={""} className="homeLogo"><img src="assests/images/home.svg" className="homeLogo"/></Link>
-                <img src="assests/images/contact us.svg" className="contactLogo"/>
+            <Link to={"/ContactUs"} className="contactLogo"><img src="assests/images/contact us.svg" className="contactLogo"/></Link>
             </div>
             <ul className="menuList">
             <Link to={""} style={{ textDecoration: 'none', color: 'inherit' ,margin:"0px", height:"fit-content",justifySelf:"center",alignSelf:"center"}}><li onClick={()=>{   

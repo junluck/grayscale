@@ -11,6 +11,7 @@ import { addNumberToCart } from "../../features/cartSlice";
 import { isClickedBoolThreeFalse } from "../../features/isClicked";
 import { cartDisplayTrueFalse } from "../../features/cartSlice";
 import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
+import { choosenProduct } from "../../features/singleProductSlice";
 
 function ProductDetails(){
     const singleProductSlice  = useSelector(state=> state.singleProductSlice);
@@ -23,6 +24,10 @@ function ProductDetails(){
     const cartSlice = useSelector(state => state.CartSlice);
     const CartNumberSlice = useSelector(state => state.CartNumberSlice);
     const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch()
+    console.log(isClickedFive)
+    const handleMouseOver = () => setHoverSix(true);
+    const handleMouseOut = () => setHoverSix(false);
 
     useEffect(()=>{
             dispatch(addNumberToCart(cartSlice));
@@ -30,15 +35,13 @@ function ProductDetails(){
                 dispatch(isClickedBoolThreeFalse()) 
             }
         },[cartSlice])
-        
         useEffect(()=>{
             dispatch(cartDisplayTrueFalse(CartNumberSlice))  
         },[CartNumberSlice])
-
-    const dispatch = useDispatch()
-    console.log(isClickedFive)
-    const handleMouseOver = () => setHoverSix(true);
-    const handleMouseOut = () => setHoverSix(false);
+    useEffect(()=>{
+        dispatch(choosenProduct(JSON.parse(sessionStorage.getItem("choosenProduct"))))
+    },[])
+ 
     return(
         <div className="singleProductOuter">
             <div className="singleProduct">

@@ -111,6 +111,7 @@ function ItemFilter(){
                         </div>
                         <Link to={"/Product"} className="arrowButtoBackgroundTwo" ><div className="arrowButtoBackgroundTwo" onClick={(e)=>{
                             dispatch(choosenProduct(element))
+                            sessionStorage.setItem("choosenProduct",JSON.stringify(element));
                             dispatch(recentlyViewedArray(element))
                             window.scrollTo({ top: 0})
                         }}>
