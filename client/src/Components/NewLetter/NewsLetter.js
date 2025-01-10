@@ -33,7 +33,7 @@ function NewsLetter(){
                             <form className="formVoucherTwo" onSubmit={async (e)=>{
                                     e.preventDefault()
                                     try{
-                                        const response = await sendDataToBackend({email:e.target.value[0]});
+                                        const response = await sendDataToBackend({email:e.target[0].value});
                                             if(response.ok){
 
                                             }
