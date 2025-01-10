@@ -106,6 +106,45 @@ app.post("/api/sendEmail",async (req,res) => {
    
 })
 
+app.post("/api/newsLetter",async (req,res) => {
+    try{ 
+        const {email} = req.body
+        const subject = "Subscribing to newsletter"
+        const message = "Thank you for subscribing to the newslettter"
+        const transporter = nodeMailer.createTransport({
+            service:"gmail",
+            host: "smtp.gmail.email",
+            port: 465,
+            secure: true, // true for port 465, false for other p
+            auth:{
+                user:process.env.EMAIL_ADDRESS,
+                pass:process.env.EMAIL_KEY
+
+            }
+        })
+
+        const mailOptions = {
+            from:`junain@greyscale.com`,
+            to:`${email}`,
+            subject:subject,
+            text:message
+        }
+       
+        const info = await transporter.sendMail(mailOptions)
+        
+        
+        res.status(200).json(
+        {
+            emailSent:true}
+        )}catch(e){
+            
+            res.status(500).json({
+                error: false,
+              });
+        }
+   
+})
+
 app.listen(5000,()=>{
     console.log("server is running 5000")
 }
