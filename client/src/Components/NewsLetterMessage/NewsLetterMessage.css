@@ -1,5 +1,5 @@
 .NewsLetterHeadingAndParagraph{
-    position: absolute;
+    position: fixed;
     top:30%;
     right: 0%;
     left: 0%;
@@ -9,10 +9,11 @@
     align-items: center;
     background-color:white ;
     width: 500px;
-    height: 250px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border: solid 1px black;
 }
 
 .NewsLetterHeading{
@@ -33,4 +34,15 @@
 
 .newsLettterParagraph{
     text-align: center;
+}
+
+.coverScreen{
+    position: fixed;
+    top: 0; 
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.3;
+    z-index:0;
 }

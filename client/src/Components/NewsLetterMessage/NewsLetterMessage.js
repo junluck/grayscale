@@ -12,7 +12,10 @@ function NewsLetterMessage({setIsAddedToNewsLetter,isAddedToNewsLetter}){
         return () => clearTimeout(timer)
     },[isAddedToNewsLetter])
     return(
+        <>
+        <div className="coverScreen"></div>
         <div className="NewsLetterHeadingAndParagraph">
+            
             <div className="NewsLetterHeading">
                 <h3>Thank you for subscribing! 🎉</h3>
                 <span className="NewLetterSpan"></span>
@@ -20,6 +23,7 @@ function NewsLetterMessage({setIsAddedToNewsLetter,isAddedToNewsLetter}){
             <p className="newsLettterParagraph">You're officially part of our community. Stay tuned for the latest updates, tips, 
                 and exclusive content delivered straight to your inbox. We’re excited to have you on board!</p>
         </div>
+        </>
     )
 }
 
