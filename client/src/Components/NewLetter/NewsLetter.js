@@ -1,7 +1,10 @@
 import React from "react";
 import "./NewsLetter.css"
 import { useState } from "react";
+import { useEffect } from "react";
+import NewsLetterMessage from "../NewsLetterMessage/NewsLetterMessage";
 function NewsLetter(){
+    const [isAddedToNewsLetter,setIsAddedToNewsLetter] = useState(false)
     const sendDataToBackend = async (dataObject) =>{
         try{
             const response = await fetch(`https://grayscale-server.vercel.app/api/newsLetter`,{
@@ -12,19 +15,23 @@ function NewsLetter(){
                 body:JSON.stringify(dataObject)
             })
             const result = await response.json();
+            
             if(response.ok){
-                if(result === false){
-                    alert("You not added to the newsletter please try again")
-                }
+                return response
+            }
+            else{
+                alert("You not added to the newsletter please try again")
                 return response
             }
         }
         catch(error){
             console.error("Error sending data", error)
+            alert("You not added to the newsletter please try again")
         }
     }
     return(
         <div className="joinUsVoucherEmailTwo">
+                       {isAddedToNewsLetter && <NewsLetterMessage />}
                         <div className="joinUsTenTwo">
                             <h5>Join us and recieve a voucher code</h5>
                             <p>10% off on your first purchase and free shipping for all new newsletter subscribers</p>
@@ -34,9 +41,7 @@ function NewsLetter(){
                                     e.preventDefault()
                                     try{
                                         const response = await sendDataToBackend({email:e.target[0].value});
-                                            if(response.ok){
-
-                                            }
+                                           setIsAddedToNewsLetter(response); 
                                         }
                                     catch(error)
                                         {

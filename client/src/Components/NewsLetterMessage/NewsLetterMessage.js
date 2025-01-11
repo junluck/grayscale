@@ -1,8 +1,10 @@
 import React from "react";
-
+import "./NewsLetterMessage.css"
+import { useEffect } from "react";
 function NewsLetterMessage(){
+    
     return(
-        <div className="NewsLetterHeadingAnd Paragraph">
+        <div className="NewsLetterHeadingAndParagraph">
             <div className="NewsLetterHeading">
                 <h3>Thank you for subscribing! 🎉</h3>
                 <span className="NewLetterSpan"></span>
@@ -12,3 +14,5 @@ function NewsLetterMessage(){
         </div>
     )
 }
+
+export default NewsLetterMessage

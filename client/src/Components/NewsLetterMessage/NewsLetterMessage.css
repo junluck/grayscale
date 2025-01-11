@@ -1,0 +1,36 @@
+.NewsLetterHeadingAndParagraph{
+    position: absolute;
+    top:40%;
+    right: 0%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:white ;
+    width: 500px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.NewsLetterHeading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.NewsLetterHeading h3{
+    margin-bottom: 5px;
+}
+.NewLetterSpan{
+    background-color: black;
+    width: 280px;
+    height: 2px;
+}
+
+.newsLettterParagraph{
+    text-align: center;
+}

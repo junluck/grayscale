@@ -29,14 +29,12 @@ function ContactUs(){
             })
             const result = await response.json();
             if(response.ok){
-                if(result === false){
-                    alert("Please try again email was not sent.")
-                }
                 return response
             }
         }
         catch(error){
             console.error("Error sending data", error)
+            alert("Please try again email was not sent.")
         }
     }
     return(
