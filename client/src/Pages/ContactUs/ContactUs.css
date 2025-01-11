@@ -146,11 +146,12 @@
 }
 .headingContact{
     margin-bottom: 0px;
+    font-size: 1.7rem;
 }
 .contactSpan{
 
     height: 2px;
-    width: 160px;
+    width: 170px;
     background-color: black;
 }
 

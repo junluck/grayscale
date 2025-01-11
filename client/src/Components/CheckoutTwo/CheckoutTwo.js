@@ -62,7 +62,7 @@ function CheckoutTwo(){
     return(
             <div className={isClickedFive?"mainCheckoutTwo":"mainCheckoutTwoActive"}>
                 <div className="checkoutUnderline">
-                    <h2>CART</h2>
+                    <h2 className="cartHeading">CART</h2>
                     <span></span>
                 </div>{isEmptyOrNot === false &&
                 <div className="emptyCartAndTitle">

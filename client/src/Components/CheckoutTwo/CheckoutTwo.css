@@ -61,14 +61,14 @@
 .checkoutUnderline h2{
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .checkoutUnderline span{
-    margin-top: 5px;
+    margin-top: 0px;
     background-color: black;
     height:2px;
-    width:100px
+    width:75px
 }
 .groupCheckoutsTwo::-webkit-scrollbar  {
    width: 8px;
@@ -353,6 +353,8 @@ input[type="number"] {
     grid-row-start: 3;
     grid-row-end: 4;
 }
+
+
 @media(min-width:1621px){
    
 }
