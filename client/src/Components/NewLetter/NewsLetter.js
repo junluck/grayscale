@@ -31,7 +31,7 @@ function NewsLetter(){
     }
     return(
         <div className="joinUsVoucherEmailTwo">
-                       {isAddedToNewsLetter && <NewsLetterMessage />}
+                       {isAddedToNewsLetter && <NewsLetterMessage setIsAddedToNewsLetter={setIsAddedToNewsLetter} isAddedToNewsLetter={isAddedToNewsLetter} />}
                         <div className="joinUsTenTwo">
                             <h5>Join us and recieve a voucher code</h5>
                             <p>10% off on your first purchase and free shipping for all new newsletter subscribers</p>

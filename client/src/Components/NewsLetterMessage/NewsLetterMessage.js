@@ -1,8 +1,16 @@
 import React from "react";
 import "./NewsLetterMessage.css"
 import { useEffect } from "react";
-function NewsLetterMessage(){
-    
+function NewsLetterMessage({setIsAddedToNewsLetter,isAddedToNewsLetter}){
+    useEffect(()=>{
+        const timer = setTimeout(()=>{
+            if(isAddedToNewsLetter){
+                setIsAddedToNewsLetter(false)
+            }
+        },5000)
+
+        return () => clearTimeout(timer)
+    },[isAddedToNewsLetter])
     return(
         <div className="NewsLetterHeadingAndParagraph">
             <div className="NewsLetterHeading">
