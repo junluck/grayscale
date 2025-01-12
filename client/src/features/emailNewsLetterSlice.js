@@ -16,9 +16,12 @@ const EmailNewsLetterSlice = createSlice({
                 array.push(action.payload)
             }
             return array;
+        },
+        setGroupEmails:(state,action)=>{
+            return action.payload
         }
     }
 })
 
-export const {GroupOfEmail} = EmailNewsLetterSlice.actions;
+export const {GroupOfEmail ,setGroupEmails} = EmailNewsLetterSlice.actions;
 export default EmailNewsLetterSlice.reducer;

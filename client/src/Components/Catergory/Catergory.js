@@ -7,7 +7,7 @@ import inventory from "../../features/inventory";
 import { arrayOfSortedItems } from "../../features/productSlice";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { GroupOfEmail } from "../../features/emailNewsLetterSlice";
+import { GroupOfEmail ,setGroupEmails} from "../../features/emailNewsLetterSlice";
 import NewsLetterMessage from "../NewsLetterMessage/NewsLetterMessage";
 import { useSelector } from "react-redux";
 function Catergory({setIsClickedFive}){
@@ -25,7 +25,7 @@ function Catergory({setIsClickedFive}){
         sessionStorage.setItem("groupOfEmails",JSON.stringify(groupOfEmails))
     },[groupOfEmails]);
     useEffect(()=>{
-        dispatch(GroupOfEmail(JSON.parse(sessionStorage.getItem("groupOfEmails"))))
+        dispatch(setGroupEmails(JSON.parse(sessionStorage.getItem("groupOfEmails"))))
     },[])
     const sendDataToBackend = async (dataObject) =>{
         try{

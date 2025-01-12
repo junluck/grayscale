@@ -3,9 +3,10 @@ import "./NewsLetter.css"
 import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { GroupOfEmail } from "../../features/emailNewsLetterSlice";
+import { GroupOfEmail, setGroupEmails} from "../../features/emailNewsLetterSlice";
 import { useSelector } from "react-redux";
 import NewsLetterMessage from "../NewsLetterMessage/NewsLetterMessage";
+
 function NewsLetter(){
     const [isAddedToNewsLetter,setIsAddedToNewsLetter] = useState(false)
     const dispatch = useDispatch()
@@ -13,8 +14,8 @@ function NewsLetter(){
     useEffect(()=>{
             sessionStorage.setItem("groupOfEmails",JSON.stringify(groupOfEmails))
         },[groupOfEmails]);
-        useEffect(()=>{
-            dispatch(GroupOfEmail(JSON.parse(sessionStorage.getItem("groupOfEmails"))))
+    useEffect(()=>{
+            dispatch(setGroupEmails(JSON.parse(sessionStorage.getItem("groupOfEmails"))))
         },[])
     const sendDataToBackend = async (dataObject) =>{
         try{
