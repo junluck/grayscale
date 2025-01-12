@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Catergory.css"
 import { useDispatch } from "react-redux";
 import { isClickedBool } from "../../features/isClicked";
@@ -7,18 +7,26 @@ import inventory from "../../features/inventory";
 import { arrayOfSortedItems } from "../../features/productSlice";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { GroupOfEmail } from "../../features/emailNewsLetterSlice";
 import NewsLetterMessage from "../NewsLetterMessage/NewsLetterMessage";
+import { useSelector } from "react-redux";
 function Catergory({setIsClickedFive}){
     const dispatch = useDispatch()
     const arrayOfBools = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    const [isAddedToNewsLetter,setIsAddedToNewsLetter] = useState(false)
+    const [isAddedToNewsLetter,setIsAddedToNewsLetter] = useState(false);
+    const groupOfEmails = useSelector(state => state.EmailNewsLetterSlice)
     function arraySetter(index,arrayNew,setter){
         let array = [...arrayNew];
         array[index] = !array[index];
         setter(array)   
         console.log(array)
     }
-
+    useEffect(()=>{
+        sessionStorage.setItem("groupOfEmails",JSON.stringify(groupOfEmails))
+    },[groupOfEmails]);
+    useEffect(()=>{
+        dispatch(GroupOfEmail(JSON.parse(sessionStorage.getItem("groupOfEmails"))))
+    },[])
     const sendDataToBackend = async (dataObject) =>{
         try{
             const response = await fetch(`https://grayscale-server.vercel.app/api/newsLetter`,{
@@ -137,7 +145,17 @@ function Catergory({setIsClickedFive}){
                 </div>
                 <div className="subscribeNewsLetter">
                     <form className="formVoucher" onSubmit={async (e)=>{
-                                    e.preventDefault()
+                                    e.preventDefault();
+                                    let bool = false
+                                    dispatch(GroupOfEmail(e.target[0].value));
+                                    groupOfEmails.forEach(element => {
+                                        if(element === e.target[0].value){
+                                            bool = true
+                                        }
+                                    });
+                                    if(bool){
+                                        alert("Email has already been added.")
+                                    }
                                     try{
                                         const response = await sendDataToBackend({email:e.target[0].value});
                                            setIsAddedToNewsLetter(response); 

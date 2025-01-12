@@ -11,6 +11,7 @@ import singleProductSliceReducer from './features/singleProductSlice';
 import recentlyViewedArrayReducer from './features/RecentlyViewedSlice';
 import { RecentlyViewedSliceBoolReducer } from './features/RecentlyViewedSlice';
 import SuccessAndFailureReducer from "./features/successAndFailure"
+import EmailNewsLetterReducer from './features/emailNewsLetterSlice';
 
 
 
@@ -38,6 +39,7 @@ const store = configureStore({
       IsClicedFiveSlice: IsClickedFiveReduce,
       RecentlyViewedSliceBool:RecentlyViewedSliceBoolReducer,
       SuccessAndFailure:SuccessAndFailureReducer,
+      EmailNewsLetterSlice:EmailNewsLetterReducer
 
     }
   })
