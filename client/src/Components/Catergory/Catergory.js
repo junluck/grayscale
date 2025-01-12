@@ -51,7 +51,7 @@ function Catergory({setIsClickedFive}){
     }
     return(
         <div className="categoryOuter">
-            {isAddedToNewsLetter && <NewsLetterMessage setIsAddedToNewsLetter={setIsAddedToNewsLetter} isAddedToNewsLetter={isAddedToNewsLetter} />}
+            {!isAddedToNewsLetter && <NewsLetterMessage setIsAddedToNewsLetter={setIsAddedToNewsLetter} isAddedToNewsLetter={isAddedToNewsLetter} />}
         <div className="categoryInner">
             <div className="catergoryHeading"> 
                 <h2>CATEGORY</h2>
