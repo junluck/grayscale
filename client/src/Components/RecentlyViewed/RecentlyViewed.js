@@ -54,6 +54,7 @@ function RecentlyViewed(){
                                     <Link to={"/Product"} className="arrowButtoBackgroundThree" ><div className="arrowButtoBackgroundThree" onClick={(e)=>{
                                         dispatch(choosenProduct(element))
                                         dispatch(recentlyViewedArray(element))
+                                        window.scrollTo({ top: 0})
                                         }}>
                                         <img src="assests/images/arrowRight.svg" className="arrowPicThree"/>
                                     </div></Link>
