@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const EmailNewsLetterSlice = createSlice({
     name:"EmailNewsLetter",
-    initialState:[],
+    initialState:JSON.parse(sessionStorage.getItem("groupOfEmails")) || [],
     reducers:{
         GroupOfEmail:(state,action)=>{
             let array = [...state];
@@ -18,7 +18,9 @@ const EmailNewsLetterSlice = createSlice({
             return array;
         },
         setGroupEmails:(state,action)=>{
-            return action.payload
+            let array = [...action.payload]
+            console.log(array)
+            return array
         }
     }
 })

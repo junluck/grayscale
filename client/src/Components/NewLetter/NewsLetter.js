@@ -14,9 +14,6 @@ function NewsLetter(){
     useEffect(()=>{
             sessionStorage.setItem("groupOfEmails",JSON.stringify(groupOfEmails))
         },[groupOfEmails]);
-    useEffect(()=>{
-            dispatch(setGroupEmails(JSON.parse(sessionStorage.getItem("groupOfEmails"))))
-        },[])
     const sendDataToBackend = async (dataObject) =>{
         try{
             const response = await fetch(`https://grayscale-server.vercel.app/api/newsLetter`,{
@@ -61,13 +58,15 @@ function NewsLetter(){
                                     if(bool){
                                         alert("Email has already been added.")
                                     }
-                                    try{
-                                        const response = await sendDataToBackend({email:e.target[0].value});
-                                           setIsAddedToNewsLetter(response); 
-                                        }
-                                    catch(error)
-                                        {
-                                            console.log(error)
+                                    else{
+                                        try{
+                                            const response = await sendDataToBackend({email:e.target[0].value});
+                                               setIsAddedToNewsLetter(response); 
+                                            }
+                                        catch(error)
+                                            {
+                                                console.log(error)
+                                            }
                                         }
                                 }}>
                                 <label for="emailInput"id="emailLabelTwo">Email</label>
