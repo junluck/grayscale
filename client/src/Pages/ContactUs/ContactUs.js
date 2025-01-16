@@ -5,10 +5,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import MailFailed from "../../Components/MailFailed/MailFailed";
 import MailSuccess from "../../Components/MailSuccess/MailSuccess";
+import LoadingAnimationWhite from "../../Components/LoadingAnimationWhite/LoadingAnimation";
 
 function ContactUs(){
     
     const [mailSuccessFailed,setMailSuccessFailed] = useState(false)
+    const [loading,setLoading] = useState(false)
     useEffect(()=>{
             
         const timer = setTimeout(()=>
@@ -29,16 +31,25 @@ function ContactUs(){
             })
             const result = await response.json();
             if(response.ok){
+                setLoading(false)
                 return response
             }
         }
         catch(error){
             console.error("Error sending data", error)
             alert("Please try again email was not sent.")
+            setLoading(false)
         }
     }
     return(
         <div>
+            {loading && 
+                <div className="loading">
+                    <div className="loadingAnimation">
+                        <LoadingAnimationWhite />
+                    </div>
+                
+                </div>}
             <div className="headingContactAndSpan">
                 <h2 className="headingContact">CONTACT US</h2>
                 <span className="contactSpan"></span>
@@ -48,6 +59,7 @@ function ContactUs(){
                 
                 <form className="contactForm" onSubmit={async (e)=>{
                     e.preventDefault()
+                    setLoading(true)
                     try{
                         const response = await sendDataToBackend({name:e.target[0].value, surname:e.target[1].value,email:e.target[2].value , subject:e.target[3].value, message:e.target[4].value});
                         setMailSuccessFailed(response)
