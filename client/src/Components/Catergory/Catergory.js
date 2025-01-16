@@ -140,6 +140,9 @@ function Catergory({setIsClickedFive}){
                 </div>
             </div>
             <div className="joinUsVoucherEmail">
+                <img src="assests/images/exitTwo.svg" className="exitTwo" onClick={() => {
+                    setIsAddedToNewsLetter(false)
+                }}/>
                 <div className="joinUsTen">
                     <h5>Join us and recieve a voucher code</h5>
                     <p>10% off on your first purchase and free shipping for all new newsletter subscribers</p>
