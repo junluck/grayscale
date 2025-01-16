@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import "./BillingDetails.css"
 import { useSelector } from "react-redux";
 import { useState } from "react";
-
+import LoadingAnimationWhite from "../LoadingAnimationWhite/LoadingAnimation";
 
 function BillingDetails(){
     const cartSlice = useSelector(state => state.CartSlice);
     const quantity = useSelector(state => state.CartQuantitySlice);
     const [totalAmount,setTotalAmount] = useState(0);
+    const [loading, setLoading] = useState(false)
     
      const sendDataToBackend = async (data,quantity) =>{
             let finalData = [data,quantity];
@@ -24,9 +25,13 @@ function BillingDetails(){
                 if(response.ok){
                     window.location = result.url
                 }
+                else{
+                    setLoading(false)
+                }
             }
             catch(error){
                 console.error("Error sending data", error)
+                setLoading(false)
             }
         }
     useEffect(()=>{ 
@@ -39,6 +44,13 @@ function BillingDetails(){
     },[cartSlice,quantity])
     return(
         <div>
+            {loading && 
+                <div className="loading">
+                    <div className="loadingAnimation">
+                        <LoadingAnimationWhite />
+                    </div>
+                
+                </div>}
             <div className="headingCheckOutAndSpan">
                 <h2 className="headingCheckout">CHECKOUT</h2>
                 <span className="checkoutSpan"></span>
@@ -47,7 +59,9 @@ function BillingDetails(){
                 
                 <form className="billingDetailsForm" onSubmit={(e)=>{
                     e.preventDefault()
+                    setLoading(true)
                     sendDataToBackend(cartSlice, quantity);
+                   
                 }}>
                     <div className="firstNameAndSurname">
                         <input type="text" id="firstName" name="firstName" placeholder="First Name" required/>
