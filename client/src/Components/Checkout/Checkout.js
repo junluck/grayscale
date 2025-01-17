@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./Checkout.css"
 import { addToQuantity, substractToQuantity, setQuantity, removeFromCart} from "../../features/cartSlice";
@@ -12,6 +12,9 @@ function Checkout(){
     const currency =  useSelector((state)=> state.CurrencySlice);
     const quantityGroup = useSelector(state => state.CartQuantitySlice);
     const isClickedThree = useSelector(state => state.IsClickedThreeSlice);
+    useEffect(()=>{
+        sessionStorage.setItem("qauntityGroup",JSON.stringify(quantityGroup))
+    },[quantityGroup])
     return(
         <div className={isClickedThree?"checkout":"checkoutDeactive"}>
             <div className="groupOfCheckouts">

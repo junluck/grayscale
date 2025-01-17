@@ -76,7 +76,7 @@ const CartDisplayerSlice = createSlice({
 
 const CartQuantitySlice = createSlice({
     name:"quantity",
-    initialState:array,
+    initialState:JSON.parse(sessionStorage.getItem("qauntityGroup")) || array,
     reducers:{
         addToQuantity:(state,action)=>{
             let array = [...state]
