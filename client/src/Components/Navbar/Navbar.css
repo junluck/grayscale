@@ -99,7 +99,9 @@
     width: 1px;
     background-color: black;
     justify-self: center;
+    align-self: center;
     border-radius: 80px;
+    height: 80%;
 }
 
 .menuList li:nth-child(3){
@@ -117,7 +119,9 @@
     background-color: black;
     width: 1px;
     justify-self: center;
+    align-self: center;
     border-radius: 80px;
+    height: 80%;
 }
 
 .menuList li:nth-child(5){
@@ -127,6 +131,7 @@
     grid-row-end: 2;
     justify-self: center;
     align-self: center;
+   
 }
 
 .menuList span:nth-child(6){
@@ -135,7 +140,9 @@
     background-color: black;
     width: 1px;
     justify-self: center;
+    align-self: center;
     border-radius: 80px;
+    height: 80%;
 }
 
 .menuList li:nth-child(7){

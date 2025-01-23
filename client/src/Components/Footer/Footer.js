@@ -11,21 +11,10 @@ function Footer(){
                         <span></span>
                     </div>
                     <div className="descriptionGrayscale">
-                        <div  className="descriptionOne">
-                            <p>About Grayscale</p>
-                            <p>Careers</p>
-                            <p>Info</p>
-                            <p>Shipping</p>
-                            <p>FAQ's</p>
+                            <p className="termsAndCondition">Terms & Conditions</p>
+                            <p className="aboutGrayscale">About Grayscale</p>
+                            <p className="faqs">FAQ's</p>
                         
-                        </div>
-                        <div  className="descriptionTwo">
-                            <p>Terms & Conditions</p>
-                            <p>Privacy Statement</p>
-                            <p>Blog</p>
-                            <p>Cookie Statement</p>
-                            <p>Newsletter</p>
-                        </div>
                     </div>
                 </div>
                 <div className="socialsDiv">
