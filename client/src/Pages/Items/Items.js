@@ -6,9 +6,7 @@ function Items(){
     return(
     <div className="itemFilter">
         <ItemFilter />
-        <div className="footerr">
-            <Footer />
-        </div>
+        <Footer />
     </div>
     )
 }

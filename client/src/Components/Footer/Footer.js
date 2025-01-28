@@ -1,9 +1,14 @@
 import React from "react";
 import "./Footer.css"
-
+import FooterPopUp from "../FooterPopUp/FooterPopUp";
+import { useState } from "react";
 function Footer(){
+    const [containerSwitch ,setContainerSwitch] = useState(false);
+    const [terms,setTerms] = useState(0)
     return(
+       
         <div className="footerOuter">
+           
             <div className="footer">
                 <div className="grayscaleDiv">
                     <div className="headingGrayscale">
@@ -11,9 +16,18 @@ function Footer(){
                         <span></span>
                     </div>
                     <div className="descriptionGrayscale">
-                            <p className="termsAndCondition">Terms & Conditions</p>
-                            <p className="aboutGrayscale">About Grayscale</p>
-                            <p className="faqs">FAQ's</p>
+                            <p className="termsAndCondition" onClick={(e)=>{
+                                setContainerSwitch(true)
+                                setTerms(0)
+                            }}>Terms & Conditions</p>
+                            <p className="aboutGrayscale" onClick={(e)=>{
+                                setContainerSwitch(true)
+                                setTerms(1)
+                            }}>About Grayscale</p>
+                            <p className="faqs" onClick={(e)=>{
+                                setContainerSwitch(true)
+                                setTerms(2)
+                            }}>FAQ's</p>
                         
                     </div>
                 </div>
@@ -45,6 +59,7 @@ function Footer(){
                     <h4>GRAYSCALE</h4>
                 </div>
             </div>
+            <FooterPopUp containerSwitch={containerSwitch} setTerms={setTerms} terms={terms} setContainerSwitch={setContainerSwitch}/>
         </div>
     )
 }

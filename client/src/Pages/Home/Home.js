@@ -5,6 +5,8 @@ import ProductSlider from "../../Components/ProductSlider/ProductSlider";
 import Catergory from "../../Components/Catergory/Catergory";
 import Footer from "../../Components/Footer/Footer";
 import NewsLetter from "../../Components/NewLetter/NewsLetter";
+import FooterPopUp from "../../Components/FooterPopUp/FooterPopUp";
+
 
 function Home({setIsClickedFive}){
     return(

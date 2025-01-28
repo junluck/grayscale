@@ -193,10 +193,12 @@
     justify-self: center;
     margin-top: 0px;
     margin-bottom: 0px;
+    cursor: pointer;
 }
 
 .faqs{
     justify-self: center;
+    cursor: pointer;
 }
 
 .termsAndCondition{
@@ -205,6 +207,7 @@
     justify-self: center;
     margin-top: 0px;
     margin-bottom: 0px;
+    cursor: pointer;
 }
 
 @media (min-width:655px){
@@ -213,6 +216,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 10% 60% 30%; 
         background-color: #C2C1C1;
+        
        
         
 

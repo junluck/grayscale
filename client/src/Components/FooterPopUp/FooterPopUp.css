@@ -1,0 +1,209 @@
+.termsConOuterainer{
+    position: fixed;
+    top: 8%;
+    left: 15%;
+    z-index: 8;
+    background-color: white;
+    height: 90%;
+    width: 70%;
+    overflow-y: scroll;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+.TermsAndCondition{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.faqHeadingAndDropdown h3{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.termsNavbar{
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 1fr 0.1fr 1fr;
+    grid-template-rows: 100%;
+    padding-top: 20px;
+}
+
+.termsAndConditions{
+    justify-self: center;
+    cursor: pointer;
+    font-weight: 400;
+    grid-column-start: 1;
+}
+
+.aboutUs{
+    justify-self: center;
+    cursor: pointer;
+    font-weight: 400;
+    grid-column-start: 3;
+}
+
+.faqs{
+    justify-self: center;
+    cursor: pointer;
+    font-weight: 400;
+    grid-column-start: 5;
+}
+
+.bodyTerms{
+    padding-bottom: 50px;
+}
+
+.faqHeadingAndDropdown{
+    font-size: 1.8rem;
+}
+.generalInformation,.Products,.orders,.shipping,.returns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.generalInformation h3,.Products h3,.orders h3,.shipping h3,.returns h3{
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+
+ol{
+    width: 90%;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+.aboutUsTab{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUsTab p{
+    padding-top: 0px;
+}
+
+.grayscaleLogo{
+    filter: grayscale(100%);
+    width: 300px;
+    height: 100px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+}
+
+.aboutUsTab p{
+    width: 100%;
+   text-align: center;
+   font-weight: 200;
+}
+
+.faqsSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faqContainerOne, .faqContainerTwo, .faqContainerThree, .faqContainerFour, .faqContainerFive{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+
+
+.faqText{
+    width: 80%;
+   font-weight: 200;
+   text-align: center;
+}
+
+.faqTextDeactive{
+    display: none;
+}
+
+.faqHeadingAndDropdown{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    cursor: pointer;
+    
+    
+}
+
+.faqHeadingAndDropdownMain{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    font-size: 1.4rem;
+    margin-top: 30px;
+}
+.faqHeadingAndDropdown h3{
+    justify-self: center;
+    align-self: center;
+    font-size: 1.4rem;
+}
+
+.dropdownMaterial{
+    margin-top: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 13px;
+    transform:rotate(180deg);
+    
+}
+
+
+
+.dropdownMaterialDeactive{
+    margin-top: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 13px;
+}
+
+.underlineFaq{
+    background-color: black;
+    width: 70%;
+    height: 1px;
+    margin-top: 10px;
+}
+
+.headingSpan{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+.navbarLine{
+    grid-column-start: 2;
+    height: 100%;
+    width: 1px;
+    background-color: black;
+}
+
+.navbarLineTwo{
+    grid-column-start: 4;
+    height: 100%;
+    width: 1px;
+    background-color: black;
+}
+
+.exit{
+    position: absolute;
+    width: 19px;
+    right: 1%;
+    top: 1%;
+    cursor: pointer;
+}
