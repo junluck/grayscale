@@ -49,6 +49,8 @@
     cursor: pointer;
     font-weight: 400;
     grid-column-start: 5;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .bodyTerms{
