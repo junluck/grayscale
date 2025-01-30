@@ -46,6 +46,7 @@
 
 .faqs{
     justify-self: center;
+    align-self: center;
     cursor: pointer;
     font-weight: 400;
     grid-column-start: 5;
@@ -208,4 +209,28 @@ ol{
     right: 1%;
     top: 1%;
     cursor: pointer;
+}
+
+@media(max-width: 1059px) {
+    .termsAndConditions{
+        font-size: 1rem;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .aboutUs{
+        font-size: 1rem;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .faqs{
+        font-size: 1rem;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .faqHeadingAndDropdownMain{
+        font-size: 0.9rem;
+    }
 }
