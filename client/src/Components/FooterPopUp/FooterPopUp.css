@@ -43,7 +43,9 @@
     font-weight: 400;
     grid-column-start: 3;
 }
-
+.faqHeadingAndDropdownMain h2{
+    margin-bottom: 0px;
+}
 .faqs{
     justify-self: center;
     align-self: center;
