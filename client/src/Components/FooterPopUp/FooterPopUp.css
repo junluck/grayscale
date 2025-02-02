@@ -110,6 +110,7 @@ ol{
     width: 100%;
    text-align: center;
    font-weight: 200;
+   padding-bottom: 40px;
 }
 
 .faqsSection{
@@ -216,6 +217,10 @@ ol{
     right: 1%;
     top: 1%;
     cursor: pointer;
+}
+
+.generalInformation ol, .Products ol, .orders ol, .shipping ol, .returns ol{
+    margin-top: 0px;
 }
 
 @media(max-width: 1059px) and (min-width: 758px){
