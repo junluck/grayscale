@@ -39,12 +39,16 @@
     font-size: 1.3rem;
     cursor: pointer;
     font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .shopWomen h2{
     margin-left: 5px;
     font-size: 1.3rem;
     cursor: pointer;
     font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .shopMen h3{

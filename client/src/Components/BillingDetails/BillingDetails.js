@@ -58,10 +58,16 @@ function BillingDetails(){
             <div className="billingDetailsOuter">
                 
                 <form className="billingDetailsForm" onSubmit={(e)=>{
-                    e.preventDefault()
-                    setLoading(true)
-                    sendDataToBackend(cartSlice, quantity);
-                   
+                    console.log(e.target[4].value)
+                    const regex = /^\d{8,10}$/;
+                    if(regex.test(e.target[4].value)){
+                        e.preventDefault()
+                        setLoading(true)
+                        sendDataToBackend(cartSlice, quantity);
+                    }
+                    else{
+                        alert("Please enter a valid phone number")
+                    }
                 }}>
                     <div className="firstNameAndSurname">
                         <input type="text" id="firstName" name="firstName" placeholder="First Name" required/>
@@ -69,8 +75,8 @@ function BillingDetails(){
                     </div>
                     <input type="email" id="email" name="email" placeholder="Email" required/>
                     <input type="text" id="address" name="address" placeholder="Physical Address" required/>
-                    <input type="number" id="number" name="number" placeholder="Tel Number" required/>
-                    <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message" required/>
+                    <input type="number" id="number" name="number" placeholder="Tel Number" re  required/>
+                    <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message"  required/>
                     <div className="total">
                         <h2 className="totalHeading">Total:{`$${totalAmount}`}</h2>
                     </div>
